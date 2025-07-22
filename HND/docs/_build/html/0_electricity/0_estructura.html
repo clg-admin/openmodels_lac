@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1. Estructura del Modelo &mdash; ENDRCH-HON 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=cb975c41"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.2. Datos de entrada del modelo" href="1_entradas.html" />
+    <link rel="prev" title="4. Energía" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ENDRCH-HON
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methodology.html">2. Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../national_results.html">3. Resultados Nacionales</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. Energía</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Estructura del Modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_entradas.html">4.2. Datos de Entrada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_escenarios.html">4.3. Escenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_resultados.html">4.4. Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_referencias.html">4.5. Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1_transport/index.html">5. Transporte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_lulucf/index.html">6. Agricultura, Silvicultura y Cambio de Uso de la Tierra (AFOLU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model_use.html">7. Uso del Modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github_navigation.html">8. Navegación en GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">9. Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">10. Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ENDRCH-HON</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">4. </span>Energía</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1. </span>Estructura del Modelo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/0_electricity/0_estructura.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="estructura-del-modelo">
+<h1><span class="section-number">4.1. </span>Estructura del Modelo<a class="headerlink" href="#estructura-del-modelo" title="Link to this heading"></a></h1>
+<p>El modelo del sector energético se estructura en torno al análisis del consumo energético según la
+oferta primaria de diversas fuentes —como petróleo, gas natural, carbón, biomasa, electricidad, GLP, entre otras— y
+las tecnologías vinculadas a su distribución, importación y exportación. Estas fuentes se desagregan por sector consumidor,
+siguiendo las categorías del Inventario Nacional de Gases de Efecto Invernadero de Honduras (INGEI), permitiendo una evaluación
+detallada por tipo de energía y sector. Los sectores considerados incluyen:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Generación eléctrica y calor (1A1a)</p></li>
+<li><p>Importacindustrias manufactureras y de la construcción (1A2)</p></li>
+<li><p>Uso comercial e institucional (1A4a)</p></li>
+<li><p>Uso residencial (1A4b)</p></li>
+<li><p>Actividades agrícolas, silvícolas y pesqueras (1A4c)</p></li>
+</ul>
+</div></blockquote>
+<p>También se integran tecnologías emergentes como eólicas con baterías, biogás y plantas con gas natural o nucleares, alineadas con políticas nacionales
+como la ENRICH y la actualización de la NDC.</p>
+<p><strong>Tecnologías</strong></p>
+<p>Las tecnologías utilizadas en el desarrollo del modelo del subsector Energía corresponden a las presentes en la <strong>Tabla 1</strong>.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text"><strong>T4bla 1.</strong> Tecnologías del Sector Energía</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tech</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DIST_DSL</p></td>
+<td><p>Importación y Distribución Primaria de Diesel</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_GSL</p></td>
+<td><p>Importación y Distribución Primaria de Gasolina</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_LPG</p></td>
+<td><p>Importación y Distribución Primaria de LPG</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_FOI</p></td>
+<td><p>Importación y Distribución Primaria de Fuel Oil</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_COK</p></td>
+<td><p>Importación y Distribución Primaria de Coque</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_KER</p></td>
+<td><p>Importación y Distribución Primaria de Keroseno</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_COA</p></td>
+<td><p>Importación y Distribución Primaria de Carbón</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_NGS</p></td>
+<td><p>Importación y Distribución Primaria de Gas Natural</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_URA</p></td>
+<td><p>Importación y Distribución Primaria de Uranio</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMP_ELE</p></td>
+<td><p>Importación Primaria de Electricidad</p></td>
+</tr>
+<tr class="row-even"><td><p>EXTT_CRU</p></td>
+<td><p>Extracción y Transformación Primaria de Crudo</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXTT_LPG</p></td>
+<td><p>Extracción y Transformación Primaria de LPG</p></td>
+</tr>
+<tr class="row-even"><td><p>PPHDAM</p></td>
+<td><p>Planta de Generación Eléctrica de Presa Hidroeléctrica</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPHROR</p></td>
+<td><p>Planta de Generación Eléctrica de Hidroeléctrica de Flujo Corriente (ROR)</p></td>
+</tr>
+<tr class="row-even"><td><p>PPGEO</p></td>
+<td><p>Planta de Generación Eléctrica de Geotermia</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPWNDON</p></td>
+<td><p>Planta de Generación Eléctrica de Energía Eólica</p></td>
+</tr>
+<tr class="row-even"><td><p>PPWNDS</p></td>
+<td><p>Planta de Generación Eléctrica de Energía Eólica con Almacenamiento</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPPVT</p></td>
+<td><p>Planta de Generación Eléctrica de Energía Solar Fotovoltaica de Transmisión</p></td>
+</tr>
+<tr class="row-even"><td><p>PPPVT2</p></td>
+<td><p>Planta de Generación Eléctrica de Energía Solar Fotovoltaica de Transmisión para H2</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPPVTS</p></td>
+<td><p>Planta de Generación Eléctrica de Energía Solar Fotovoltaica de Transmisión con Almacenamiento de Batería</p></td>
+</tr>
+<tr class="row-even"><td><p>PPPVD</p></td>
+<td><p>Planta de Generación Eléctrica de Energía Solar Fotovoltaica Distribuida</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPPVDS</p></td>
+<td><p>Planta de Generación Eléctrica de Energía Solar Fotovoltaica Distribuida con Almacenamiento de Batería</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_FIR</p></td>
+<td><p>Producción de Leña</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_BIM</p></td>
+<td><p>Producción de Biomasa</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_BGS</p></td>
+<td><p>Producción de Biogás</p></td>
+</tr>
+<tr class="row-odd"><td><p>ELE_TRANS</p></td>
+<td><p>Transmisión Secundaria de Energía Eléctrica</p></td>
+</tr>
+<tr class="row-even"><td><p>ELE_TRANS2</p></td>
+<td><p>Transmisión Secundaria de Energía Eléctrica Importada</p></td>
+</tr>
+<tr class="row-odd"><td><p>ELE_DIST</p></td>
+<td><p>Distribución Secundaria de Energía de Eléctrica</p></td>
+</tr>
+<tr class="row-even"><td><p>HYD_G_PROD</p></td>
+<td><p>Producción Secundaria de Hidrógeno Verde</p></td>
+</tr>
+<tr class="row-odd"><td><p>HYD_DIST</p></td>
+<td><p>Distribución Secundaria de Hidrógeno</p></td>
+</tr>
+<tr class="row-even"><td><p>STOELE</p></td>
+<td><p>Almacenamiento Secundario de Batería</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPBIM</p></td>
+<td><p>Planta de Generación Eléctrica de Biomasa</p></td>
+</tr>
+<tr class="row-even"><td><p>PPBGS</p></td>
+<td><p>Planta de Generación Eléctrica de Biogás</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPCOA</p></td>
+<td><p>Planta de Generación Eléctrica de Carbón</p></td>
+</tr>
+<tr class="row-even"><td><p>PPGTDSL</p></td>
+<td><p>Planta de Generación Eléctrica de Turbina de gas Diesel</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPFOI</p></td>
+<td><p>Planta de Generación Eléctrica de Fuel Oil</p></td>
+</tr>
+<tr class="row-even"><td><p>PPNGS</p></td>
+<td><p>Planta de Generación Eléctrica de Gas Natural</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPCOK</p></td>
+<td><p>Planta de Generación Eléctrica de Coque</p></td>
+</tr>
+<tr class="row-even"><td><p>PPICEDSL</p></td>
+<td><p>Planta de Generación Eléctrica de Motor de Combustión Interna Diesel</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPGTGLP</p></td>
+<td><p>Planta de Generación Eléctrica de LPG</p></td>
+</tr>
+<tr class="row-even"><td><p>PPNUC</p></td>
+<td><p>Planta de Generación Eléctrica Nuclear</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="4. Energía" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_entradas.html" class="btn btn-neutral float-right" title="4.2. Datos de entrada del modelo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, CLG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

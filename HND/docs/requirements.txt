@@ -1,0 +1,10 @@
+sphinx
+sphinx_rtd_theme
+pyDOE
+xlsxwriter
+xlrd
+pyyaml
+pandas
+numpy
+scipy
+openpyxl

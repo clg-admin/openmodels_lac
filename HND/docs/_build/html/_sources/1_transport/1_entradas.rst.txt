@@ -1,0 +1,34 @@
+===================================
+Datos de entrada del modelo
+===================================
+
+En la **Tabla 4**  se presentan los datos de entrada para el modelo del sector Transporte.
+
+.. list-table:: **Tabla 4.** Datos de entrada del modelo del sector transporte
+   :widths: 25 55 20
+   :header-rows: 1
+
+   * - Dato/Supuesto
+     - Detalle
+     - Fuente
+   * - Cantidad de vehículos por tipo de combustible
+     - Estimada con base en registros del parque vehicular y consumo energético; considera diesel, gasolina y GLP. Se proyecta su disminución hasta 2050.
+     - INE (2023), SEN (2022), Secretaría de Energía (2024), SEPSE (2021), OSeMOSYS-CR
+   * - Rendimiento energético [MJ/km]
+     - Derivado de balances energéticos y kilometraje en Costa Rica; complementado con OSeMOSYS-CR para datos faltantes.
+     - SEPSE (2021), Secretaría de Energía (2024), OSeMOSYS-CR
+   * - Infraestructura de carga
+     - Se propone una estación de carga pública por cada 7 vehículos eléctricos, basada en experiencias internacionales.
+     - Hall & Lutsey (2017, 2020)
+   * - Crecimiento de la demanda
+     - Se aproxima con base en las proyecciones del PIB per cápita y crecimiento poblacional hasta 2050.
+     - Banco Central de Honduras (2023), Naciones Unidas (2022)
+   * - Costos del sector transporte
+     - Considera costos de capital y operación, con menores costos de mantenimiento en tecnologías de cero emisiones.
+     - Godínez-Zamora et al. (2020)
+   * - Emisiones
+     - Calculadas como consumo proyectado por factor de emisión de la IPCC para combustión móvil.
+     - IPCC (2006), Vol. 2, Cap. 3
+   * - Externalidades
+     - Incluyen impactos en salud pública por consumo de diésel, gasolina y GLP.
+     - IMF (Coady et al., 2019)

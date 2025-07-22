@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1. Estructura del Modelo &mdash; ENDRCH-HON 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=cb975c41"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.2. Datos de entrada del modelo" href="1_entradas.html" />
+    <link rel="prev" title="4. Energía y Transporte" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ENDRCH-HON
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methodology.html">2. Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../national_results.html">3. Resultados Nacionales</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. Energía y Transporte</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Estructura del Modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_entradas.html">4.2. Datos de Entrada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_escenarios.html">4.3. Escenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_resultados.html">4.4. Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_referencias.html">4.5. Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../1_lulucf/index.html">5. Agricultura, Silvicultura y Cambio de Uso de la Tierra (AFOLU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model_use.html">6. Uso del Modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github_navigation.html">7. Navegación en GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">8. Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">9. Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ENDRCH-HON</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">4. </span>Energía y Transporte</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1. </span>Estructura del Modelo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/0_electricity_transport/0_estructura.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="estructura-del-modelo">
+<h1><span class="section-number">4.1. </span>Estructura del Modelo<a class="headerlink" href="#estructura-del-modelo" title="Link to this heading"></a></h1>
+<p>El sector Energía y Transporte se modela de manera integrada para capturar las interacciones entre el consumo de energía y su uso final en el sistema de movilidad como se observa en la <strong>Figura 3</strong>.  Por el lado energético, se
+analiza la oferta y demanda de fuentes primarias como petróleo crudo, gas natural, carbón mineral, leña, biomasa, electricidad, GLP, gasolinas, kerosene, diésel, fuel oil y coque de petróleo.
+Se consideran las tecnologías de importación, exportación, producción, distribución y transformación de estas fuentes.</p>
+<p>En cuanto al transporte, el modelo se enfoca en el transporte terrestre y analiza el uso de combustibles como diésel, gasolina, GLP, gas natural, electricidad, hidrógeno y tecnologías híbridas.
+La demanda se desagrega en transporte público, privado, turístico, de carga liviana y de carga pesada. También se incluye, en escenarios estratégicos, tecnologías como trenes y teleféricos. La
+caracterización del parque vehicular se basa en estadísticas nacionales y referencias internacionales, incluyendo la eficiencia energética (MJ/km) por tipo de vehículo y datos de kilometraje recorrido.
+Esta estructura permite simular trayectorias futuras y evaluar el impacto de distintas políticas de descarbonización.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/3_energia.png"><img alt="Models used on the cost and benefits analysis" src="../_images/3_energia.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figura 3:</strong> Estructura del modelo para los sectores Energía y Transporte</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Tecnologías</strong>
+Las tecnologías utilizadas en el desarrollo del modelo del subsector Energía corresponden a las presentes en la <strong>Tabla 1</strong>, para el subsector Transporte se presentan en la <strong>Tabla 2</strong>.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text"><strong>Tabla 1. Tecnologías del Sector Energía</strong></span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Tech</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EXTT_CRU</p></td>
+<td><p>Primaria - Extracción/Transformación - Crudo</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXTT_LPG</p></td>
+<td><p>Primaria - Extracción/Transformación - LPG</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_FIR</p></td>
+<td><p>Primaria - Extracción/Transformación/Distribución - Leña</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_BIM</p></td>
+<td><p>Primaria - Extracción/Transformación/Distribución - Biomasa</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_BGS</p></td>
+<td><p>Primaria - Extracción/Transformación/Distribución - Biogás</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_CRU</p></td>
+<td><p>Primaria - Importación/Distribución - Crudo</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_NGS</p></td>
+<td><p>Primaria - Importación/Distribución - Gas Natural</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_DSL</p></td>
+<td><p>Primaria - Importación/Distribución - Diesel</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_GSL</p></td>
+<td><p>Primaria - Importación/Distribución - Gasolina</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_LPG</p></td>
+<td><p>Primaria - Importación/Distribución - LPG</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_FOI</p></td>
+<td><p>Primaria - Importación/Distribución - Fuel Oil</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_COK</p></td>
+<td><p>Primaria - Importación/Distribución - Coke</p></td>
+</tr>
+<tr class="row-even"><td><p>DIST_KER</p></td>
+<td><p>Primaria - Importación/Distribución - Kerosen</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIST_COA</p></td>
+<td><p>Primaria - Importación/Distribución - Carbón</p></td>
+</tr>
+<tr class="row-even"><td><p>IMP_ELE</p></td>
+<td><p>Primaria - Importación - Electricidad</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPHDAM</p></td>
+<td><p>Central Hidroeléctrica de Embalse</p></td>
+</tr>
+<tr class="row-even"><td><p>PPHROR</p></td>
+<td><p>Central Hidroeléctrica de Paso</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPGEO</p></td>
+<td><p>Central Geotérmica</p></td>
+</tr>
+<tr class="row-even"><td><p>PPWNDON</p></td>
+<td><p>Central Eólica</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPWNDOFF</p></td>
+<td><p>Central Eólica Offshore</p></td>
+</tr>
+<tr class="row-even"><td><p>PPPVT</p></td>
+<td><p>Central Solar de Transmisión</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPPVTHYD</p></td>
+<td><p>Central Solar de Transmisión Hidrógeno</p></td>
+</tr>
+<tr class="row-even"><td><p>PPPVTS</p></td>
+<td><p>Central Solar de Transmisión con Baterías</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPPVD</p></td>
+<td><p>Central Solar Distribuida</p></td>
+</tr>
+<tr class="row-even"><td><p>PPDHYD</p></td>
+<td><p>Central Hidroeléctrica Autoproductor</p></td>
+</tr>
+<tr class="row-odd"><td><p>REF_DSL</p></td>
+<td><p>Refinería Secundaria de Diesel</p></td>
+</tr>
+<tr class="row-even"><td><p>REF_GSL</p></td>
+<td><p>Refinería Secundaria de Gasolina</p></td>
+</tr>
+<tr class="row-odd"><td><p>REF_LPG</p></td>
+<td><p>Refinería Secundaria de LPG</p></td>
+</tr>
+<tr class="row-even"><td><p>REF_FOI</p></td>
+<td><p>Refinería Secundaria de Fuel Oil</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPBIM</p></td>
+<td><p>Central de Biomasa</p></td>
+</tr>
+<tr class="row-even"><td><p>PPBGS</p></td>
+<td><p>Central de Biogás</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPCOA</p></td>
+<td><p>Central de Carbón</p></td>
+</tr>
+<tr class="row-even"><td><p>PPCCTDSL</p></td>
+<td><p>Ciclo Combinado y Turbina a Gas - Diesel</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPCCFOIDSL</p></td>
+<td><p>Ciclo Combinado - Fuel Oil y Diesel</p></td>
+</tr>
+<tr class="row-even"><td><p>PPCCTNGS</p></td>
+<td><p>Ciclo Combinado y Turbina a Gas - Gas Natural</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPCCTNGSDSL</p></td>
+<td><p>Ciclo Combinado y Turbina a Gas - Gas Natural y Diesel</p></td>
+</tr>
+<tr class="row-even"><td><p>PPICEFOI</p></td>
+<td><p>Motor de Combustión Interna - Fuel Oil</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPICEGASFOI</p></td>
+<td><p>Motor de Combustión Interna - Gas Natural y Fuel Oil</p></td>
+</tr>
+<tr class="row-even"><td><p>PPADSL</p></td>
+<td><p>Central Aislada - Diesel</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPAFOI</p></td>
+<td><p>Central Aislada - Fuel Oil</p></td>
+</tr>
+<tr class="row-even"><td><p>PPANGS</p></td>
+<td><p>Central Aislada - Gas Natural</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPDBIM</p></td>
+<td><p>Central Autoproductor - Biogás</p></td>
+</tr>
+<tr class="row-even"><td><p>PPDBGS</p></td>
+<td><p>Central Autoproductor - Biogás</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPDDSL</p></td>
+<td><p>Central Autoproductor - Diesel</p></td>
+</tr>
+<tr class="row-even"><td><p>PPDFOI</p></td>
+<td><p>Central Autoproductor - Fuel Oil</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPDNGS</p></td>
+<td><p>Central Autoproductor - Gas Natural</p></td>
+</tr>
+<tr class="row-even"><td><p>PPDGSL</p></td>
+<td><p>Central Autoproductor - Gasolina</p></td>
+</tr>
+<tr class="row-odd"><td><p>PPDGLP</p></td>
+<td><p>Central Autoproductor - LPG</p></td>
+</tr>
+<tr class="row-even"><td><p>ELE_TRANS</p></td>
+<td><p>Transmisión Secundaria</p></td>
+</tr>
+<tr class="row-odd"><td><p>HYD_G_PROD</p></td>
+<td><p>Producción de Hidrógeno Verde</p></td>
+</tr>
+<tr class="row-even"><td><p>ELE_DIST</p></td>
+<td><p>Distribución Secundaria</p></td>
+</tr>
+<tr class="row-odd"><td><p>HYD_DIST</p></td>
+<td><p>Distribución de Hidrógeno Secundaria</p></td>
+</tr>
+<tr class="row-even"><td><p>T5DSLCOM</p></td>
+<td><p>Demanda Diesel Comercial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5GSLCOM</p></td>
+<td><p>Demanda Gasolina Comercial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NGSCOM</p></td>
+<td><p>Demanda Gas Natural Comercial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5LPGCOM</p></td>
+<td><p>Demanda LPG Comercial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5ELECOM</p></td>
+<td><p>Demanda Eléctrica Comercial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5FIRCOM</p></td>
+<td><p>Demanda Leña Comercial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5DSLIND</p></td>
+<td><p>Demanda Diesel Industrial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5GSLIND</p></td>
+<td><p>Demanda Gasolina Industrial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NGSIND</p></td>
+<td><p>Demanda Gas Natural Industrial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5LPGIND</p></td>
+<td><p>Demanda LPG Industrial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5ELEIND</p></td>
+<td><p>Demanda Eléctrica Industrial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5HYDIND</p></td>
+<td><p>Demanda Hidrógeno Industrial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5COKIND</p></td>
+<td><p>Demanda Coke Industrial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5BIMIND</p></td>
+<td><p>Demanda Biomasa Industrial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5COAIND</p></td>
+<td><p>Demanda Carbón Industrial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5FOIIND</p></td>
+<td><p>Demanda Fuel Oil Industrial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5LPGRES</p></td>
+<td><p>Demanda LPG Residencial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5ELERES</p></td>
+<td><p>Demanda Eléctrica Residencial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5KERRES</p></td>
+<td><p>Demanda Kerosen Residencial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5FIRRES</p></td>
+<td><p>Demanda Leña Residencial</p></td>
+</tr>
+<tr class="row-even"><td><p>T5BIMRES</p></td>
+<td><p>Demanda Biomasa Residencial</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5GSLCON</p></td>
+<td><p>Demanda Gasolina Construcción</p></td>
+</tr>
+<tr class="row-even"><td><p>T5LPGCON</p></td>
+<td><p>Demanda LPG Construcción</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NGSEXP</p></td>
+<td><p>Demanda Gas Natural Exportaciones</p></td>
+</tr>
+<tr class="row-even"><td><p>T5KEREXP</p></td>
+<td><p>Demanda Kerosen Exportaciones</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5BIMEXP</p></td>
+<td><p>Demanda Biomasa Exportaciones</p></td>
+</tr>
+<tr class="row-even"><td><p>T5DSLTOT</p></td>
+<td><p>Demanda Diesel Transporte - Otro</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5GSLTOT</p></td>
+<td><p>Demanda Gasolina Transporte - Otro</p></td>
+</tr>
+<tr class="row-even"><td><p>T5ELETOT</p></td>
+<td><p>Demanda Eléctrica Transporte - Otro</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5GSLTAC</p></td>
+<td><p>Demanda Gasolina Transporte - Aero</p></td>
+</tr>
+<tr class="row-even"><td><p>T5KERTAC</p></td>
+<td><p>Demanda Kerosen Transporte - Aero</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5DSLAGR</p></td>
+<td><p>Demanda Diesel Agricultura</p></td>
+</tr>
+<tr class="row-even"><td><p>T5LPGAGR</p></td>
+<td><p>Demanda LPG Agricultura</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5ELEAGR</p></td>
+<td><p>Demanda Eléctrica Agricultura</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text"><strong>Tabla 2. Tecnologías del sector Transporte</strong></span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Tech</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TRAUT</p></td>
+<td><p>Automóviles</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRBPU</p></td>
+<td><p>Buses públicos</p></td>
+</tr>
+<tr class="row-even"><td><p>TRBTUR</p></td>
+<td><p>Turismo</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRMBS</p></td>
+<td><p>Minibuses (Guaguas)</p></td>
+</tr>
+<tr class="row-even"><td><p>TRMOT</p></td>
+<td><p>Motocicletas</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRSUV</p></td>
+<td><p>SUV</p></td>
+</tr>
+<tr class="row-even"><td><p>TRTAX</p></td>
+<td><p>Taxis (Conchos)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRXTRAI</p></td>
+<td><p>Tren de Pasajeros</p></td>
+</tr>
+<tr class="row-even"><td><p>TRXTRAIFRE</p></td>
+<td><p>Tren de Carga</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRXTTEL</p></td>
+<td><p>Teleférico</p></td>
+</tr>
+<tr class="row-even"><td><p>TRYLF</p></td>
+<td><p>Carga Liviana</p></td>
+</tr>
+<tr class="row-odd"><td><p>TRYTK</p></td>
+<td><p>Carga Pesada</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="4. Energía y Transporte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_entradas.html" class="btn btn-neutral float-right" title="4.2. Datos de entrada del modelo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, CLG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
