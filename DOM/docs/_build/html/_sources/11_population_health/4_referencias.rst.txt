@@ -1,0 +1,18 @@
+---------------------
+References
+---------------------
+- World Bank. (2020). *Jamaica Integrated Community Development Project: Procurement Plan*. Retrieved from https://documents1.worldbank.org/curated/en/963501595626744589/pdf/Jamaica-LATIN-AMERICA-AND-CARIBBEAN-P146460-Jamaica-Integrated-Community-Development-Project-Procurement-Plan.pdf
+- Case Study on Shock-Responsive Social Protection in Jamaica. (n.d.). *socialprotection.org*. Retrieved from https://www.socialprotection.org/gimi/RessourcePDF.action?id=55616
+- The Patterson Foundation. (n.d.). *The Multiplier Effect*. Retrieved from https://www.thepattersonfoundation.org/the-multiplier-effect.html
+- The Trust for Public Land. (2018). *The Health Benefits of Parks and Their Economic Impacts*. Retrieved from https://www.tpl.org/the-health-benefits-of-parks-and-their-economic-impacts_0.pdf
+- DefeatDD. (2015). *Average Cost of a Diarrhea Case*. Retrieved from https://www.defeatdd.org/
+- Worldometer. (2024). *Jamaica Population (2024)*. Retrieved from https://www.worldometers.info/world-population/jamaica-population/
+- United Nations. (n.d.). *Voluntary National Review: Goal 6 – Clean Water and Sanitation*. Retrieved from https://sustainabledevelopment.un.org/memberstates/jamaica
+- DocsLib. (n.d.). *A Spatial Analysis of Northern Guatemala*. Retrieved from https://docslib.org/doc/10521959
+- Government of Jamaica. (2019). *FINAL National Water Sector Policy (2019)a - Jan 08 19*. Retrieved from https://www.mwh.gov.jm
+- CEPAL. (n.d.). *An Assessment of the Economic Impact of Climate Change on the Health Sector in Jamaica*. Retrieved from https://www.cepal.org/
+- Bloomberg. (2022). *Cities Need to Build Faster, Cheaper Public Parks*. Retrieved from https://www.bloomberg.com/news/articles/2022-07-07
+- MacroTrends. (2024). *Jamaica GDP 1960-2024*. Retrieved from https://www.macrotrends.net/countries/JAM/jamaica/gdp-gross-domestic-product
+- OECD. (2011). *Benefits of Investing in Water and Sanitation*. https://www.oecd.org/en/publications/benefits-of-investing-in-water-and-sanitation_9789264100817-en.html
+- Jamaica Information Service. (n.d.). *National Food and Nutrition Security Policy*. Retrieved from https://jis.gov.jm/
+- Development and Importance of Tourism for Jamaica. (n.d.). Retrieved from https://jis.gov.jm/
