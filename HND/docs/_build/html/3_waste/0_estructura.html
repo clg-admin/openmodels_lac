@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7.1. Estructura del Modelo &mdash; RD-LTS 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=cb975c41"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7.2. Datos de entrada del modelo" href="1_entradas.html" />
+    <link rel="prev" title="7. Residuos" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            RD-LTS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">1. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methodology.html">2. Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../national_results.html">3. Resultados Nacionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_electricity_transport/index.html">4. Energía y Transporte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_afolu/index.html">5. Agricultura, Silvicultura y Cambio de Uso de la Tierra (AFOLU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_piup/index.html">6. Procesos Industriales y Uso de Productos (PIUP)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">7. Residuos</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.1. Estructura del Modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_entradas.html">7.2. Datos de Entrada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_escenarios.html">7.3. Escenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_resultados.html">7.4. Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_referencias.html">7.5. Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../model_use.html">8. Uso del Modelo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github_navigation.html">9. Navegación en GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">10. Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">11. Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">RD-LTS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">7. </span>Residuos</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7.1. </span>Estructura del Modelo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/3_waste/0_estructura.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="estructura-del-modelo">
+<h1><span class="section-number">7.1. </span>Estructura del Modelo<a class="headerlink" href="#estructura-del-modelo" title="Link to this heading"></a></h1>
+<p>El sector residuos, en cuanto a la generación de emisiones de GEI, se divide en dos grandes categorías: residuos sólidos y aguas residuales, representadas en la <strong>Figura 13</strong> y <strong>Figura 14</strong>
+respectivamente. En la primera categoría, las emisiones se originan principalmente por la descomposición de materia orgánica en sitios de disposición final o
+durante tratamientos específicos. Para capturar no solo las emisiones sino también las inversiones, operaciones y externalidades asociadas, el modelo del sector residuos
+sólidos se estructura en varias etapas: generación, separación, recolección, y disposición final o tratamiento.</p>
+<p>Esta estructura permite simular trayectorias futuras y evaluar el impacto de distintas políticas de descarbonización.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/13_wastesolid.png"><img alt="Models used on the cost and benefits analysis" src="../_images/13_wastesolid.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figura 13:</strong> Esquema resumen de los aspectos considerados para el sector residuos, del tipo sólidos.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/14_wasteliquid.png"><img alt="Models used on the cost and benefits analysis" src="../_images/14_wasteliquid.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figura 14:</strong> Esquema resumen de los aspectos considerados para el sector residuos, del tipo líquidos.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Tecnologías</strong></p>
+<p>Las tecnologías utilizadas en el desarrollo del modelo del sector corresponden a las presentes en la <strong>Tabla 7</strong>.</p>
+<blockquote>
+<div><table class="longtable docutils align-default" id="id3">
+<caption><span class="caption-text"><strong>Tabla 7.</strong> Tecnologías modeladas para el sector Residuos</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Tech</strong></p></th>
+<th class="head"><p><strong>Descripción</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>INORG_RCY_OS</p></td>
+<td><p>Reciclaje de residuos inorgánicos separados en sitio de disposición final</p></td>
+</tr>
+<tr class="row-odd"><td><p>AD</p></td>
+<td><p>Digestión anaerobia</p></td>
+</tr>
+<tr class="row-even"><td><p>COMPOST</p></td>
+<td><p>Compostaje</p></td>
+</tr>
+<tr class="row-odd"><td><p>LANDFILL</p></td>
+<td><p>Relleno sanitario</p></td>
+</tr>
+<tr class="row-even"><td><p>NO_CONTR_OD</p></td>
+<td><p>Botadero a cielo abierto</p></td>
+</tr>
+<tr class="row-odd"><td><p>COPROC</p></td>
+<td><p>Coprocesamiento</p></td>
+</tr>
+<tr class="row-even"><td><p>INCIN</p></td>
+<td><p>Incineración controlada</p></td>
+</tr>
+<tr class="row-odd"><td><p>OPEN_BURN</p></td>
+<td><p>Quema a cielo abierto</p></td>
+</tr>
+<tr class="row-even"><td><p>SIT_CLAN</p></td>
+<td><p>Disposición en sitios clandestinos</p></td>
+</tr>
+<tr class="row-odd"><td><p>OSS_INORG</p></td>
+<td><p>Separación de residuos inorgánicos en sitio de disposición final</p></td>
+</tr>
+<tr class="row-even"><td><p>OSS_ORG</p></td>
+<td><p>Separación de residuos orgánicos en sitio de disposición final</p></td>
+</tr>
+<tr class="row-odd"><td><p>NO_OSS_BLEND</p></td>
+<td><p>No separación de residuos mezclados en sitio de disposición final</p></td>
+</tr>
+<tr class="row-even"><td><p>NO_OSS_NO_COLL</p></td>
+<td><p>No recolección de residuos sólidos en sitio de disposición final</p></td>
+</tr>
+<tr class="row-odd"><td><p>INORG_DCOLL</p></td>
+<td><p>Recolección diferenciada de residuos inorgánicos</p></td>
+</tr>
+<tr class="row-even"><td><p>ORG_DCOLL</p></td>
+<td><p>Recolección diferenciada de residuos orgánicos</p></td>
+</tr>
+<tr class="row-odd"><td><p>BLEND_NO_DCOLL</p></td>
+<td><p>Recolección no diferenciada de residuos mezclados</p></td>
+</tr>
+<tr class="row-even"><td><p>BLEND_NO_COLL</p></td>
+<td><p>No recolección de residuos sólidos</p></td>
+</tr>
+<tr class="row-odd"><td><p>INORG_SS</p></td>
+<td><p>Separación de residuos inorgánicos en la fuente</p></td>
+</tr>
+<tr class="row-even"><td><p>ORG_SS</p></td>
+<td><p>Separación de residuos orgánicos en la fuente</p></td>
+</tr>
+<tr class="row-odd"><td><p>NO_SS</p></td>
+<td><p>No separación de residuos en la fuente</p></td>
+</tr>
+<tr class="row-even"><td><p>LANDFILL_ELEC</p></td>
+<td><p>Recuperación de metano para generación de electricidad</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5TSWTSW</p></td>
+<td><p>Generación nacional de residuos sólidos</p></td>
+</tr>
+<tr class="row-even"><td><p>AERO_PTAR</p></td>
+<td><p>Planta de tratamiento aerobica centralizada</p></td>
+</tr>
+<tr class="row-odd"><td><p>AERO_PTAR_RU</p></td>
+<td><p>Reúso de agua tratada proveniente de una planta centralizada de tratamiento aeróbico de aguas residuales</p></td>
+</tr>
+<tr class="row-even"><td><p>ANAE_LAGN</p></td>
+<td><p>Laguna anaeróbica</p></td>
+</tr>
+<tr class="row-odd"><td><p>ANAE_LAGN_RU</p></td>
+<td><p>Reúso de agua tratada proveniente de una laguna anaeróbica</p></td>
+</tr>
+<tr class="row-even"><td><p>SEPT_SYST</p></td>
+<td><p>Sistema séptico</p></td>
+</tr>
+<tr class="row-odd"><td><p>LATR</p></td>
+<td><p>Letrina</p></td>
+</tr>
+<tr class="row-even"><td><p>EFLT_DISC</p></td>
+<td><p>Vertido de efluentes al medio acuático</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEWER_NO_T</p></td>
+<td><p>Aguas residuales recolectadas no tratadas</p></td>
+</tr>
+<tr class="row-even"><td><p>WWWT</p></td>
+<td><p>Aguas residuales con tratamiento</p></td>
+</tr>
+<tr class="row-odd"><td><p>WWWOT</p></td>
+<td><p>Aguas residuales sin tratamiento</p></td>
+</tr>
+<tr class="row-even"><td><p>SEWERWW</p></td>
+<td><p>Aguas residuales recolectadas</p></td>
+</tr>
+<tr class="row-odd"><td><p>DIRECT_DISC</p></td>
+<td><p>Aguas residuales no recolectadas</p></td>
+</tr>
+<tr class="row-even"><td><p>IWW</p></td>
+<td><p>Aguas residuales industriales</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5TWWTWW</p></td>
+<td><p>Generación nacional de aguas residuales</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="7. Residuos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_entradas.html" class="btn btn-neutral float-right" title="7.2. Datos de entrada del modelo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, CLG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

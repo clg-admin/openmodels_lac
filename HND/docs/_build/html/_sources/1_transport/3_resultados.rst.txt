@@ -1,0 +1,22 @@
+---------------------
+Resultados
+---------------------
+
+La **Figura 5** muestra una disminución notable de las emisiones entre escenarios, producto de las medidas de mitigación establecidas. Esta disminución representa una reducción absoluta de 4,102 Gg CO₂,
+equivalente a un 62 % menos. En términos económicos, la **Figura 6** muestra que aunque el ENDRCH implica mayores inversiones (CAPEX), los costos operativos (OPEX) y las
+externalidades son significativamente menores, lo que se traduce en un ahorro total de 18.27 mil millones de USD respecto al escenario Tendencial.
+
+
+.. figure:: ../_static/_images/5_transresuls.png
+   :alt: Models used on the cost and benefits analysis
+   :width: 100%
+   :align: center
+
+   **Figura 5:** Emisiones del sector transporte en los escenarios Tendencial y ENDRCH.
+
+.. figure:: ../_static/_images/5_transcostos.png
+   :alt: Models used on the cost and benefits analysis
+   :width: 100%
+   :align: center
+
+   **Figura 6:** Costos acumulados al 2050 del sector transporte y beneficios de los escenarios Tendencial y ENDRCH

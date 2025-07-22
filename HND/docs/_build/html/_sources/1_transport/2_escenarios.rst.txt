@@ -1,0 +1,31 @@
+---------------------
+Escenarios
+---------------------
+
+
+Para describir la evolución del sector Transporte se establecieron los siguientes escenarios:
+  * **Escenario Tendencial**: El escenario tendencial proyecta la evolución del sector transporte siguiendo el crecimiento histórico del PIB per cápita y la población. Considera una electrificación muy limitada y una introducción inicial de vehículos híbridos, basada en las metas del documento Prospectiva Energética: Adopción de la Electromovilidad 2019–2050 (Secretaría de Energía, 2024). No contempla medidas adicionales de mitigación, tecnologías emergentes como el hidrógeno ni un cambio modal hacia formas más sostenibles de transporte. La infraestructura de carga pública se establece con una proporción técnica estándar de 1 estación por cada 7 vehículos eléctricos.
+  * **Escenario ENDRC**: Este escenario plantea una transformación gradual del sector mediante la electrificación de la flota vehicular, la adopción de vehículos híbridos, mejoras en la eficiencia tecnológica y un cambio modal hacia el transporte público y la movilidad activa. Las acciones se complementan con incentivos económicos y normativas para promover la electromovilidad. Se incluyen objetivos específicos como el desarrollo de centros de conversión vehicular, esquemas de incentivos fiscales y programas de formación técnica. Se espera una electrificación del 40 % en varias categorías al 2050 y un cambio modal que promueve el uso de transporte público y modos no motorizados.
+
+**Medidas y supuestos del Escenario ENDRC**
+
+**Crecimiento de la flota vehicular**
+  * Acorde al comportamiento histórico del PIB per cápita y la población.
+
+**Electrificación de la flota**
+  * 2035: 15 % motocicletas, 10 % autos livianos, taxis, microbuses, buses públicos; 8 % pickups, SUVs y camionetas.
+  * 2050: 40 % motocicletas y autos livianos; 30 % pickups, jeeps, microbuses, buses de tránsito rápido; 40 % buses grandes de transporte masivo.
+
+**Vehículos híbridos**
+  * 2035: 20 % vehículos livianos y 15 % carga liviana/pesada.
+  * 2050: 50 % vehículos livianos y 40 % carga liviana/pesada.
+
+**Eficiencia tecnológica**
+  * Mejora progresiva de eficiencia energética: +10 % para vehículos eléctricos y +20 % para los demás tipos.
+
+**Infraestructura de carga**
+  * 1 estación pública por cada 7 vehículos eléctricos.
+
+**Cambio modal**
+  * 2035: +4 % transporte público, +2.5 % movilidad activa.
+  * 2050: +7.5 % transporte público, +5 % movilidad activa.
