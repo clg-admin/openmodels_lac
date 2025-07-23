@@ -1,0 +1,12 @@
+---------------------
+Referencias
+---------------------
+- Ministry of Science, Energy and Technology (MSET), 2023. *National Energy Balances*.
+- Planning Institute of Jamaica (PIOJ), 2022. *Economic and Social Survey Jamaica*.
+- Ministry of Science, Energy and Technology (MSET), 2020. *2018 Jamaica Integrated Resource for Diesel, Fuel Oil and Natural Gas*.
+- Intergovernmental Panel on Climate Change. *Default values reported in the IPCC Guidelines, volume 2, chapter 2 Stationary Combustion*.
+- Vivid Economics. (2023). *Developing Jamaica’s long-term strategy for low emission and climate resilient development*.
+- Intergovernmental Panel on Climate Change (IPCC). (2019). *CO2 emissions from Cement Production*.
+- De Lena, E. et al. (2021). *Techno-economic analysis of calcium looping processes for low CO2 emission cement plants*.
+- Glenk et al. (2023). *Cost-Efficient Decarbonization of Portland Cement Production*.
+- Ministry of Economic Growth and Job Creation (MEGJC), 2022. *Jamaica’s Climate Action Enhancement Package (CAEP) Programme Synthesis Report*.

@@ -1,0 +1,14 @@
+---------------------
+References
+---------------------
+- International Energy Agency (IEA). (2023). *Global EV Outlook 2023: Executive Summary* [Accessed: 2023-11-28]. https://www.iea.org/reports/global-ev-outlook-2023/executive-summary
+- Ministry of Science, Energy and Technology (MSET), 2020
+- Ministry of Science, Energy and Technology (MSET), 2018a
+- Ministry of Science, Energy and Technology (MSET), 2018b
+- Ministry of Science, Energy and Technology (MSET), 2023
+- Jamaica Public Service (JPS), 2015, 2022, 2023
+- SieLAC-OLADE, 2022a
+- Planning Institute of Jamaica (PIOJ), 2022b
+- Argus Media, 2023
+- Intergovernmental Panel on Climate Change (IPCC Guidelines, volume 2, chapter 2)
+- Statistical Institute of Jamaica (StatInJa), 2024

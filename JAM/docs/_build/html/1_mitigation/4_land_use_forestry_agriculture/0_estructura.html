@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.5.1. Model Structure &mdash; JAM-LTS 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=cb975c41"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.5.2. Input Data" href="1_entradas.html" />
+    <link rel="prev" title="4.5. Land Use, Forestry and Agriculture Sector" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            JAM-LTS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Structure</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../methodology.html">2. Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../national_results.html">3. National Results</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">4. Mitigation Model</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../0_electricity_buildings/index.html">4.1. Electricity and Buildings Sector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_transport/index.html">4.2. Transport Sector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_industry/index.html">4.3. Industry Sector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_waste/index.html">4.4. Waste Sector</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">4.5. Land Use, Forestry and Agriculture Sector</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.5.1. Model Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1_entradas.html">4.5.2. Input Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2_escenarios.html">4.5.3. Scenarios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3_resultados.html">4.5.4. Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4_referencias.html">4.5.5. References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../0_adaptation/index.html">5. Adaptation Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../model_use.html">6. Model Use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../github_navigation.html">7. GitHub Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">9. Authors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">JAM-LTS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><span class="section-number">4. </span>Mitigation Model</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">4.5. </span>Land Use, Forestry and Agriculture Sector</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.5.1. </span>Model Structure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/1_mitigation/4_land_use_forestry_agriculture/0_estructura.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="model-structure">
+<h1><span class="section-number">4.5.1. </span>Model Structure<a class="headerlink" href="#model-structure" title="Link to this heading"></a></h1>
+<p><strong>Figure 10</strong> shows the model structure which includes six general categories of
+land use: forests, crops, grassland, wetlands, settlements, and other land uses.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/10_estructuraafolu.png"><img alt="Models used on the cost and benefits analysis" src="../../_images/10_estructuraafolu.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 10:</strong> Key elements represented for the land use and forestry sector.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Technologies</strong></p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text"><strong>Table 9.</strong> Technologies and Demand Categories</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 52.0%" />
+<col style="width: 26.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Tech</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Sub-sector</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SOIALL</p></td>
+<td><p>Primary soil</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPCOF</p></td>
+<td><p>Import – Coffee</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPCOC</p></td>
+<td><p>Import – Cocoa</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPCNT</p></td>
+<td><p>Import – Coconut</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPBAN</p></td>
+<td><p>Import – Banana</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPLEG</p></td>
+<td><p>Import – Legumes</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPVEG</p></td>
+<td><p>Import – Vegetables</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPCON</p></td>
+<td><p>Import – Condiments</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPFRT</p></td>
+<td><p>Import – Fruits</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPCER</p></td>
+<td><p>Import – Cereals</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPPLA</p></td>
+<td><p>Import – Plantains</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPPOT</p></td>
+<td><p>Import – Potatoes</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPYAM</p></td>
+<td><p>Import – Yams</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPOTTU</p></td>
+<td><p>Import – Other tubers</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPCARBOV</p></td>
+<td><p>Import – Cattle</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPCARPOR</p></td>
+<td><p>Import – Pigs</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPCARPOL</p></td>
+<td><p>Import – Poultry</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>IMPMILK</p></td>
+<td><p>Import – Milk</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-even"><td><p>IMPOTRCAR</p></td>
+<td><p>Import – Other meats</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_FOR</p></td>
+<td><p>Forest soil</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_WET</p></td>
+<td><p>Wetland soil</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_CROP</p></td>
+<td><p>Cropland soil</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_PAS</p></td>
+<td><p>Pasture soil</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_SET</p></td>
+<td><p>Settlement soil</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_OTL</p></td>
+<td><p>Other-land-use soil</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_DEN</p></td>
+<td><p>Dense forest</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_DRY</p></td>
+<td><p>Dry forest</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_SEC</p></td>
+<td><p>Secondary forest</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_MAN</p></td>
+<td><p>Mangrove forest</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>AG_COF</p></td>
+<td><p>Cropland – Coffee</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>AG_COC</p></td>
+<td><p>Cropland – Cocoa</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>AG_CNT</p></td>
+<td><p>Cropland – Coconut</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>AG_BAN</p></td>
+<td><p>Cropland – Banana</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>AG_LEG</p></td>
+<td><p>Cropland – Legumes</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>AG_VEG</p></td>
+<td><p>Cropland – Vegetables</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>AG_CON</p></td>
+<td><p>Cropland – Condiments</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>AG_FRT</p></td>
+<td><p>Cropland – Fruits</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>AG_CER</p></td>
+<td><p>Cropland – Cereals</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>AG_PLA</p></td>
+<td><p>Cropland – Plantains</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>AG_POT</p></td>
+<td><p>Cropland – Potatoes</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>AG_YAM</p></td>
+<td><p>Cropland – Yams</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>AG_OTTU</p></td>
+<td><p>Cropland – Other tubers</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>GA_CARBOV</p></td>
+<td><p>Pasture – Cattle</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>GA_CARPOR</p></td>
+<td><p>Pasture – Pigs</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-even"><td><p>GA_CARPOL</p></td>
+<td><p>Pasture – Poultry</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>GA_MILK</p></td>
+<td><p>Pasture – Milk</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-even"><td><p>GA_OTRCAR</p></td>
+<td><p>Pasture – Other meats</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5COFAGR</p></td>
+<td><p>Demand – Coffee (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5COCAGR</p></td>
+<td><p>Demand – Cocoa (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5CNTAGR</p></td>
+<td><p>Demand – Coconut (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5BANAGR</p></td>
+<td><p>Demand – Banana (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5LEGAGR</p></td>
+<td><p>Demand – Legumes (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5VEGAGR</p></td>
+<td><p>Demand – Vegetables (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5CONAGR</p></td>
+<td><p>Demand – Condiments (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5FRTAGR</p></td>
+<td><p>Demand – Fruits (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5CERAGR</p></td>
+<td><p>Demand – Cereals (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5PLAAGR</p></td>
+<td><p>Demand – Plantains (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5POTAGR</p></td>
+<td><p>Demand – Potatoes (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5YAMAGR</p></td>
+<td><p>Demand – Yams (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5OTTUAGR</p></td>
+<td><p>Demand – Other tubers (agriculture)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5CARBOVGAN</p></td>
+<td><p>Demand – Beef (livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5CARPORGAN</p></td>
+<td><p>Demand – Pork (livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-even"><td><p>T5CARPOLGAN</p></td>
+<td><p>Demand – Poultry (livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5LECGAN</p></td>
+<td><p>Demand – Milk (livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-even"><td><p>T5OTRCARGAN</p></td>
+<td><p>Demand – Other meats (livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5COFAGREXP</p></td>
+<td><p>Demand – Coffee (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5COCAGREXP</p></td>
+<td><p>Demand – Cocoa (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5CNTAGREXP</p></td>
+<td><p>Demand – Coconut (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5BANAGREXP</p></td>
+<td><p>Demand – Banana (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5LEGAGREXP</p></td>
+<td><p>Demand – Legumes (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5VEGAGREXP</p></td>
+<td><p>Demand – Vegetables (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5CONAGREXP</p></td>
+<td><p>Demand – Condiments (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5FRTAGREXP</p></td>
+<td><p>Demand – Fruits (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5CERAGREXP</p></td>
+<td><p>Demand – Cereals (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5PLAAGREXP</p></td>
+<td><p>Demand – Plantains (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5POTAGREXP</p></td>
+<td><p>Demand – Potatoes (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5YAMAGREXP</p></td>
+<td><p>Demand – Yams (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5OTTUAGREXP</p></td>
+<td><p>Demand – Other tubers (export crops)</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+<tr class="row-even"><td><p>T5CARBOVGANEXP</p></td>
+<td><p>Demand – Beef (export livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5CARPORGANEXP</p></td>
+<td><p>Demand – Pork (export livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-even"><td><p>T5CARPOLGANEXP</p></td>
+<td><p>Demand – Poultry (export livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5LECGANEXP</p></td>
+<td><p>Demand – Milk (export livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-even"><td><p>T5OTRCARGANEXP</p></td>
+<td><p>Demand – Other meats (export livestock)</p></td>
+<td><p>Livestock</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5SETCOB</p></td>
+<td><p>Demand – Settlement cover</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-even"><td><p>T5OTLCOB</p></td>
+<td><p>Demand – Other land-use cover</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5WETCOB</p></td>
+<td><p>Demand – Wetland cover</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-even"><td><p>T5DENBOS</p></td>
+<td><p>Demand – Dense-forest cover</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5DRYBOS</p></td>
+<td><p>Demand – Dry-forest cover</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-even"><td><p>T5SECBOS</p></td>
+<td><p>Demand – Secondary-forest cover</p></td>
+<td><p>Land-use</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5MANBOS</p></td>
+<td><p>Demand – Mangrove-forest cover</p></td>
+<td><p>Land-use</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="4.5. Land Use, Forestry and Agriculture Sector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_entradas.html" class="btn btn-neutral float-right" title="4.5.2. Input Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, CLG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

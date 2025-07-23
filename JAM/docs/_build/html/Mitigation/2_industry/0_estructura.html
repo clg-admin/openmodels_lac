@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Model Structure &mdash; JAM-LTS 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=cb975c41"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            JAM-LTS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Structure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../methodology.html">2. Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../national_results.html">3. National Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../model_use.html">4. Model Use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../github_navigation.html">5. GitHub Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">6. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">7. Authors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">JAM-LTS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Model Structure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/mitigation/2_industry/0_estructura.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="model-structure">
+<h1>Model Structure<a class="headerlink" href="#model-structure" title="Link to this heading"></a></h1>
+<p>This part of the model primarily relies on national data, including energy balances,
+fuel prices published annually by the Office of Utilities Regulation and the annual production figures for products like cement.
+<strong>Figure 6</strong> highlights aspects of cement production, relevant to model the clinker-to-cement ratio reduction targeted by the LTS.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="mitigation/_static/_images/6_estructuraindus.png"><img alt="Models used on the cost and benefits analysis" src="mitigation/_static/_images/6_estructuraindus.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 6:</strong> Key elements represented in cement production.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Technologies</strong>
+.. list-table:: <strong>Table 5.</strong> Industry and IPPU Sector Technologies</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">widths<span class="colon">:</span></dt>
+<dd class="field-odd"><p>15 20 20 45</p>
+</dd>
+<dt class="field-even">header-rows<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><ul>
+<li><p><strong>Sector</strong></p></li>
+<li><p><strong>Subsector</strong></p></li>
+<li><p><strong>Technology</strong></p></li>
+<li><p><strong>Description</strong></p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5DSLINDCEM</p></li>
+<li><p>Demand Diesel for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5GSLINDCEM</p></li>
+<li><p>Demand Gasoline for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5NGSINDCEM</p></li>
+<li><p>Demand Natural Gas for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5ELEINDCEM</p></li>
+<li><p>Demand Electric for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5HYDINDCEM</p></li>
+<li><p>Demand Hydrogen for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5COKINDCEM</p></li>
+<li><p>Demand Coke for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5BIMINDCEM</p></li>
+<li><p>Demand Biomass for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5COAINDCEM</p></li>
+<li><p>Demand Coal for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Cement production</p></li>
+<li><p>T5FOIINDCEM</p></li>
+<li><p>Demand Fuel Oil for Industrial - Cement</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>IPPU</p></li>
+<li><p>Cement production process</p></li>
+<li><p>RAW_MAT_CLK</p></li>
+<li><p>Supply of raw material for clinker</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>IPPU</p></li>
+<li><p>Cement production process</p></li>
+<li><p>PROD_CLK_TRAD</p></li>
+<li><p>Traditional clinker production</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>IPPU</p></li>
+<li><p>Lime</p></li>
+<li><p>LIME</p></li>
+<li><p>Lime production</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>IPPU</p></li>
+<li><p>HFCs</p></li>
+<li><p>IMP_R32</p></li>
+<li><p>R32</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>IPPU</p></li>
+<li><p>HFCs</p></li>
+<li><p>T5R32IPPU</p></li>
+<li><p>Demand R32 for Industrial Processes</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Construction</p></li>
+<li><p>T5DSLCON</p></li>
+<li><p>Demand Diesel for Construction</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Industry</p></li>
+<li><p>Industry</p></li>
+<li><p>CCS_FLO</p></li>
+<li><p>Floating Carbon Capture and Storage</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, CLG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
