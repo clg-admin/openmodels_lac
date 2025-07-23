@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16. ¿Cómo usar el modelo? &mdash; JAM-LTS 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=cb975c41"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="17. Navegación en GitHub" href="github_navigation.html" />
+    <link rel="prev" title="15.5. Referencias" href="11_population_health/4_referencias.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAM-LTS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Structure</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">2. Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="national_results.html">3. National Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_electricity_buildings/index.html">4. Electricity and Buildings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_transport/index.html">5. Transport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_industry/index.html">6. Industry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_waste/index.html">7. Waste</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_land_use_forestry_agriculture/index.html">8. Land-use Change, Forestry and Agriculture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_food_security/index.html">9. Food Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_terrestrial_ecosystems/index.html">10. Terrestrial Ecosystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_human_settlements_infrastructure/index.html">11. Human Settlements and Critical Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_tourism/index.html">12. Tourism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_coastal_areas/index.html">13. Coastal Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_culture_heritage/index.html">14. Culture and Heritage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_population_health/index.html">15. Population and Health</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. Model Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#crear-la-estructura-del-modelo-a1">16.1. Crear la estructura del modelo (A1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compilador-del-modelo-a2">16.2. Compilador del modelo (A2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crear-el-archivo-de-entrada-b1">16.3. Crear el archivo de entrada (B1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejecucion-del-modelo-b1">16.4. Ejecución del modelo (B1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concatenacion-de-resultados-b2">16.5. Concatenación de resultados (B2)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="github_navigation.html">17. GitHub Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">18. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">19. Authors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAM-LTS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">16. </span>¿Cómo usar el modelo?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/model_use.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="como-usar-el-modelo">
+<h1><span class="section-number">16. </span>¿Cómo usar el modelo?<a class="headerlink" href="#como-usar-el-modelo" title="Link to this heading"></a></h1>
+<p>En primer lugar, es importante tener en cuenta el flujo de trabajo que se muestra en la Figura 1. Este flujo de trabajo nos indica cuáles son los archivos importantes para ejecutar cada paso y proporciona una mejor comprensión general.</p>
+<img alt="Figura 1 Flujo de trabajo del modelo OSeMOSYS-ECU" class="align-center" src="_static/_images/flujo_trabajo.png" />
+<p><strong>Figura 1: Flujo de trabajo del modelo OSeMOSYS-ECU</strong></p>
+<section id="crear-la-estructura-del-modelo-a1">
+<h2><span class="section-number">16.1. </span>Crear la estructura del modelo (A1)<a class="headerlink" href="#crear-la-estructura-del-modelo-a1" title="Link to this heading"></a></h2>
+<p>El primer paso del OSeMOSYS-ECU es crear la estructura del modelo. Para ello, necesita ejecutar el script de Python <code class="docutils literal notranslate"><span class="pre">A1_Model_Structure</span></code>. Para realizar esta ejecución, es necesario parametrizar los archivos de Excel dentro de <code class="docutils literal notranslate"><span class="pre">A1_Inputs</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Demand</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Supply</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Transport</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Horizon_Configuration</span></code></p></li>
+</ul>
+<p>Luego, debes ejecutar el script de Python <code class="docutils literal notranslate"><span class="pre">A1_Model_Structure</span></code>. Al finalizar la ejecución, se generarán algunos archivos dentro de <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_AR_Model_Base_Year.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_AR_Projections.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Demand.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Fleet.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Parametrization.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Fleet_Groups.pickle</span></code></p></li>
+</ul>
+<p>Estos archivos se reescriben con la estructura predeterminada cada vez que se ejecuta el script de Python, por lo que se recomienda ejecutar este script solo una vez.</p>
+</section>
+<section id="compilador-del-modelo-a2">
+<h2><span class="section-number">16.2. </span>Compilador del modelo (A2)<a class="headerlink" href="#compilador-del-modelo-a2" title="Link to this heading"></a></h2>
+<p>El segundo paso consiste en definir el proceso para compilar el modelo en archivos por parámetro. Para ello, toma como entradas los archivos de Excel de <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code>, además de los archivos de Excel de la carpeta <code class="docutils literal notranslate"><span class="pre">A2_Xtra_Inputs</span></code> y el archivo <code class="docutils literal notranslate"><span class="pre">A2_Structure_Lists</span></code>. Luego, ejecuta este script de Python.</p>
+<p>Es importante tener en la carpeta <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params/Default</span></code>, los archivos predeterminados por parámetro utilizados por el script de Python <code class="docutils literal notranslate"><span class="pre">A2_Compiler</span></code>. Este script genera algunos archivos en las carpetas <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code> y <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params</span></code>. En la segunda carpeta, se genera la misma cantidad de subcarpetas que escenarios tiene el modelo, y dentro de estas subcarpetas se encuentran los archivos de Excel con datos por parámetro.</p>
+</section>
+<section id="crear-el-archivo-de-entrada-b1">
+<h2><span class="section-number">16.3. </span>Crear el archivo de entrada (B1)<a class="headerlink" href="#crear-el-archivo-de-entrada-b1" title="Link to this heading"></a></h2>
+<p>El siguiente paso es más largo y requiere cuidado. Es importante seguir el flujo de trabajo en la figura al inicio de la sección. Primero, ve a la carpeta <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code> y elimina cualquier subcarpeta que encuentres allí. Luego, ve a la carpeta <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params</span></code>, copia las carpetas con el nombre de los escenarios, y pégalas en <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code>. También es necesario copiar manualmente los datos del archivo <code class="docutils literal notranslate"><span class="pre">A2_Structure_Lists.xlsx</span></code> al archivo <code class="docutils literal notranslate"><span class="pre">B1_Model_Structure</span></code>.</p>
+<p>A continuación, debes parametrizar el modelo en los archivos <code class="docutils literal notranslate"><span class="pre">B1_Scenario_Config.xlsx</span></code>.</p>
+<p>Para escribir el modelo, usa el script <code class="docutils literal notranslate"><span class="pre">B1_Base_Scenarios_Adj_Parallel.py</span></code>.</p>
+<p>Los resultados de esta ejecución se encuentran en la carpeta <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code>. Los archivos en esta carpeta sobrescriben los de las salidas del paso <code class="docutils literal notranslate"><span class="pre">A2</span></code>. Además, el archivo del modelo se encuentra en la carpeta <code class="docutils literal notranslate"><span class="pre">Executables</span></code>, dentro de una subcarpeta para cada escenario. Este archivo es un archivo de texto, por ejemplo:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BAU_0.txt</span></code></p></li>
+</ul>
+</section>
+<section id="ejecucion-del-modelo-b1">
+<h2><span class="section-number">16.4. </span>Ejecución del modelo (B1)<a class="headerlink" href="#ejecucion-del-modelo-b1" title="Link to this heading"></a></h2>
+<p>Para ejecutar el modelo, usa el script <code class="docutils literal notranslate"><span class="pre">B1_Base_Scenarios_Adj_Parallel.py</span></code>.</p>
+<p>Los resultados de esta ejecución se encuentran en la carpeta <code class="docutils literal notranslate"><span class="pre">Executables</span></code>, dentro de una subcarpeta para cada escenario, y generan tres archivos.</p>
+</section>
+<section id="concatenacion-de-resultados-b2">
+<h2><span class="section-number">16.5. </span>Concatenación de resultados (B2)<a class="headerlink" href="#concatenacion-de-resultados-b2" title="Link to this heading"></a></h2>
+<p>Este paso facilita el análisis de los resultados. Al ejecutar el script de Python <code class="docutils literal notranslate"><span class="pre">B2_Results_Creator_f0.py</span></code>, este toma los archivos CSV con datos de entrada y salida del modelo de cada escenario, los concatena y crea cuatro archivos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Nombre_de_Escenario_Input.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nombre_de_Escenario_Input_2024_10_22.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nombre_de_Escenario_Output.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nombre_de_Escenario_Output_2024_10_22.csv</span></code></p></li>
+</ul>
+<p>Los archivos con fecha permiten rastrear ejecuciones realizadas en diferentes fechas, ya que los archivos sin fecha se sobrescriben con cada ejecución.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="11_population_health/4_referencias.html" class="btn btn-neutral float-left" title="15.5. Referencias" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="github_navigation.html" class="btn btn-neutral float-right" title="17. Navegación en GitHub" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, CLG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

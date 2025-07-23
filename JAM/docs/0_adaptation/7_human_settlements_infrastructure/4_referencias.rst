@@ -1,0 +1,25 @@
+---------------------
+References
+---------------------
+- McHardy, P., & Donovan, M. G. (2016). *The State of Social Housing in Six Caribbean Countries*. Inter-American Development Bank. https://webimages.iadb.org/publications/english/document/The-State-of-Social-Housing-in-Six-Caribbean-Countries.pdf
+- Jamaica Information Service (JIS). (2020). *Statistical Digest or Report*. Government of Jamaica.
+- Ministry of Local Government and Community Development (MLGCD). (2023). *[Title of the report]*. Government of Jamaica.
+- Energy Star Product Finder. (n.d.). *Energy efficiency data for appliances*. https://www.energystar.gov
+- Home Depot, FedEx, Easy Ship, ATL Jamaica. (n.d.). *Product and logistics information from supplier websites*.
+- United for Efficiency. (2020). *United for Efficiency Annual Report*. UNEP.
+- Boakye, A., et al. (2024). *Accelerating Energy Efficiency: United for Efficiency Country Assessment Jamaica*. United Nations Environment Programme (UNEP), United for Efficiency. https://united4efficiency.org/resources/publications/
+- ICLEI. (2011). *Population and Housing Census 2011*. Statistical Institute of Jamaica (STATIN).
+- Snyder, B., van Benthem, A., & Zivin, J. G. (2019). *Environmental and economic impacts of electricity transmission expansion in the Eastern US*. Ecological Economics, 161, 132–143. https://doi.org/10.1016/j.ecolecon.2019.03.009
+- Thomas, C., Henry, S., & Johnson, P. (2023). *A Systems Thinking Approach to Urban Water Resilience in the Caribbean*. Frontiers in Environmental Science, 11, 1212552. https://doi.org/10.3389/fenvs.2023.1212552
+- Brander, L., et al. (2024). *[Valuing ecosystem services: A global assessment]*. Journal/Publisher.
+- National Water Commission (NWC). (2024). *NWC News*. Kingston: NWC.
+- National Water Commission (NWC). (2016). *Annual Report 2016*. Kingston: NWC.
+- National Water Commission (NWC). (2019). *Annual Report 2019*. Kingston: NWC.
+- Hallegatte, S., et al. (2019). *Lifelines: The Resilient Infrastructure Opportunity*. World Bank Group.
+- TNA Jamaica. (n.d.). *Technology Needs Assessment Policy Brief*. Government of Jamaica.
+- NWC. (n.d.). *[Capital Projects Report]*. Kingston: NWC.
+- Population and Housing Census 2011. (2011). *Jamaica Population and Housing Census 2011*. STATIN.
+- PIOJ. (n.d.). *[Damage and Loss Report]*. Planning Institute of Jamaica.
+- National Works Agency (NWA). (n.d.). *[MIDP: Major Infrastructure Development Programme Report]*. Government of Jamaica.
+- World Bank. (n.d.). *World Bank Data on infrastructure and resilience*. https://data.worldbank.org
+- OSeMOSYS Model. (n.d.). *Documentation of the Open Source Energy Modelling System*. https://www.osemosys.org

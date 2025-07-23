@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. How to use the models? &mdash; JAM-LTS 2025 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=cb975c41"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7. Github Navigation" href="github_navigation.html" />
+    <link rel="prev" title="5.7.4. References" href="0_adaptation/11_population_health/4_referencias.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAM-LTS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Structure</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="methodology.html">2. Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="national_results.html">3. National Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_mitigation/index.html">4. Mitigation Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_adaptation/index.html">5. Adaptation Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Model Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mitigation-model">6.1. Mitigation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adaptation-model">6.2. Adaptation Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="github_navigation.html">7. GitHub Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">8. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">9. Authors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAM-LTS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>How to use the models?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/model_use.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-use-the-models">
+<h1><span class="section-number">6. </span>How to use the models?<a class="headerlink" href="#how-to-use-the-models" title="Link to this heading"></a></h1>
+<p>We used a mitigation model built with OSeMOSYS to quantify the costs and benefits of implementing LTS mitigation actions
+across different scenarios and futures. For adaptation, we developed a separate model using an open-access cost-benefit
+analysis tool to evaluate the economic impacts of sector-specific adaptation strategies aligned with the LTS, also incorporating
+uncertainty analysis through RDM.</p>
+<section id="mitigation-model">
+<h2><span class="section-number">6.1. </span>Mitigation Model<a class="headerlink" href="#mitigation-model" title="Link to this heading"></a></h2>
+<p>First, it is important to consider the workflow shown in Figure 1. This workflow indicates which files are important for executing each step and provides a better general understanding.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/flujo_trabajo.png"><img alt="Models used on the cost and benefits analysis" src="_images/flujo_trabajo.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Figure 19:</strong> Workflow of the OSeMOSYS-ECU model</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Create the model structure (A1)</strong></p>
+<p>The first step of OSeMOSYS-ECU is to create the model structure. To do this, you need to run the Python script <code class="docutils literal notranslate"><span class="pre">A1_Model_Structure</span></code>. To run this script, it is necessary to parameterize the Excel files inside <code class="docutils literal notranslate"><span class="pre">A1_Inputs</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Demand</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Supply</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Transport</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Horizon_Configuration</span></code></p></li>
+</ul>
+<p>Then, you must run the Python script <code class="docutils literal notranslate"><span class="pre">A1_Model_Structure</span></code>. After the execution is complete, some files will be generated inside <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_AR_Model_Base_Year.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_AR_Projections.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Demand.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Fleet.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Parametrization.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Fleet_Groups.pickle</span></code></p></li>
+</ul>
+<p>These files are overwritten with the default structure each time the Python script is run, so it is recommended to run this script only once.</p>
+<p><strong>Model compiler (A2)</strong></p>
+<p>The second step consists of defining the process to compile the model into parameter files. To do this, it takes as inputs the Excel files from <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code>, as well as the Excel files from the <code class="docutils literal notranslate"><span class="pre">A2_Xtra_Inputs</span></code> folder and the file <code class="docutils literal notranslate"><span class="pre">A2_Structure_Lists</span></code>. Then, run this Python script.</p>
+<p>It is important to have in the folder <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params/Default</span></code>, the default files by parameter used by the Python script <code class="docutils literal notranslate"><span class="pre">A2_Compiler</span></code>. This script generates some files in the <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code> and <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params</span></code> folders. In the second folder, the same number of subfolders as there are scenarios in the model is generated, and inside these subfolders, Excel files with data by parameter are found.</p>
+<p><strong>Create the input file (B1)</strong></p>
+<p>The next step is longer and requires care. It is important to follow the workflow in the figure at the beginning of the section. First, go to the folder <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code> and delete any subfolder you find there. Then, go to the folder <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params</span></code>, copy the folders with the names of the scenarios, and paste them into <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code>. It is also necessary to manually copy the data from the file <code class="docutils literal notranslate"><span class="pre">A2_Structure_Lists.xlsx</span></code> to the file <code class="docutils literal notranslate"><span class="pre">B1_Model_Structure</span></code>.</p>
+<p>Next, you must parameterize the model in the files <code class="docutils literal notranslate"><span class="pre">B1_Scenario_Config.xlsx</span></code>.</p>
+<p>To write the model, use the script <code class="docutils literal notranslate"><span class="pre">B1_Base_Scenarios_Adj_Parallel.py</span></code>.</p>
+<p>The results of this execution are found in the folder <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code>. The files in this folder overwrite those from the <code class="docutils literal notranslate"><span class="pre">A2</span></code> step outputs. Additionally, the model file is located in the <code class="docutils literal notranslate"><span class="pre">Executables</span></code> folder, inside a subfolder for each scenario. This file is a text file, for example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BAU_0.txt</span></code></p></li>
+</ul>
+<p><strong>Model execution (B1)</strong></p>
+<p>To run the model, use the script <code class="docutils literal notranslate"><span class="pre">B1_Base_Scenarios_Adj_Parallel.py</span></code>.</p>
+<p>The results of this execution are found in the <code class="docutils literal notranslate"><span class="pre">Executables</span></code> folder, inside a subfolder for each scenario, and generate three files.</p>
+<p><strong>Results concatenation (B2)</strong></p>
+<p>This step facilitates the analysis of results. When running the Python script <code class="docutils literal notranslate"><span class="pre">B2_Results_Creator_f0.py</span></code>, it takes the CSV files with input and output data of the model for each scenario, concatenates them, and creates four files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Scenario_Name_Input.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scenario_Name_Input_2024_10_22.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scenario_Name_Output.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scenario_Name_Output_2024_10_22.csv</span></code></p></li>
+</ul>
+<p>The files with dates allow tracking of executions made on different dates, as the files without dates are overwritten with each execution.</p>
+</section>
+<section id="adaptation-model">
+<h2><span class="section-number">6.2. </span>Adaptation Model<a class="headerlink" href="#adaptation-model" title="Link to this heading"></a></h2>
+<p><strong>Overview</strong></p>
+<p>The <em>Metodología para la Priorización de Medidas de Adaptación frente al Cambio Climático</em> is a structured approach developed by GIZ to support decision-makers in evaluating and ranking adaptation measures. It is based on multi-criteria analysis (MCA) and participatory processes, ensuring that prioritized actions are effective, feasible, and aligned with local needs.</p>
+<p><strong>Steps for Using the Methodology</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>Define the Context</strong>
+- Determine the geographical scope (national, regional, or local).
+- Identify the climate risks (e.g., droughts, floods) and sectors (e.g., agriculture, water resources).</p></li>
+<li><p><strong>Identify Adaptation Measures</strong>
+- Collect a list of potential adaptation actions from existing plans, expert input, or community consultations.
+- Include structural (infrastructure) and non-structural (policies, education) measures.</p></li>
+<li><p><strong>Establish Evaluation Criteria</strong>
+- Common criteria include:
+- <strong>Effectiveness:</strong> How well does the measure reduce climate risk?
+- <strong>Feasibility:</strong> Technical, social, and institutional capacity for implementation.
+- <strong>Cost:</strong> Initial investment and operational costs.
+- <strong>Co-benefits:</strong> Additional environmental, social, or economic benefits.
+- <strong>Urgency &amp; Equity:</strong> How urgent is the measure, and who benefits?</p></li>
+<li><p><strong>Engage Stakeholders</strong>
+- Conduct workshops with stakeholders (government, civil society, technical experts).
+- Define and weight evaluation criteria based on local priorities.</p></li>
+<li><p><strong>Score and Rank Measures</strong>
+- Evaluate each adaptation measure against the selected criteria.
+- Apply weights to reflect the importance of each criterion.
+- Use scoring matrices (e.g., Excel-based tools) to calculate final scores.</p></li>
+<li><p><strong>Interpret Results</strong>
+- Generate a ranked list of prioritized measures.
+- Use this list to guide adaptation</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="0_adaptation/11_population_health/4_referencias.html" class="btn btn-neutral float-left" title="5.7.4. References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="github_navigation.html" class="btn btn-neutral float-right" title="7. Github Navigation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, CLG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
