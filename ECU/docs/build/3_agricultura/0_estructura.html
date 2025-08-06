@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estructura del modelo &mdash; ECU_NDC  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Datos de entrada del modelo" href="1_entradas.html" />
+    <link rel="prev" title="Modelo del Sector Agricultura" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ECU_NDC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_energia/index.html">Energía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_piup/index.html">Procesos Industriales y Uso de Productos (PIUP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_residuos/index.html">Residuos</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Agricultura</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Estructura del modelo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#categorias-del-ingei">Categorías del INGEI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emisiones">Emisiones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tecnologias">Tecnologías</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="1_entradas.html">Datos de Entrada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_escenarios.html">Escenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_resultados.html">Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_referencias.html">Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../4_uscuss/index.html">Uso del Suelo y Cambio de Uso del Suelo (USCUSS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Uso del modelo OSeMOSYS-ECU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ECU_NDC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Modelo del Sector Agricultura</a></li>
+      <li class="breadcrumb-item active">Estructura del modelo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/3_agricultura/0_estructura.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="estructura-del-modelo">
+<h1>Estructura del modelo<a class="headerlink" href="#estructura-del-modelo" title="Link to this heading"></a></h1>
+<p>El sector agrícola analiza la producción de productos alimenticios como frutas, vegetales, hortalizas y productos cárnicos. Este sector registra emisiones de gases como metano (CH4), óxido nitroso (N2O), óxidos de nitrógeno (NOx), monóxido de carbono (CO) y dióxido de carbono (CO2). Las categorías utilizadas se basan en el INGEI de la 5ta Comunicación Nacional (5CN) del Ecuador (MAATE, n.d.).</p>
+<section id="categorias-del-ingei">
+<h2>Categorías del INGEI<a class="headerlink" href="#categorias-del-ingei" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Categorías del INGEI consideradas en el modelo de agricultura</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Código</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Gas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3A1</p></td>
+<td><p>Emisiones de CH4 por fermentación entérica en el ganado doméstico</p></td>
+<td><p>CH4</p></td>
+</tr>
+<tr class="row-odd"><td><p>3A2</p></td>
+<td><p>Emisiones de CH4 del gestión de estiércol</p></td>
+<td><p>CH4</p></td>
+</tr>
+<tr class="row-even"><td><p>3A2</p></td>
+<td><p>N2O Emisiones directas de la gestión de estiércol</p></td>
+<td><p>N2O</p></td>
+</tr>
+<tr class="row-odd"><td><p>3C6</p></td>
+<td><p>N2O Emisiones indirectas de la gestión de estiércol</p></td>
+<td><p>N2O</p></td>
+</tr>
+<tr class="row-even"><td><p>3C2</p></td>
+<td><p>Encalado: Emisiones anuales de CO2-C de Encalado</p></td>
+<td><p>CO2</p></td>
+</tr>
+<tr class="row-odd"><td><p>3C3</p></td>
+<td><p>Fertilización de urea: Emisiones anuales de CO2</p></td>
+<td><p>CO2</p></td>
+</tr>
+<tr class="row-even"><td><p>3C4</p></td>
+<td><p>N2O Emisiones Directas de Suelos Agrícolas</p></td>
+<td><p>N2O</p></td>
+</tr>
+<tr class="row-odd"><td><p>3C5</p></td>
+<td><p>N2O Emisiones Indirectas de Suelos Agrícolas</p></td>
+<td><p>N2O</p></td>
+</tr>
+<tr class="row-even"><td><p>3C7</p></td>
+<td><p>Emisiones de CH4 de la producción de arroz</p></td>
+<td><p>CH4</p></td>
+</tr>
+<tr class="row-odd"><td><p>3C1</p></td>
+<td><p>Emisiones de la quema de biomasa en tierras de cultivo</p></td>
+<td><p>CH4, N2O, NOx, CO</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="emisiones">
+<h2>Emisiones<a class="headerlink" href="#emisiones" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Clasificación de emisiones estimadas en el modelo de agricultura</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Código</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CO2e_GAN_FERM</p></td>
+<td><p>Dióxido de carbono equivalente de fermentación entérica</p></td>
+</tr>
+<tr class="row-odd"><td><p>CO2e_GAN_GE</p></td>
+<td><p>Dióxido de carbono equivalente de gestión de estiércol</p></td>
+</tr>
+<tr class="row-even"><td><p>CO2e_GAN_GEI</p></td>
+<td><p>Dióxido de carbono equivalente de gestión directa de estiércol</p></td>
+</tr>
+<tr class="row-odd"><td><p>CO2e_GAN_GED</p></td>
+<td><p>Dióxido de carbono equivalente de gestión indirecta de estiércol</p></td>
+</tr>
+<tr class="row-even"><td><p>CO2e_AGR_DIR</p></td>
+<td><p>Dióxido de carbono equivalente de gestión directa de suelos agrícolas</p></td>
+</tr>
+<tr class="row-odd"><td><p>CO2e_AGR_IND</p></td>
+<td><p>Dióxido de carbono equivalente de gestión indirecta de suelos agrícolas</p></td>
+</tr>
+<tr class="row-even"><td><p>CO2e_ENC</p></td>
+<td><p>Dióxido de carbono de encalado</p></td>
+</tr>
+<tr class="row-odd"><td><p>CO2e_URE</p></td>
+<td><p>Dióxido de carbono de fertilización con urea</p></td>
+</tr>
+<tr class="row-even"><td><p>CO2e_BIO</p></td>
+<td><p>Dióxido de carbono equivalente por quema de biomasa</p></td>
+</tr>
+<tr class="row-odd"><td><p>CO2e_ARR</p></td>
+<td><p>Dióxido de carbono equivalente de producción de arroz</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tecnologias">
+<h2>Tecnologías<a class="headerlink" href="#tecnologias" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Tecnologías de productos agrícolas incluidas en el modelo de agricultura</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Descripción</p></th>
+<th class="head"><p>Código</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tierras de cultivo Arroz</p></td>
+<td><p>AG_ARR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tierras de cultivo Banano</p></td>
+<td><p>AG_BAN</p></td>
+</tr>
+<tr class="row-even"><td><p>Tierras de cultivo Cacao</p></td>
+<td><p>AG_COC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tierras de cultivo Café</p></td>
+<td><p>AG_COF</p></td>
+</tr>
+<tr class="row-even"><td><p>Tierras de cultivo Caña de azúcar</p></td>
+<td><p>AG_SUG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tierras de cultivo Maíz</p></td>
+<td><p>AG_MAI</p></td>
+</tr>
+<tr class="row-even"><td><p>Tierras de cultivo Palma africana</p></td>
+<td><p>AG_PAF</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tierras de cultivo Soya</p></td>
+<td><p>AG_SOY</p></td>
+</tr>
+<tr class="row-even"><td><p>Tierras de cultivo Palmito</p></td>
+<td><p>AG_PAL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tierras de cultivo Legumbres</p></td>
+<td><p>AG_LEG</p></td>
+</tr>
+<tr class="row-even"><td><p>Tierras de cultivo Cereales</p></td>
+<td><p>AG_CER</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tierras de cultivo Tubérculos</p></td>
+<td><p>AG_TUB</p></td>
+</tr>
+<tr class="row-even"><td><p>Tierras de cultivo Frutas</p></td>
+<td><p>AG_FRT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tierras de cultivo Hortalizas</p></td>
+<td><p>AG_VEG</p></td>
+</tr>
+<tr class="row-even"><td><p>Tierras de cultivo Flores</p></td>
+<td><p>AG_FLO</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Tecnologías de productos ganaderos incluidas en el modelo de agricultura</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Descripción</p></th>
+<th class="head"><p>Código</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pasturas Bovinos</p></td>
+<td><p>GA_BOV</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Bovinos Vacas</p></td>
+<td><p>GA_BOVVAC</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Bovinos Crecimiento</p></td>
+<td><p>GA_BOVCRE</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Bovinos Leche</p></td>
+<td><p>GA_BOVLEC</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Bovinos Regenerativo</p></td>
+<td><p>GA_BOVREG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Bovinos Vacas Regenerativo</p></td>
+<td><p>GA_BOVVACREG</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Bovinos Crecimiento Regenerativo</p></td>
+<td><p>GA_BOVCREREG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Bovinos Leche Regenerativo</p></td>
+<td><p>GA_BOVLECREG</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Búfalos</p></td>
+<td><p>GA_BUF</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Ovejas</p></td>
+<td><p>GA_OVE</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Cabras</p></td>
+<td><p>GA_CBR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Camélidos sudamericanos</p></td>
+<td><p>GA_CAM</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Caballos</p></td>
+<td><p>GA_CAB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Mulas</p></td>
+<td><p>GA_MUL</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Cerdos</p></td>
+<td><p>GA_POR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Aves</p></td>
+<td><p>GA_AVE</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Patos</p></td>
+<td><p>GA_PAT</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pasturas Pavos</p></td>
+<td><p>GA_PAV</p></td>
+</tr>
+<tr class="row-even"><td><p>Pasturas Ponedoras</p></td>
+<td><p>GA_PON</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Modelo del Sector Agricultura" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_entradas.html" class="btn btn-neutral float-right" title="Datos de entrada del modelo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, ClimateLeadGroup.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

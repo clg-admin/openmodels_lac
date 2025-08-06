@@ -1,0 +1,854 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8.1. Estructura del modelo &mdash; ECU_NDC  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8.2. Datos de entrada del modelo" href="1_entradas.html" />
+    <link rel="prev" title="8. Modelo del Sector USCUSS" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ECU_NDC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduccion.html">1. Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metodologia.html">2. Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nacionales.html">3. Emisiones Nacionales NDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_energia/index.html">4. Energía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_piup/index.html">5. Procesos Industriales y Uso de Productos (PIUP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_residuos/index.html">6. Residuos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_agricultura/index.html">7. Agricultura</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">8. Uso del Suelo y Cambio de Uso del Suelo (USCUSS)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.1. Estructura del modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_entradas.html">8.2. Datos de Entrada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_escenarios.html">8.3. Escenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_resultados.html">8.4. Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_referencias.html">8.5. Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">9. Uso del modelo OSeMOSYS-ECU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guia.html">10. Guía de Navegación GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">11. Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">12. Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ECU_NDC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">8. </span>Modelo del Sector USCUSS</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8.1. </span>Estructura del modelo</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/clg-admin/ECU_NDC/blob/main/docs/4_uscuss/0_estructura.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="estructura-del-modelo">
+<h1><span class="section-number">8.1. </span>Estructura del modelo<a class="headerlink" href="#estructura-del-modelo" title="Link to this heading"></a></h1>
+<p>El sector USCUSS analiza los cambios de uso de suelo y las emisiones y absorciones de CO2 provenientes de estos cambios, así como las absorciones debido a las áreas forestales protegidas. Las categorías analizadas se encuentran en la <strong>Tabla 27</strong>.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text"><em>Tabla 27. Categorías del INGEI consideradas en el modelo de USCUSS</em></span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Código</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3B1a</p></td>
+<td><p>Tierras forestales que permanecen como tales</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B1b</p></td>
+<td><p>Cambios de tierra de cultivo a tierras forestales</p></td>
+</tr>
+<tr class="row-even"><td><p>3B1b</p></td>
+<td><p>Cambios de pastizales a tierras forestales</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B1b</p></td>
+<td><p>Cambios de humedales a tierras forestales</p></td>
+</tr>
+<tr class="row-even"><td><p>3B1b</p></td>
+<td><p>Cambios de otras tierras a tierras forestales</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B2b</p></td>
+<td><p>Cambios de tierras forestales a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>3B2b</p></td>
+<td><p>Cambios de humedales a tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B2b</p></td>
+<td><p>Cambios de otras tierras a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>3B3b</p></td>
+<td><p>Cambios de tierras forestales a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B3b</p></td>
+<td><p>Cambios de tierras cultivo a pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>3B3b</p></td>
+<td><p>Cambios de humedales a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B3b</p></td>
+<td><p>Cambios de otras tierras a pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>3B4b</p></td>
+<td><p>Cambios de tierras forestales a humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B4b</p></td>
+<td><p>Cambios de tierras cultivo a humedales</p></td>
+</tr>
+<tr class="row-even"><td><p>3B4b</p></td>
+<td><p>Cambios de pastizales a humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B5b</p></td>
+<td><p>Cambios de tierras forestales a asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>3B5b</p></td>
+<td><p>Cambios de tierras cultivo a asentamientos</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B5b</p></td>
+<td><p>Cambios de pastizales a asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>3B6b</p></td>
+<td><p>Cambios de tierras forestales a otras tierras</p></td>
+</tr>
+<tr class="row-odd"><td><p>3B6b</p></td>
+<td><p>Cambios de tierras cultivo a otras tierras</p></td>
+</tr>
+<tr class="row-even"><td><p>3B6b</p></td>
+<td><p>Cambios de pastizales a otras tierras</p></td>
+</tr>
+</tbody>
+</table>
+<p>Las tierras forestales fueron subdivididas según los tipos de bosque, según la clasificación del INGEI:</p>
+<ul class="simple">
+<li><p>Seco andino</p></li>
+<li><p>Seco pluvioestacional</p></li>
+<li><p>Siempre verde andino montano</p></li>
+<li><p>Siempre verde andino pie montano</p></li>
+<li><p>Siempre verde andino ceja andina</p></li>
+<li><p>Siempre verde de tierras bajas de la Amazonía</p></li>
+<li><p>Siempre verde de tierras bajas del Chocó</p></li>
+<li><p>Manglar</p></li>
+<li><p>Moretal</p></li>
+</ul>
+<p><strong>Emisiones</strong></p>
+<p>El modelo del sector USCUSS únicamente contabiliza emisiones y absorciones de CO2.</p>
+<p><strong>Tecnologías</strong></p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text"><em>Tabla 28 Tecnologías de uso de suelo incluidas en el modelo de USCUSS</em></span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Código</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LU_FOR</p></td>
+<td><p>Suelo forestal</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_WET</p></td>
+<td><p>Suelo humedales</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_CROP</p></td>
+<td><p>Suelo tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_PAS</p></td>
+<td><p>Suelo pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_SET</p></td>
+<td><p>Suelo asentamientos</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_OTL</p></td>
+<td><p>Suelo otros usos</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRAND</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Seco Andino - protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNAND</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Seco Andino - no protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRPFO</p></td>
+<td><p>Plantación forestal - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNPFO</p></td>
+<td><p>Plantación forestal - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRPLU</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Pluvioestacional - protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNPLU</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Pluvioestacional - no protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRMON</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde andino Montano - protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNMON</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde andino Montano - no protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRPIE</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde andino Pie montano - protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNPIE</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde andino Pie montano - no protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRCEJ</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde andino de Ceja Andina - protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNCEJ</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde andino de Ceja Andina - no protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRAMA</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde de tierras bajas de la Amazonía - protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNAMA</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde de tierras bajas de la Amazonía - no protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRCHO</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde de tierras bajas del Chocó - protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNCHO</p></td>
+<td><ol class="upperalpha simple" start="2">
+<li><p>Siempre verde de tierras bajas del Chocó - no protegido</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>LU_RAR</p></td>
+<td><p>Área restaurada</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_PLA</p></td>
+<td><p>Plantación forestal</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRMAN</p></td>
+<td><p>Manglar - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNMAN</p></td>
+<td><p>Manglar - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>LU_NPRMOR</p></td>
+<td><p>Moretal - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>LU_NUNMOR</p></td>
+<td><p>Moretal - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5WETCOB</p></td>
+<td><p>Cobertura humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5SETCOB</p></td>
+<td><p>Cobertura asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>T5BURCOB</p></td>
+<td><p>Cobertura quemas</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5OTLCOB</p></td>
+<td><p>Cobertura otros usos</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRAND</p></td>
+<td><p>Cobertura B. Seco Andino - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNAND</p></td>
+<td><p>Cobertura B. Seco Andino - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRPLU</p></td>
+<td><p>Cobertura B. Pluvioestacional protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNPLU</p></td>
+<td><p>Cobertura B. Pluvioestacional - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRMON</p></td>
+<td><p>Cobertura B. Siempre verde andino Montano - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNMON</p></td>
+<td><p>Cobertura B. Siempre verde andino Montano - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRPIE</p></td>
+<td><p>Cobertura B. Siempre verde andino Pie montano - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNPIE</p></td>
+<td><p>Cobertura B. Siempre verde andino Pie montano - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRCEJ</p></td>
+<td><p>Cobertura B. Siempre verde andino de Ceja Andina - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNCEJ</p></td>
+<td><p>Cobertura B. Siempre verde andino de Ceja Andina - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRAMA</p></td>
+<td><p>Cobertura B. Siempre verde de tierras bajas de la Amazonía - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNAMA</p></td>
+<td><p>Cobertura B. Siempre verde de tierras bajas de la Amazonía - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRCHO</p></td>
+<td><p>Cobertura B. Siempre verde de tierras bajas del Chocó - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNCHO</p></td>
+<td><p>Cobertura B. Siempre verde de tierras bajas del Chocó - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5RARBOS</p></td>
+<td><p>Cobertura Área restaurada</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5PLABOS</p></td>
+<td><p>Cobertura Plantación forestal</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRMAN</p></td>
+<td><p>Cobertura Manglar - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNMAN</p></td>
+<td><p>Cobertura Manglar - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRMOR</p></td>
+<td><p>Cobertura Moretal - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNMOR</p></td>
+<td><p>Cobertura Moretal - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>T5NPRPFO</p></td>
+<td><p>Cobertura Plantación forestal - protegido</p></td>
+</tr>
+<tr class="row-odd"><td><p>T5NUNPFO</p></td>
+<td><p>Cobertura Plantación forestal - no protegido</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCROAND</p></td>
+<td><p>Cambio de tierras de cultivo a B. Seco Andino</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCROPLU</p></td>
+<td><p>Cambio de tierras de cultivo a B. Pluvioestacional</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCROMON</p></td>
+<td><p>Cambio de tierras de cultivo a B. Siempre verde andino Montano</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCROPIE</p></td>
+<td><p>Cambio de tierras de cultivo a B. Siempre verde andino Pie montano</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCROCEJ</p></td>
+<td><p>Cambio de tierras de cultivo a B. Siempre verde andino de Ceja Andina</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCROAMA</p></td>
+<td><p>Cambio de tierras de cultivo a B. Siempre verde de tierras bajas de la Amazonía</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCROCHO</p></td>
+<td><p>Cambio de tierras de cultivo a B. Siempre verde de tierras bajas del Chocó</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCROMAN</p></td>
+<td><p>Cambio de tierras de cultivo a Manglar</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCROMOR</p></td>
+<td><p>Cambio de tierras de cultivo a Moretal</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCROPFO</p></td>
+<td><p>Cambio de tierras de cultivo a Plantación forestal</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRAAND</p></td>
+<td><p>Cambio de pastizales a B. Seco Andino</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMGRAPLU</p></td>
+<td><p>Cambio de pastizales a B. Pluvioestacional</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRAMON</p></td>
+<td><p>Cambio de pastizales a B. Siempre verde andino Montano</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMGRAPIE</p></td>
+<td><p>Cambio de pastizales a B. Siempre verde andino Pie montano</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRACEJ</p></td>
+<td><p>Cambio de pastizales a B. Siempre verde andino de Ceja Andina</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMGRAAMA</p></td>
+<td><p>Cambio de pastizales a B. Siempre verde de tierras bajas de la Amazonía</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRACHO</p></td>
+<td><p>Cambio de pastizales a B. Siempre verde de tierras bajas del Chocó</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMGRAMAN</p></td>
+<td><p>Cambio de pastizales a Manglar</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRAMOR</p></td>
+<td><p>Cambio de pastizales a Moretal</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMGRAPFO</p></td>
+<td><p>Cambio de pastizales a Plantación forestal</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMHUMAND</p></td>
+<td><p>Cambio de humedales a B. Seco Andino</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMHUMPLU</p></td>
+<td><p>Cambio de humedales a B. Pluvioestacional</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMHUMMON</p></td>
+<td><p>Cambio de humedales a B. Siempre verde andino Montano</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMHUMPIE</p></td>
+<td><p>Cambio de humedales a B. Siempre verde andino Pie montano</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMHUMCEJ</p></td>
+<td><p>Cambio de humedales a B. Siempre verde andino de Ceja Andina</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMHUMAMA</p></td>
+<td><p>Cambio de humedales a B. Siempre verde de tierras bajas de la Amazonía</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMHUMCHO</p></td>
+<td><p>Cambio de humedales a B. Siempre verde de tierras bajas del Chocó</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMHUMMAN</p></td>
+<td><p>Cambio de humedales a Manglar</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMHUMMOR</p></td>
+<td><p>Cambio de humedales a Moretal</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMHUMPFO</p></td>
+<td><p>Cambio de humedales a Plantación forestal</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMOTIAND</p></td>
+<td><p>Cambio de otras tierras a B. Seco Andino</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMOTIPLU</p></td>
+<td><p>Cambio de otras tierras a B. Pluvioestacional</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMOTIMON</p></td>
+<td><p>Cambio de otras tierras a B. Siempre verde andino Montano</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMOTIPIE</p></td>
+<td><p>Cambio de otras tierras a B. Siempre verde andino Pie montano</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMOTICEJ</p></td>
+<td><p>Cambio de otras tierras a B. Siempre verde andino de Ceja Andina</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMOTIAMA</p></td>
+<td><p>Cambio de otras tierras a B. Siempre verde de tierras bajas de la Amazonía</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMOTICHO</p></td>
+<td><p>Cambio de otras tierras a B. Siempre verde de tierras bajas del Chocó</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMOTIMAN</p></td>
+<td><p>Cambio de otras tierras a Manglar</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMOTIMOR</p></td>
+<td><p>Cambio de otras tierras a Moretal</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMOTIPFO</p></td>
+<td><p>Cambio de otras tierras a Plantación forestal</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMANDCRO</p></td>
+<td><p>Cambio B. Seco Andino a tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMPLUCRO</p></td>
+<td><p>Cambio B. Pluvioestacional a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMMONCRO</p></td>
+<td><p>Cambio B. Siempre verde andino Montano a tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMPIECRO</p></td>
+<td><p>Cambio B. Siempre verde andino Pie montano a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCEJCRO</p></td>
+<td><p>Cambio B. Siempre verde andino de Ceja Andina a tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMAMACRO</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas de la Amazonía a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCHOCRO</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas del Chocó a tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMMANCRO</p></td>
+<td><p>Cambio Manglar a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMMORCRO</p></td>
+<td><p>Cambio Moretal a tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMPFOCRO</p></td>
+<td><p>Cambio Plantación forestal a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRACRO</p></td>
+<td><p>Cambio Pastizales a tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMHUMCRO</p></td>
+<td><p>Cambio Humedales a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMASECRO</p></td>
+<td><p>Cambio Asentamientos a tierras de cultivo</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMOTICRO</p></td>
+<td><p>Cambio Otros usos a tierras de cultivo</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMANDGRA</p></td>
+<td><p>Cambio B. Seco Andino a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMPLUGRA</p></td>
+<td><p>Cambio B. Pluvioestacional a pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMMONGRA</p></td>
+<td><p>Cambio B. Siempre verde andino Montano a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMPIEGRA</p></td>
+<td><p>Cambio B. Siempre verde andino Pie montano a pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCEJGRA</p></td>
+<td><p>Cambio B. Siempre verde andino de Ceja Andina a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMAMAGRA</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas de la Amazonía a pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCHOGRA</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas del Chocó a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMMANGRA</p></td>
+<td><p>Cambio Manglar a pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMMORGRA</p></td>
+<td><p>Cambio Moretal a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMPFOGRA</p></td>
+<td><p>Cambio Plantación forestal a pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMCROGRA</p></td>
+<td><p>Cambio Tierras de cultivo a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMHUMGRA</p></td>
+<td><p>Cambio Humedales a pastizales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMOTIGRA</p></td>
+<td><p>Cambio Otros usos a pastizales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMANDHUM</p></td>
+<td><p>Cambio B. Seco Andino a humedales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPLUHUM</p></td>
+<td><p>Cambio B. Pluvioestacional a humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMMONHUM</p></td>
+<td><p>Cambio B. Siempre verde andino Montano a humedales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPIEHUM</p></td>
+<td><p>Cambio B. Siempre verde andino Pie montano a humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCEJHUM</p></td>
+<td><p>Cambio B. Siempre verde andino de Ceja Andina a humedales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMAMAHUM</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas de la Amazonía a humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCHOHUM</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas del Chocó a humedales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMMANHUM</p></td>
+<td><p>Cambio Manglar a humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMMORHUM</p></td>
+<td><p>Cambio Moretal a humedales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPFOHUM</p></td>
+<td><p>Cambio Plantación forestal a humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCROHUM</p></td>
+<td><p>Cambio Tierras de cultivo a humedales</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRAHUM</p></td>
+<td><p>Cambio Pastizales a humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMANDASE</p></td>
+<td><p>Cambio B. Seco Andino hacia asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPLUASE</p></td>
+<td><p>Cambio B. Pluvioestacional hacia asentamientos</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMMONASE</p></td>
+<td><p>Cambio B. Siempre verde andino Montano hacia asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPIEASE</p></td>
+<td><p>Cambio B. Siempre verde andino Pie montano hacia asentamientos</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCEJASE</p></td>
+<td><p>Cambio B. Siempre verde andino de Ceja Andina hacia asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMAMAASE</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas de la Amazonía hacia asentamientos</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCHOASE</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas del Chocó hacia asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMMANASE</p></td>
+<td><p>Cambio Manglar hacia asentamientos</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMMORASE</p></td>
+<td><p>Cambio Moretal hacia asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPFOASE</p></td>
+<td><p>Cambio Plantación forestal hacia asentamientos</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCROASE</p></td>
+<td><p>Cambio Tierras de cultivo a asentamientos</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRAASE</p></td>
+<td><p>Cambio Pastizales a asentamientos</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMANDOTI</p></td>
+<td><p>Cambio B. Seco Andino a otras tierras</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPLUOTI</p></td>
+<td><p>Cambio B. Pluvioestacional a otras tierras</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMMONOTI</p></td>
+<td><p>Cambio B. Siempre verde andino Montano a otras tierras</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPIEOTI</p></td>
+<td><p>Cambio B. Siempre verde andino Pie montano a otras tierras</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCEJOTI</p></td>
+<td><p>Cambio B. Siempre verde andino de Ceja Andina a otras tierras</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMAMAOTI</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas de la Amazonía a otras tierras</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCHOOTI</p></td>
+<td><p>Cambio B. Siempre verde de tierras bajas del Chocó a otras tierras</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMMANOTI</p></td>
+<td><p>Cambio Manglar a otras tierras</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMMOROTI</p></td>
+<td><p>Cambio Moretal a otras tierras</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMPFOOTI</p></td>
+<td><p>Cambio Plantación forestal a otras tierras</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPCAMCROOTI</p></td>
+<td><p>Cambio Tierras de cultivos a otras tierras</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPCAMGRAOTI</p></td>
+<td><p>Cambio Pastizales a otras tierras</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMEDREST</p></td>
+<td><p>Medida 1. Restauración forestal</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMEDRESTMAN</p></td>
+<td><p>Medida 2. Restauración manglar</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMEDABAMA</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde de Tierras Bajas de la Amazonía - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMEDABMOR</p></td>
+<td><p>Medida 4. Bosques protectores Moretales - absorción</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMEDABPIE</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde Andino Pie Montano - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMEDABCHO</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde de Tierras Bajas del Chocó - absorción</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMEDABMON</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde Andino Montano - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMEDABPIE2</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde Andino Pie Montano - absorción</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMEDDEFAMA</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde de Tierras Bajas de la Amazonía - deforestación evitada</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMEDDEFMOR</p></td>
+<td><p>Medida 4. Bosques protectores Moretales - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMEDDEFPIE</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde Andino Pie Montano - deforestación evitada</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMEDDEFCHO</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde de Tierras Bajas del Chocó - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMEDDEFMON</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde Andino Montano - deforestación evitada</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMEDDEFPIE2</p></td>
+<td><p>Medida 4. Bosques protectores Bosque Siempre Verde Andino Pie Montano - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED5DEFAND</p></td>
+<td><p>Medida 5. Socio bosque B. Seco Andino - deforestación evitada</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED5DEFPLU</p></td>
+<td><p>Medida 5. Socio bosque B. Seco Pluvioestacional - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED5DEFMON</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde andino Montano - deforestación evitada</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED5DEFPIE</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde andino Pie montano - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED5DEFCEJ</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde andino de Ceja Andina - deforestación evitada</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED5DEFAMA</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde de tierras bajas de la Amazonía - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED5DEFCHO</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde de tierras bajas del Chocó - deforestación evitada</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED5DEFMAN</p></td>
+<td><p>Medida 5. Socio bosque Manglar - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED5ABAND</p></td>
+<td><p>Medida 5. Socio bosque B. Seco Andino - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED5ABPLU</p></td>
+<td><p>Medida 5. Socio bosque B. Seco Pluvioestacional - absorción</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED5ABMON</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde andino Montano - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED5ABPIE</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde andino Pie montano - absorción</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED5ABCEJ</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde andino de Ceja Andina - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED5ABAMA</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde de tierras bajas de la Amazonía - absorción</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED5ABCHO</p></td>
+<td><p>Medida 5. Socio bosque B. Siempre verde de tierras bajas del Chocó - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED5ABMAN</p></td>
+<td><p>Medida 5. Socio bosque Manglar - absorción</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED3ABCEJ</p></td>
+<td><p>Medida 3. Taita Imbaura Bosque Siempre Verde Andino de Ceja Andina - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED3ABMON</p></td>
+<td><p>Medida 3. Taita Imbaura Bosque Siempre Verde Andino Montano - absorción</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED3ABCEJA</p></td>
+<td><p>Medida 3. Taita Imbaura Bosque Siempre Verde Andino de Ceja Andina - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED3DEFCEJ</p></td>
+<td><p>Medida 3. Taita Imbaura Bosque Siempre Verde Andino de Ceja Andina - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED3DEFMON</p></td>
+<td><p>Medida 3. Taita Imbaura Bosque Siempre Verde Andino Montano - deforestación evitada</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED3DEFCEJA</p></td>
+<td><p>Medida 3. Taita Imbaura Bosque Siempre Verde Andino de Ceja Andina - deforestación evitada</p></td>
+</tr>
+<tr class="row-odd"><td><p>SUPMED6DABAMA</p></td>
+<td><p>Medida 6. WWF Bosque Siempre Verde de Tierras Bajas de la Amazonía - absorción</p></td>
+</tr>
+<tr class="row-even"><td><p>SUPMED6DEFAMA</p></td>
+<td><p>Medida 6. WWF Bosque Siempre Verde de Tierras Bajas de la Amazonía - deforestación evitada</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="8. Modelo del Sector USCUSS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_entradas.html" class="btn btn-neutral float-right" title="8.2. Datos de entrada del modelo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, ClimateLeadGroup.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

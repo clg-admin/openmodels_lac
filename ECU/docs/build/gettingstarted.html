@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Cómo usar el modelo? &mdash; ECU_NDC  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Referencias" href="4_uscuss/4_referencias.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ECU_NDC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_energia/index.html">Energía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_piup/index.html">Procesos Industriales y Uso de Productos (PIUP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_residuos/index.html">Residuos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_agricultura/index.html">Agricultura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_uscuss/index.html">Uso del Suelo y Cambio de Uso del Suelo (USCUSS)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Uso del modelo OSeMOSYS-ECU</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#crear-la-estructura-del-modelo-a1">Crear la estructura del modelo (A1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compilador-del-modelo-a2">Compilador del modelo (A2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crear-el-archivo-de-entrada-b1">Crear el archivo de entrada (B1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejecucion-del-modelo-b1">Ejecución del modelo (B1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concatenacion-de-resultados-b2">Concatenación de resultados (B2)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ECU_NDC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">¿Cómo usar el modelo?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/gettingstarted.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="como-usar-el-modelo">
+<h1>¿Cómo usar el modelo?<a class="headerlink" href="#como-usar-el-modelo" title="Link to this heading"></a></h1>
+<p>En primer lugar, es importante tener en cuenta el flujo de trabajo que se muestra en la Figura 1. Este flujo de trabajo nos indica cuáles son los archivos importantes para ejecutar cada paso y proporciona una mejor comprensión general.</p>
+<img alt="Figura 1 Flujo de trabajo del modelo OSeMOSYS-ECU" class="align-center" src="_images/flujo_trabajo.png" />
+<p><strong>Figura 1: Flujo de trabajo del modelo OSeMOSYS-ECU</strong></p>
+<section id="crear-la-estructura-del-modelo-a1">
+<h2>Crear la estructura del modelo (A1)<a class="headerlink" href="#crear-la-estructura-del-modelo-a1" title="Link to this heading"></a></h2>
+<p>El primer paso del OSeMOSYS-ECU es crear la estructura del modelo. Para ello, necesita ejecutar el script de Python <code class="docutils literal notranslate"><span class="pre">A1_Model_Structure</span></code>. Para realizar esta ejecución, es necesario parametrizar los archivos de Excel dentro de <code class="docutils literal notranslate"><span class="pre">A1_Inputs</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Demand</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Supply</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Classifier_Modes_Transport</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-I_Horizon_Configuration</span></code></p></li>
+</ul>
+<p>Luego, debes ejecutar el script de Python <code class="docutils literal notranslate"><span class="pre">A1_Model_Structure</span></code>. Al finalizar la ejecución, se generarán algunos archivos dentro de <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_AR_Model_Base_Year.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_AR_Projections.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Demand.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Fleet.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Parametrization.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A-O_Fleet_Groups.pickle</span></code></p></li>
+</ul>
+<p>Estos archivos se reescriben con la estructura predeterminada cada vez que se ejecuta el script de Python, por lo que se recomienda ejecutar este script solo una vez.</p>
+</section>
+<section id="compilador-del-modelo-a2">
+<h2>Compilador del modelo (A2)<a class="headerlink" href="#compilador-del-modelo-a2" title="Link to this heading"></a></h2>
+<p>El segundo paso consiste en definir el proceso para compilar el modelo en archivos por parámetro. Para ello, toma como entradas los archivos de Excel de <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code>, además de los archivos de Excel de la carpeta <code class="docutils literal notranslate"><span class="pre">A2_Xtra_Inputs</span></code> y el archivo <code class="docutils literal notranslate"><span class="pre">A2_Structure_Lists</span></code>. Luego, ejecuta este script de Python.</p>
+<p>Es importante tener en la carpeta <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params/Default</span></code>, los archivos predeterminados por parámetro utilizados por el script de Python <code class="docutils literal notranslate"><span class="pre">A2_Compiler</span></code>. Este script genera algunos archivos en las carpetas <code class="docutils literal notranslate"><span class="pre">A1_Outputs</span></code> y <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params</span></code>. En la segunda carpeta, se genera la misma cantidad de subcarpetas que escenarios tiene el modelo, y dentro de estas subcarpetas se encuentran los archivos de Excel con datos por parámetro.</p>
+</section>
+<section id="crear-el-archivo-de-entrada-b1">
+<h2>Crear el archivo de entrada (B1)<a class="headerlink" href="#crear-el-archivo-de-entrada-b1" title="Link to this heading"></a></h2>
+<p>El siguiente paso es más largo y requiere cuidado. Es importante seguir el flujo de trabajo en la figura al inicio de la sección. Primero, ve a la carpeta <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code> y elimina cualquier subcarpeta que encuentres allí. Luego, ve a la carpeta <code class="docutils literal notranslate"><span class="pre">A2_Outputs_Params</span></code>, copia las carpetas con el nombre de los escenarios, y pégalas en <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code>. También es necesario copiar manualmente los datos del archivo <code class="docutils literal notranslate"><span class="pre">A2_Structure_Lists.xlsx</span></code> al archivo <code class="docutils literal notranslate"><span class="pre">B1_Model_Structure</span></code>.</p>
+<p>A continuación, debes parametrizar el modelo en los archivos <code class="docutils literal notranslate"><span class="pre">B1_Scenario_Config.xlsx</span></code>.</p>
+<p>Para escribir el modelo, usa el script <code class="docutils literal notranslate"><span class="pre">B1_Base_Scenarios_Adj_Parallel.py</span></code>.</p>
+<p>Los resultados de esta ejecución se encuentran en la carpeta <code class="docutils literal notranslate"><span class="pre">B1_Output_Params</span></code>. Los archivos en esta carpeta sobrescriben los de las salidas del paso <code class="docutils literal notranslate"><span class="pre">A2</span></code>. Además, el archivo del modelo se encuentra en la carpeta <code class="docutils literal notranslate"><span class="pre">Executables</span></code>, dentro de una subcarpeta para cada escenario. Este archivo es un archivo de texto, por ejemplo:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BAU_0.txt</span></code></p></li>
+</ul>
+</section>
+<section id="ejecucion-del-modelo-b1">
+<h2>Ejecución del modelo (B1)<a class="headerlink" href="#ejecucion-del-modelo-b1" title="Link to this heading"></a></h2>
+<p>Para ejecutar el modelo, usa el script <code class="docutils literal notranslate"><span class="pre">B1_Base_Scenarios_Adj_Parallel.py</span></code>.</p>
+<p>Los resultados de esta ejecución se encuentran en la carpeta <code class="docutils literal notranslate"><span class="pre">Executables</span></code>, dentro de una subcarpeta para cada escenario, y generan tres archivos.</p>
+</section>
+<section id="concatenacion-de-resultados-b2">
+<h2>Concatenación de resultados (B2)<a class="headerlink" href="#concatenacion-de-resultados-b2" title="Link to this heading"></a></h2>
+<p>Este paso facilita el análisis de los resultados. Al ejecutar el script de Python <code class="docutils literal notranslate"><span class="pre">B2_Results_Creator_f0.py</span></code>, este toma los archivos CSV con datos de entrada y salida del modelo de cada escenario, los concatena y crea cuatro archivos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Nombre_de_Escenario_Input.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nombre_de_Escenario_Input_2024_10_22.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nombre_de_Escenario_Output.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nombre_de_Escenario_Output_2024_10_22.csv</span></code></p></li>
+</ul>
+<p>Los archivos con fecha permiten rastrear ejecuciones realizadas en diferentes fechas, ya que los archivos sin fecha se sobrescriben con cada ejecución.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="4_uscuss/4_referencias.html" class="btn btn-neutral float-left" title="Referencias" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="license.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, ClimateLeadGroup.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escenarios &mdash; ECU_NDC  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Resultados" href="3_resultados.html" />
+    <link rel="prev" title="Datos de entrada del modelo" href="1_entradas.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ECU_NDC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_energia/index.html">Energía</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Procesos Industriales y Uso de Productos (PIUP)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0_estructura.html">Estructura del modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_entradas.html">Datos de Entrada</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Escenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_resultados.html">Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_referencias.html">Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_residuos/index.html">Residuos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_agricultura/index.html">Agricultura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_uscuss/index.html">Uso del Suelo y Cambio de Uso del Suelo (USCUSS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Uso del modelo OSeMOSYS-ECU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ECU_NDC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Modelo del Sector PIUP</a></li>
+      <li class="breadcrumb-item active">Escenarios</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1_piup/2_escenarios.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="escenarios">
+<h1>Escenarios<a class="headerlink" href="#escenarios" title="Link to this heading"></a></h1>
+<p>Para el sector PIUP primeramente se construye un escenario Tendencial. Este representa un escenario sin iniciativas NDC que servirá para comparar los escenarios que sí poseen iniciativas tomadas bajo el contexto de las NDC. Para definir un caso sin iniciativas se utilizan los datos históricos y supuestos del sector presentados en la Tabla 7 y se ajustan para compensar el efecto de las iniciativas NDC que ya se han materializado dentro de la información histórica.</p>
+<p>La iniciativa que se consideró para este proceso de ajuste, es la iniciativa del escenario Incondicional presente en la 1ra NDC (Gobierno de Ecuador, 2019) cuya descripción es la siguiente:</p>
+<ul class="simple">
+<li><p>Sustituir un porcentaje de Clinker por otras adiciones para la producción de cemento (con potencial de reducción de GEI en 2025 de 130 GgCO2e).</p></li>
+</ul>
+<p>El segundo escenario es el escenario Incondicional 2daNDC que incluye 2 iniciativas adicionales que se están proponiendo en el sector para la segunda NDC para reducir las emisiones del Ecuador. Estas iniciativas incluyen la sustitución adicional de un porcentaje de Clinker por adiciones para la producción de cemento y el seguimiento de las reducciones de consumo de HFC planteado en la enmienda de Kigali que tiene su efecto en las emisiones de la categoría 2F: Uso de Productos como sustitutos para las substancias que agotan la capa de ozono. En la Tabla 9 se detallan de mejor forma las iniciativas mencionadas.</p>
+<p><em>Tabla 9: Descripción de iniciativas del sector PIUP para el escenario Incondicional 2daNDC.</em></p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Categoría</p></th>
+<th class="head"><p>Iniciativa</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sustituir un porcentaje de Clinker
+para la producción de cemento</p></td>
+<td><p>Reducción del factor Clinker de acuerdo con la hoja de ruta
+FICEM - Ecuador</p></td>
+<td><p>Reducción al 68% a 2030</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enmienda de Kigali</p></td>
+<td><p>Reducción del consumo de HFC considerando el siguiente
+cronograma:
+2024: Congelación
+2029: Reducción 10%
+2035: Reducción 30%
+2040: Reducción 50%
+2045: Reducción 80%</p></td>
+<td><p>Reducción del consumo
+de 10% de la línea base
+al 2029 y de 30% al 2035.</p></td>
+</tr>
+</tbody>
+</table>
+<p>El tercer escenario corresponde al que se nombró escenario Incondicional y Condicional 2daNDC. Para el sector PIUP no se tienen planteadas iniciativas adicionales específicas para este escenario por lo que las iniciativas contempladas son las mismas de la Tabla 9.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="1_entradas.html" class="btn btn-neutral float-left" title="Datos de entrada del modelo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="3_resultados.html" class="btn btn-neutral float-right" title="Resultados" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, ClimateLeadGroup.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

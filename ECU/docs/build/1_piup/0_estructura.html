@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estructura del modelo &mdash; ECU_NDC  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Datos de entrada del modelo" href="1_entradas.html" />
+    <link rel="prev" title="Modelo del Sector PIUP" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ECU_NDC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_energia/index.html">Energía</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Procesos Industriales y Uso de Productos (PIUP)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Estructura del modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_entradas.html">Datos de Entrada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_escenarios.html">Escenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_resultados.html">Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_referencias.html">Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_residuos/index.html">Residuos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_agricultura/index.html">Agricultura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_uscuss/index.html">Uso del Suelo y Cambio de Uso del Suelo (USCUSS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Uso del modelo OSeMOSYS-ECU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ECU_NDC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Modelo del Sector PIUP</a></li>
+      <li class="breadcrumb-item active">Estructura del modelo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/1_piup/0_estructura.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="estructura-del-modelo">
+<h1>Estructura del modelo<a class="headerlink" href="#estructura-del-modelo" title="Link to this heading"></a></h1>
+<p>El sector Procesos Industriales y Uso de Productos (PIUP), es uno de los sectores de mitigación estudiados por el Panel Intergubernamental de Expertos sobre el Cambio Climático (en inglés Intergovernmental Panel on Climate Change o conocido también por sus siglas IPCC). En Ecuador, el sector PIUP abarca varias categorías y subcategorías emisoras de GEI, de acuerdo con el INGEI de la 5ta Comunicación Nacional (5CN) del Ecuador (MAATE, n.d.), que se enlistan a continuación:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Categoría 2A: Industria de los minerales</strong></dt><dd><ul>
+<li><p><strong>Subcategoría 2A1:</strong> Producción de Cemento</p></li>
+<li><p><strong>Subcategoría 2A2:</strong> Producción de Cal</p></li>
+<li><p><strong>Subcategoría 2A3:</strong> Producción de Vidrio</p></li>
+<li><p><strong>Subcategoría 2A4a:</strong> Cerámica</p></li>
+<li><p><strong>Subcategoría 2A4b:</strong> Otros Usos de la Soda Ash</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Categoría 2C: Industria de los metales</strong></dt><dd><ul>
+<li><p><strong>Subcategoría 2C1:</strong> Producción de Hierro y Acero</p></li>
+<li><p><strong>Subcategoría 2C5:</strong> Producción de Plomo</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Categoría 2D: Uso de Productos no Energéticos de combustibles y de solventes</strong></dt><dd><ul>
+<li><p><strong>Subcategoría 2D1:</strong> Uso de Lubricantes</p></li>
+<li><p><strong>Subcategoría 2D2:</strong> Uso de Cera Parafina</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Categoría 2F: Uso de Productos como sustitutos para las substancias que agotan la capa de ozono</strong></dt><dd><ul>
+<li><p><strong>Subcategoría 2F1:</strong> Refrigeración y Aire Acondicionado</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Basado en lo anterior, se construye un modelo en la herramienta OSeMOSYS para poder representar la actividad y las emisiones anuales de las categorías y subcategorías del sector, así como para facilitar la construcción de varios escenarios basado en la adopción de diversas políticas, acciones o iniciativas. De forma simplificada, el modelo se ilustra en la Figura 1.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/PIUP_RSS.png"><img alt="Diagrama del sector" src="../_images/PIUP_RSS.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Figura 1. Diagrama de referencia del modelo del sector PIUP.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>En las Tablas 1, 2 y 3 se incluye la nomenclatura de los sets Technologies, Commodities y Emission del modelo de la Figura 1.</p>
+<p><em>Tabla 1: Tecnologías incluidas en el modelo OSeMOSYS del sector PIUP.</em></p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Descripción</p></th>
+<th class="head"><p>Código</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Suministro de materia prima para clinker</p></td>
+<td><p>RAW_MAT_CLK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Suministro de materia prima para cemento</p></td>
+<td><p>RAW_MAT_CEM</p></td>
+</tr>
+<tr class="row-even"><td><p>Clinker importado o almacenado</p></td>
+<td><p>IMP_STOR</p></td>
+</tr>
+<tr class="row-odd"><td><p>Importación de HFC</p></td>
+<td><p>IMP_REFR_AC</p></td>
+</tr>
+<tr class="row-even"><td><p>Importación de HFC23</p></td>
+<td><p>IMP_HFC23</p></td>
+</tr>
+<tr class="row-odd"><td><p>Importación de HFC32</p></td>
+<td><p>IMP_HFC32</p></td>
+</tr>
+<tr class="row-even"><td><p>Importación de HFC125</p></td>
+<td><p>IMP_HFC125</p></td>
+</tr>
+<tr class="row-odd"><td><p>Importación de HFC134a</p></td>
+<td><p>IMP_HFC134a</p></td>
+</tr>
+<tr class="row-even"><td><p>Importación de HFC143a</p></td>
+<td><p>IMP_HFC143a</p></td>
+</tr>
+<tr class="row-odd"><td><p>Importación de HFC152a</p></td>
+<td><p>IMP_HFC152a</p></td>
+</tr>
+<tr class="row-even"><td><p>Importación de HFC227ea</p></td>
+<td><p>IMP_HFC227ea</p></td>
+</tr>
+<tr class="row-odd"><td><p>Otros procesos industriales y uso de productos</p></td>
+<td><p>OTHER_IPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Producción de clinker tradicional</p></td>
+<td><p>PROD_CLK_TRAD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Producción de cemento</p></td>
+<td><p>PROD_CEM</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Producción de cemento</p></td>
+<td><p>T5CEM_PRODIND</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - HFC</p></td>
+<td><p>T5REFR_ACIPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - HFC23</p></td>
+<td><p>T5HFC23IPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - HFC32</p></td>
+<td><p>T5HFC32IPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - HFC125</p></td>
+<td><p>T5HFC125IPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - HFC134a</p></td>
+<td><p>T5HFC134aIPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - HFC143a</p></td>
+<td><p>T5HFC143aIPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - HFC152a</p></td>
+<td><p>T5HFC152aIPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - HFC227ea</p></td>
+<td><p>T5HFC227eaIPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Otros procesos industriales y uso de productos</p></td>
+<td><p>T5OTHER_IPPUIPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Producción de Cal</p></td>
+<td><p>LIME_PROD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Producción de Vidrio</p></td>
+<td><p>GLASS_PROD</p></td>
+</tr>
+<tr class="row-even"><td><p>Cerámica</p></td>
+<td><p>CERAMICS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Otros usos de Soda Ash</p></td>
+<td><p>SODA_ASH</p></td>
+</tr>
+<tr class="row-even"><td><p>Producción de Hierro y Acero</p></td>
+<td><p>IRON_STEEL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Producción de Plomo</p></td>
+<td><p>LEAD_PROD</p></td>
+</tr>
+<tr class="row-even"><td><p>Uso de Lubricantes</p></td>
+<td><p>LUBRI</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uso de Ceras de parafina</p></td>
+<td><p>PARAFFIN</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Producción de Cal</p></td>
+<td><p>T5LIME_PRODIPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Producción de Vidrio</p></td>
+<td><p>T5GLASS_PRODIPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Cerámica</p></td>
+<td><p>T5CERAMICSIPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Otros usos de Soda Ash</p></td>
+<td><p>T5SODA_ASHIPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Producción de Hierro y Acero</p></td>
+<td><p>T5IRON_STEELIPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Producción de Plomo</p></td>
+<td><p>T5LEAD_PRODIPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Uso de Lubricantes</p></td>
+<td><p>T5LUBRIIPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Uso de Ceras de parafina</p></td>
+<td><p>T5PARAFFINIPPU</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabla 2: Commodities incluidos en el modelo OSeMOSYS del sector PIUP.</em></p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Descripción</p></th>
+<th class="head"><p>Código</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Materia prima para Clinker</p></td>
+<td><p>RAW_MAT_CLK</p></td>
+</tr>
+<tr class="row-odd"><td><p>Materia prima para cemento</p></td>
+<td><p>RAW_MAT_CEM</p></td>
+</tr>
+<tr class="row-even"><td><p>Producción de Clinker</p></td>
+<td><p>CLK_PROD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Refrigeración y Aire Acondicionado</p></td>
+<td><p>REFR_AC</p></td>
+</tr>
+<tr class="row-even"><td><p>HFC23</p></td>
+<td><p>HFC23</p></td>
+</tr>
+<tr class="row-odd"><td><p>HFC32</p></td>
+<td><p>HFC32</p></td>
+</tr>
+<tr class="row-even"><td><p>HFC125</p></td>
+<td><p>HFC125</p></td>
+</tr>
+<tr class="row-odd"><td><p>HFC134a</p></td>
+<td><p>HFC134a</p></td>
+</tr>
+<tr class="row-even"><td><p>HFC143a</p></td>
+<td><p>HFC143a</p></td>
+</tr>
+<tr class="row-odd"><td><p>HFC152a</p></td>
+<td><p>HFC152a</p></td>
+</tr>
+<tr class="row-even"><td><p>HFC227ea</p></td>
+<td><p>HFC227ea</p></td>
+</tr>
+<tr class="row-odd"><td><p>Otros procesos industriales y uso de productos</p></td>
+<td><p>OTHER_IPPU</p></td>
+</tr>
+<tr class="row-even"><td><p>Producción de cemento</p></td>
+<td><p>CEM_PROD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Producción de cemento</p></td>
+<td><p>E5INDCEM_PROD</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Refrigeración y Aire Acondicionado</p></td>
+<td><p>E5IPPUREFR_AC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - HFC23</p></td>
+<td><p>E5IPPUHFC23</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - HFC32</p></td>
+<td><p>E5IPPUHFC32</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - HFC125</p></td>
+<td><p>E5IPPUHFC125</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - HFC134a</p></td>
+<td><p>E5IPPUHFC134a</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - HFC143a</p></td>
+<td><p>E5IPPUHFC143a</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - HFC152a</p></td>
+<td><p>E5IPPUHFC152a</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - HFC227ea</p></td>
+<td><p>E5IPPUHFC227ea</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Otros procesos industriales y uso de productos</p></td>
+<td><p>E5IPPUOTHER_IPPU</p></td>
+</tr>
+<tr class="row-odd"><td><p>Producción de Cal</p></td>
+<td><p>LIME_PROD</p></td>
+</tr>
+<tr class="row-even"><td><p>Producción de Vidrio</p></td>
+<td><p>GLASS_PROD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cerámica</p></td>
+<td><p>CERAMICS</p></td>
+</tr>
+<tr class="row-even"><td><p>Otros usos de Soda Ash</p></td>
+<td><p>SODA_ASH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Producción de Hierro y Acero</p></td>
+<td><p>IRON_STEEL</p></td>
+</tr>
+<tr class="row-even"><td><p>Producción de Plomo</p></td>
+<td><p>LEAD_PROD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uso de Lubricantes</p></td>
+<td><p>LUBRI</p></td>
+</tr>
+<tr class="row-even"><td><p>Uso de Ceras de parafina</p></td>
+<td><p>PARAFFIN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Producción de Cal</p></td>
+<td><p>E5IPPULIME_PROD</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Producción de Vidrio</p></td>
+<td><p>E5IPPUGLASS_PROD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Cerámica</p></td>
+<td><p>E5IPPUCERAMICS</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Otros usos de Soda Ash</p></td>
+<td><p>E5IPPUSODA_ASH</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Producción de Hierro y Acero</p></td>
+<td><p>E5IPPUIRON_STEEL</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Producción de Plomo</p></td>
+<td><p>E5IPPULEAD_PROD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Uso de Lubricantes</p></td>
+<td><p>E5IPPULUBRI</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Uso de Ceras de parafina</p></td>
+<td><p>E5IPPUPARAFFIN</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabla 3: Emisiones incluidas en el modelo OSeMOSYS del sector PIUP.</em></p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Descripción</p></th>
+<th class="head"><p>Código</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Dióxido de carbono equivalente producido por Hidrofluorocarbonos</p></td>
+<td><p>CO2e_HFC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dióxido de carbono equivalente producido por el proceso de producción de
+cemento</p></td>
+<td><p>CO2e_CEM</p></td>
+</tr>
+<tr class="row-even"><td><p>Dióxido de carbono equivalente producido por otros Procesos Industriales
+y Uso de Productos</p></td>
+<td><p>CO2e_IPPU</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Modelo del Sector PIUP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_entradas.html" class="btn btn-neutral float-right" title="Datos de entrada del modelo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, ClimateLeadGroup.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+.. _welcome:
+
+===================================================
+Documentación de OSeMOSYS-ECU
+===================================================
+
+OSeMOSYS-ECU es un modelo de planificación de mediano y largo plazo para la 
+cuantificación de emisiones desarrollado en estrecha colaboración con el 
+**PNUD y la FAO** para apoyar la construcción de la Segunda Contribución 
+Nacionalmente Determinada (NDC) de Ecuador.  
+
+El modelo se basa en **OSeMOSYS**, un marco de código abierto ampliamente 
+utilizado para evaluar políticas de mitigación y estrategias de planificación 
+energética. Además, este trabajo amplía el modelo previamente utilizado en 
+el **PLANMICC** (`Plan Nacional de Mitigación del Cambio Climático 
+<https://github.com/PLANMICC/OSeMOSYS_Ecuador>`_).
+
+
+Este documento cubre la modelización de **cinco sectores clave**:
+- **Energía**
+- **Procesos industriales y uso de productos (PIUP)**
+- **Residuos**
+- **Agricultura**
+- **Uso del suelo y cambio de uso del suelo (USCUSS)**
+
+==================================
+Estructura de la Documentación
+==================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Estructura de la Documentación
+
+   Introducción <introduccion>
+   Metodología <metodologia>
+
+   Energía <0_energia/index>
+   Procesos Industriales y Uso de Productos (PIUP) <1_piup/index>
+   Residuos <2_residuos/index>
+   Agricultura <3_agricultura/index>
+   Uso del Suelo y Cambio de Uso del Suelo (USCUSS) <4_uscuss/index>
+
+   Uso del modelo OSeMOSYS-ECU <gettingstarted>
+   Licencia <license>
+   Autores <authors>

@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estructura del modelo &mdash; ECU_NDC  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Datos de entrada del modelo" href="1_entradas.html" />
+    <link rel="prev" title="Modelo del Sector Residuos" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ECU_NDC
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Estructura de la Documentación</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduccion.html">Introducción</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metodologia.html">Metodología</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_energia/index.html">Energía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_piup/index.html">Procesos Industriales y Uso de Productos (PIUP)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Residuos</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Estructura del modelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_entradas.html">Datos de Entrada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_escenarios.html">Escenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_resultados.html">Resultados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_referencias.html">Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3_agricultura/index.html">Agricultura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_uscuss/index.html">Uso del Suelo y Cambio de Uso del Suelo (USCUSS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Uso del modelo OSeMOSYS-ECU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Licencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Autores</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ECU_NDC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Modelo del Sector Residuos</a></li>
+      <li class="breadcrumb-item active">Estructura del modelo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/2_residuos/0_estructura.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="estructura-del-modelo">
+<h1>Estructura del modelo<a class="headerlink" href="#estructura-del-modelo" title="Link to this heading"></a></h1>
+<p>Otro de los sectores de mitigación estudiados por el IPCC es el sector Residuos. Este sector produce emisiones por varias prácticas de disposición y tratamiento de residuos sólidos y aguas residuales generadas en el país. En cuanto a GEI, en el sector se genera principalmente metano (CH4) y óxido nitroso (N2O) por la descomposición de materia orgánica, además de CO2 por la incineración de residuos sólidos, aportando a la liberación bruta de emisiones de CO2e en el Ecuador. Las categorías y subcategorías que conforman este sector se enlistan a continuación:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>5A: Disposición de residuos sólidos</strong></dt><dd><ul>
+<li><p><strong>5A1:</strong> Sitios de disposición de residuos sólidos gestionados</p></li>
+<li><p><strong>5A2:</strong> Sitios de disposición de residuos sólidos no gestionados</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>5B: Tratamiento biológico de residuos sólidos</strong></dt><dd><ul>
+<li><p><strong>5B1:</strong> Compostaje</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>5C: Incineración y quema abierta de residuos</strong></dt><dd><ul>
+<li><p><strong>5C1:</strong> Incineración de residuos</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>5D: Eliminación y tratamiento de aguas residuales</strong></dt><dd><ul>
+<li><p><strong>5D1:</strong> Aguas residuales domésticas</p></li>
+<li><p><strong>5D2:</strong> Aguas residuales industriales</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Basado en lo anterior, se construye un modelo en la herramienta OSeMOSYS para poder representar la actividad y las emisiones anuales de las categorías y subcategorías del sector, así como para facilitar la construcción de varios escenarios basado en iniciativas de disposición adecuada, reducción y tratamiento de residuos sólidos y aguas residuales. De forma simplificada, el modelo que simula el comportamiento del sector residuos sólidos se ilustra en la Figura 2. Por su parte el modelo que representa las aguas residuales se muestra en la Figura 3.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/residuos_sol_RSS.png"><img alt="Diagrama del sector" src="../_images/residuos_sol_RSS.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Figura 2. Diagrama de referencia del modelo del sector Residuos Sólidos.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/residuos_aguas_RSS.png"><img alt="Diagrama del sector" src="../_images/residuos_aguas_RSS.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Figura 3. Diagrama de referencia del modelo del sector Aguas Residuales.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>En las Tablas 4, 5 y 6 se incluye la nomenclatura de los sets Technologies, Commodities y Emission del modelo de las Figura 2 y 3.</p>
+<p><em>Tabla 4: Tecnologías incluidas en el modelo OSeMOSYS del sector Residuos.</em></p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Descripción</p></th>
+<th class="head"><p>Código</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reciclaje de residuos inorgánicos separados en sitio de disposición
+final</p></td>
+<td><p>INORG_RCY_OS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Digestión anaerobia</p></td>
+<td><p>AD</p></td>
+</tr>
+<tr class="row-even"><td><p>Compostaje</p></td>
+<td><p>COMPOST</p></td>
+</tr>
+<tr class="row-odd"><td><p>Relleno sanitario</p></td>
+<td><p>LANDFILL</p></td>
+</tr>
+<tr class="row-even"><td><p>Botadero a cielo abierto</p></td>
+<td><p>NO_CONTR_OD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coprocesamiento</p></td>
+<td><p>COPROC</p></td>
+</tr>
+<tr class="row-even"><td><p>Incineración controlada</p></td>
+<td><p>INCIN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Quema a cielo abierto</p></td>
+<td><p>OPEN_BURN</p></td>
+</tr>
+<tr class="row-even"><td><p>Disposición en sitios clandestinos</p></td>
+<td><p>SIT_CLAN</p></td>
+</tr>
+<tr class="row-odd"><td><p>Aprovechamiento del metano de rellenosanitario para generación de
+electricidad</p></td>
+<td><p>LANDFILL_ELEC</p></td>
+</tr>
+<tr class="row-even"><td><p>Aguas residuales domésticas componente (orgánico degradable)</p></td>
+<td><p>DWW_DC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Aguas residuales domésticas (nitrógeno)</p></td>
+<td><p>DWW_N</p></td>
+</tr>
+<tr class="row-even"><td><p>Aguas residuales industriales</p></td>
+<td><p>IWW</p></td>
+</tr>
+<tr class="row-odd"><td><p>Separación de residuos inorgánicos en sitio de disposición final</p></td>
+<td><p>OSS_INORG</p></td>
+</tr>
+<tr class="row-even"><td><p>Separación de residuos orgánicos en sitio de disposición final</p></td>
+<td><p>OSS_ORG</p></td>
+</tr>
+<tr class="row-odd"><td><p>No separación de residuos mezclados en sitio de disposición final</p></td>
+<td><p>NO_OSS_BLEND</p></td>
+</tr>
+<tr class="row-even"><td><p>No recolección de residuos sólidos en sitio de disposición final</p></td>
+<td><p>NO_OSS_NO_COLL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Recolección diferenciada de residuos inorgánicos</p></td>
+<td><p>INORG_DCOLL</p></td>
+</tr>
+<tr class="row-even"><td><p>Recolección diferenciada de residuos orgánicos</p></td>
+<td><p>ORG_DCOLL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Recolección no diferenciada de residuos mezclados</p></td>
+<td><p>BLEND_NO_DCOLL</p></td>
+</tr>
+<tr class="row-even"><td><p>No recolección de residuos sólidos</p></td>
+<td><p>BLEND_NO_COLL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Separación de residuos inorgánicos en la fuente</p></td>
+<td><p>INORG_SS</p></td>
+</tr>
+<tr class="row-even"><td><p>Separación de residuos orgánicos en la fuente</p></td>
+<td><p>ORG_SS</p></td>
+</tr>
+<tr class="row-odd"><td><p>No separación de residuos en la fuente</p></td>
+<td><p>NO_SS</p></td>
+</tr>
+<tr class="row-even"><td><p>Generación total de residuos sólidos</p></td>
+<td><p>T5TSWTSW</p></td>
+</tr>
+<tr class="row-odd"><td><p>Recuperación de metano a partir de residuos sólidos en relleno
+sanitario para generación de electricidad</p></td>
+<td><p>T5LANDFILL_ELECTSW</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Aguas residuales domésticas componente (orgánico degradable)</p></td>
+<td><p>T5DWW_DCWW</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Aguas residuales domésticas (nitrógeno)</p></td>
+<td><p>T5DWW_NWW</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Aguas residuales industriales</p></td>
+<td><p>T5IWWWW</p></td>
+</tr>
+<tr class="row-odd"><td><p>PTAR Emission reductions</p></td>
+<td><p>PTAR_ER</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabla 5: Commodities incluidos en el modelo OSeMOSYS del sector Residuos.</em></p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Descripción</p></th>
+<th class="head"><p>Código</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Residuos inorgánicos separados en el sitio de disposición final</p></td>
+<td><p>OSS_INORG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Residuos orgánicos separados en el sitio de disposición final</p></td>
+<td><p>OSS_ORG</p></td>
+</tr>
+<tr class="row-even"><td><p>Residuos no separados en el sitio de disposición final</p></td>
+<td><p>NO_OSS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Residuos en sitios de disposición final clandestinos no recolectados</p></td>
+<td><p>NO_COLL_SDF</p></td>
+</tr>
+<tr class="row-even"><td><p>Aprovechamiento del metano de relleno sanitario para generación de
+electricidad</p></td>
+<td><p>LANDFILL_ELEC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Aguas residuales domésticas componente (orgánico degradable)</p></td>
+<td><p>DWW_DC</p></td>
+</tr>
+<tr class="row-even"><td><p>Aguas residuales domésticas (nitrógeno)</p></td>
+<td><p>DWW_N</p></td>
+</tr>
+<tr class="row-odd"><td><p>Aguas residuales industriales</p></td>
+<td><p>IWW</p></td>
+</tr>
+<tr class="row-even"><td><p>Residuos inorgánicos recolectados</p></td>
+<td><p>COLL_INORG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Residuos orgánicos recolectados</p></td>
+<td><p>COLL_ORG</p></td>
+</tr>
+<tr class="row-even"><td><p>Residuos mezclados recolectados</p></td>
+<td><p>COLL_BLEND</p></td>
+</tr>
+<tr class="row-odd"><td><p>Residuos mezclados no recolectados</p></td>
+<td><p>NO_COLL</p></td>
+</tr>
+<tr class="row-even"><td><p>Residuos inorgánicos separados en la fuente</p></td>
+<td><p>INORGSS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Residuos orgánicos separados en la fuente</p></td>
+<td><p>ORGSS</p></td>
+</tr>
+<tr class="row-even"><td><p>Residuos no separados en la fuente</p></td>
+<td><p>NOSS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Residuos sólidos totales</p></td>
+<td><p>TSW</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Residuos sólidos totales</p></td>
+<td><p>E5TSWTSW</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Aprovechamiento del metano de rellenosanitario para
+generación de electricidad</p></td>
+<td><p>E5TSWLANDFILL_ELEC</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Aguas residuales domésticas componente (orgánico degradable)</p></td>
+<td><p>E5WWDWW_DC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demanda - Aguas residuales domésticas (nitrógeno)</p></td>
+<td><p>E5WWDWW_N</p></td>
+</tr>
+<tr class="row-even"><td><p>Demanda - Aguas residuales industriales</p></td>
+<td><p>E5WWIWW</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabla 6: Emisiones incluidas en el modelo OSeMOSYS del sector Residuos.</em></p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Descripción</p></th>
+<th class="head"><p>Código</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Óxido nitroso producido por el sector residuos</p></td>
+<td><p>N2O_WASTE</p></td>
+</tr>
+<tr class="row-odd"><td><p>Metano producido por el sector residuos</p></td>
+<td><p>CH4_WASTE</p></td>
+</tr>
+<tr class="row-even"><td><p>Dióxido de carbono producido por el sector residuos</p></td>
+<td><p>CO2_WASTE</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dióxido de carbono equivalente producido por el sector
+residuos</p></td>
+<td><p>CO2e_WASTE</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Modelo del Sector Residuos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="1_entradas.html" class="btn btn-neutral float-right" title="Datos de entrada del modelo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, ClimateLeadGroup.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
