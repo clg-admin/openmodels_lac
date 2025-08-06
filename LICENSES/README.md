@@ -11,8 +11,8 @@ Este directorio contiene las licencias originales de los proyectos vendorizados:
 - **PLAN MICC**  
   - Nombre en este repositorio: ECU
   - Licencia: MIT  
-  - Archivo: `simulador-de-fluidos_LICENSE`
-  - Enlace: [GitHub]() 
+  - Archivo: `ECU_NDC_LICENSE`
+  - Enlace: [GitHub](https://github.com/clg-admin/ECU_NDC.git) 
 
 - **GUA_LTS**  
   - Nombre en este repositorio: GUA

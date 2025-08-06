@@ -7,8 +7,8 @@
 
 | Proyecto original       | Folder renombre              | Versión         | Licencia   | Enlace                                              |
 | ------------------------------------- | --------------- | ---------- | --------------------------------------------------- |
-| ndc_cr    | CRI           | 2025-07-22 (commit `531117f`) | MIT        | https://github.com/clg-admin/ndc_cr.git       |
-# | Modelo Ecuador    | ECU     | 2025-07-22 (commit `a13d`) | MIT        | https:git       |
+| ndc_cr    | CRI           | 2025-08-06 (commit `f8157d9`) | MIT        | https://github.com/clg-admin/ndc_cr.git       |
+| ECU_NDC    | ECU     | 2025-03-31 (commit `ea7065d`) | MIT        | https:git       |
 | GUA_LTS    | GUA     | 2025-07-22 (commit `20bfa62`) | MIT        | https://github.com/clg-admin/GUA_LTS.git       |
 | ENDRCH-HON      | HND      | 2025-07-22 (commit `a28533f`) | MIT        | https://github.com/clg-admin/ENDRCH-HON.git       |
 | JMA-LTS     |JAM    | 2025-07-22 (commit `a1`) | MIT        | https://github.com/clg-admin/JAM-LTS.git       |
