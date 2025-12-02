@@ -43,9 +43,9 @@ li_output = [df_0_output]
 df_output = pd.concat(li_output, axis=0, ignore_index=True)
 df_output.sort_values(by=['Future.ID','Fuel','Technology','Emission','Year'], inplace=True)
 
-df_output=df_output.assign(Sector=np.NaN)
-df_output=df_output.assign(Description=np.NaN)
-df_output=df_output.assign(SpecificSector=np.NaN)
+df_output=df_output.assign(Sector=np.nan)
+df_output=df_output.assign(Description=np.nan)
+df_output=df_output.assign(SpecificSector=np.nan)
 
 
 libro = pd.ExcelFile('B1_Model_Structure.xlsx')

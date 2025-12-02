@@ -605,7 +605,7 @@ def data_processor( case, unpackaged_useful_elements ):
                     #
                     ref_var_position_index = output_header.index( this_variable )
                     #
-                    if 'Trains' not in group_tech and 'Telef' not in group_tech:
+                    if 'Trains' not in group_tech and 'Telef' not in group_tech and 'Bus_Efi' not in group_tech:
                         driven_distance = float(Reference_driven_distance[this_strategy][group_tech][this_year_index])
                         driven_distance_START_VAR_YR = \
                             float(Reference_driven_distance[this_strategy][group_tech][time_range_vector.index(START_VAR_YR_INT)])
@@ -1358,6 +1358,8 @@ def function_C_mathprog( scen, stable_scenarios, unpackaged_useful_elements ):
     #g.write('param TotalAnnualMinCapacityInvestment default 0 :=\n;\n')
     if scenario_list[scen] == BAU_STR:
         g.write('param TotalAnnualMinCapacity default 0 :=\n;\n')
+    #if scenario_list[scen] == "LTSNZ":
+        # g.write('param TotalAnnualMinCapacity default 0 :=\n;\n')
     # g.write('param TotalTechnologyAnnualActivityUpperLimit default 99999 :=\n;\n')
     g.write('param TotalTechnologyModelPeriodActivityLowerLimit default 0 :=\n;\n')
     g.write('param TotalTechnologyModelPeriodActivityUpperLimit default 999999999999999999999 :=\n;\n')
@@ -2185,6 +2187,7 @@ if __name__ == '__main__':
     base_configuration_overall = pd.read_excel( 'B1_Scenario_Config.xlsx', sheet_name='Overall_Parameters' )
     base_configuration_waste = pd.read_excel('B1_Scenario_Config.xlsx', sheet_name='Waste')
     base_configuration_ippu = pd.read_excel('B1_Scenario_Config.xlsx', sheet_name='IPPU')
+    base_configuration_EAR = pd.read_excel('B1_Scenario_Config.xlsx', sheet_name='EmissionsActivityRatio')
     base_configuration_distance = pd.read_excel( 'B1_Scenario_Config.xlsx', sheet_name='Distance_Levers' )
     base_configuration_modeshift = pd.read_excel( 'B1_Scenario_Config.xlsx', sheet_name='Mode_Shift' )
     base_configuration_or = pd.read_excel( 'B1_Scenario_Config.xlsx', sheet_name='Occupancy_Rate' )
@@ -2292,7 +2295,7 @@ if __name__ == '__main__':
         base_configuration_modeshift_group_set_list.append( str( base_configuration_modeshift.loc[ n ,'Tech_Set'] ) )
         modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ].update( { base_configuration_modeshift_group_set_list[-1]:{} } )
         #
-        if str( base_configuration_modeshift.loc[ n ,'Logistic'] ) == 'YES' and str( base_configuration_modeshift.loc[ n ,'Linear'] ) == 'NO':
+        if str( base_configuration_modeshift.loc[ n ,'Logistic'] ) == 'YES' and str( base_configuration_modeshift.loc[ n ,'Linear'] ) == 'NO' and str( base_configuration_modeshift.loc[ n ,'Exact'] ) == 'NO':
             modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ].update( {'Values':[],'Type':'Logistic'} ) # WE MUST REMEMBER THE ORDER OF APPENDING THE PARAMETERS OF LOGISTIC BEHAVIOR: R2021, R2050, L, C, M
             modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ].update( { 'Context':base_configuration_modeshift.loc[ n ,'Context'] } )
             #
@@ -2303,7 +2306,7 @@ if __name__ == '__main__':
             modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ][ 'Values' ].append( float( base_configuration_modeshift.loc[ n ,'M'] ) )
             #
         #
-        elif str( base_configuration_modeshift.loc[ n ,'Logistic'] ) == 'NO' and str( base_configuration_modeshift.loc[ n ,'Linear'] ) == 'YES':
+        elif str( base_configuration_modeshift.loc[ n ,'Logistic'] ) == 'NO' and str( base_configuration_modeshift.loc[ n ,'Linear'] ) == 'YES' and str( base_configuration_modeshift.loc[ n ,'Exact'] ) == 'NO':
             modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ].update( {'Values':[], 'Type':'Linear'} ) # WE MUST REMEMBER THE ORDER OF APPENDING THE PARAMETERS OF LINEAR BEHAVIOR: y_ini, v_2030, v_2040, v_2050
             modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ].update( { 'Context':base_configuration_modeshift.loc[ n ,'Context'] } )
             #
@@ -2313,12 +2316,31 @@ if __name__ == '__main__':
             modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ][ 'Values' ].append( base_configuration_modeshift.loc[ n ,'v_2050'] )
             #
         #
-        elif str( base_configuration_modeshift.loc[ n ,'Built-in'] ) == 'YES':
+        elif str( base_configuration_modeshift.loc[ n ,'Built-in'] ) == 'YES' and str( base_configuration_modeshift.loc[ n ,'Exact'] ) == 'NO':
             modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ].update( {'Values':'Check_Cap', 'Type':'Built-in'} ) # WE MUST REMEMBER TO MAKE REFERENCE
             modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ].update( { 'Context':base_configuration_modeshift.loc[ n ,'Context'] } )
             #
         #
+        elif str( base_configuration_modeshift.loc[ n ,'Logistic'] ) == 'NO' and str( base_configuration_modeshift.loc[ n ,'Linear'] ) == 'YES' and str( base_configuration_modeshift.loc[ n ,'Exact'] ) == 'YES':
+            modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ].update( {'Values':[], 'Values_Exact':[], 'Type':'Exact'} ) # WE MUST REMEMBER THE ORDER OF APPENDING THE PARAMETERS OF LINEAR BEHAVIOR: y_ini, v_2030, v_2040, v_2050
+            modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ].update( { 'Context':base_configuration_modeshift.loc[ n ,'Context'] } )
+            #
+            modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ][ 'Values' ].append( float( base_configuration_modeshift.loc[ n ,'y_ini'] ) )
+            modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ][ 'Values' ].append( base_configuration_modeshift.loc[ n ,'v_2030'] )
+            modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ][ 'Values' ].append( base_configuration_modeshift.loc[ n ,'v_2040'] )
+            modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ][ 'Values' ].append( base_configuration_modeshift.loc[ n ,'v_2050'] )
+            #
+            for year in range(2018, 2035+1):
+                modeshift_params[ base_configuration_modeshift_unique_scenario_list[-1] ][ base_configuration_modeshift_group_set_list[-1] ][ 'Values_Exact' ].append(
+                    base_configuration_modeshift.loc[n, int(year)]
+                )
+            #
+        #
     #
+    
+    print('Review the modeshift params #1')
+    # sys.exit()
+    
     ####################################################################################################################################################
     # 3 - OCCUPANCY RATE DICTIONARY:
     or_params = {}
@@ -2382,7 +2404,7 @@ if __name__ == '__main__':
     ##########################################################################
     '''
     transport_group_sets = list( Fleet_Groups.keys() )
-    transport_group_sets = [ i for i in transport_group_sets if 'Train' not in i and 'Telef' not in i]
+    transport_group_sets = [ i for i in transport_group_sets if 'Train' not in i and 'Telef' not in i and 'Bus_Efi' not in i]
     Reference_driven_distance = {}
     Reference_occupancy_rate = {}
     Reference_op_life = {}
@@ -2460,6 +2482,9 @@ if __name__ == '__main__':
         lfre_range_indices = [ i for i, x in enumerate( stable_scenarios[ scenario_list[s] ][ 'SpecifiedAnnualDemand' ][ this_set_type_initial ] ) if x == str( LIGHT_FREIGHT_TRANSPORT_DEMAND_STR ) ]
         #
         # We will need to store the BAU data for later use.
+        TRADITIONAL_BOOL = False
+        TRADITIONAL_BOOL_BYPASS = True
+        # if (scenario_list[s] == BAU_STR and TRADITIONAL_BOOL) or TRADITIONAL_BOOL_BYPASS:
         if scenario_list[s] == BAU_STR:
             #
             passpub_values = deepcopy( stable_scenarios[ scenario_list[s] ][ 'SpecifiedAnnualDemand' ]['value'][ passpub_range_indices[0]:passpub_range_indices[-1]+1 ] )
@@ -2480,6 +2505,7 @@ if __name__ == '__main__':
             ref_pass_priv_shares    = [ float(passpriv_values[n])/Total_Demand[n] for n in range( len( time_range_vector ) ) ]
             ref_nonmotorized_shares = [ float(nonmotorized_values[n])/Total_Demand[n] for n in range( len( time_range_vector ) ) ]
         #
+        # if TRADITIONAL_BOOL_BYPASS:
         else:
             ###################################################################################################
             ### BLOCK 3: modify mode_shift ###
@@ -2491,6 +2517,9 @@ if __name__ == '__main__':
                     applicable_sets_demand.append( this_set )
                 elif modeshift_params[ scenario_list[s] ][ this_set ][ 'Context' ] == 'Technology':
                     applicable_sets_tech.append( this_set )
+
+            print('Review the modeshift params #2')
+            # sys.exit()
 
             # Now we perform the adjustment of the system, after having modified the demand:
             for a_set in range( len( applicable_sets_demand ) ): # FLAG: in the future we must consider non-logistic behaviors
@@ -2578,6 +2607,7 @@ if __name__ == '__main__':
 
             #
             adjust_with_rail = False
+            applicable_sets_tech_sum = [0 for i in time_range_vector]
             for a_set in range( len( applicable_sets_tech ) ): # REMEMBER THIS IS A CHANGE FUNCTION
                 this_set = applicable_sets_tech[ a_set ]
                 if 'Techs' not in this_set:
@@ -2598,33 +2628,73 @@ if __name__ == '__main__':
                 this_demand_set_value = deepcopy( stable_scenarios[ scenario_list[ s ] ][ 'SpecifiedAnnualDemand' ]['value'][ this_demand_set_range_indices[0]:this_demand_set_range_indices[-1]+1 ] )
                 this_demand_set_value = [ float(this_demand_set_value[j]) for j in range( len( time_range_vector ) ) ]
                 #
-                if modeshift_params[ scenario_list[s] ][ this_set ][ 'Type' ] == 'Linear':
-                    y_ini = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 0 ]
-                    v_2030 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 1 ]
-                    v_2040 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 2 ]                
-                    v_2050 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 3 ]
+                print('Review the modeshift params #3')
+                # sys.exit()
+
+
+                
+                if modeshift_params[ scenario_list[s] ][ this_set ][ 'Type' ] == 'Linear' or modeshift_params[ scenario_list[s] ][ this_set ][ 'Type' ] == 'Exact':
+                    
+                    if modeshift_params[ scenario_list[s] ][ this_set ][ 'Type' ] == 'Linear':
+                        y_ini = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 0 ]
+                        v_2030 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 1 ]
+                        v_2040 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 2 ]                
+                        v_2050 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 3 ]
+                        #
+                        x_coord_tofill, xp_coord_known, yp_coord_known = [], [], []
+                        for y in range( len( time_range_vector ) ):
+                            not_known_e = True
+                            if time_range_vector[y] <= y_ini:
+                                xp_coord_known.append( y )
+                                yp_coord_known.append( 0 )
+                                not_known_e = False
+                            if v_2030 != 'interp' and time_range_vector[y] == 2030:
+                                xp_coord_known.append( y )
+                                yp_coord_known.append( v_2030 )
+                                not_known_e = False
+                            if v_2040 != 'interp' and time_range_vector[y] == 2040:
+                                xp_coord_known.append( y )
+                                yp_coord_known.append( v_2040 )
+                                not_known_e = False
+                            if v_2050 != 'interp' and time_range_vector[y] == 2050:
+                                xp_coord_known.append( y )
+                                yp_coord_known.append( v_2050 )
+                                not_known_e = False
+                            if not_known_e == True:
+                                x_coord_tofill.append( y )
+                                #
+                            #
+                        #
                     #
-                    x_coord_tofill, xp_coord_known, yp_coord_known = [], [], []
-                    for y in range( len( time_range_vector ) ):
-                        not_known_e = True
-                        if time_range_vector[y] <= y_ini:
-                            xp_coord_known.append( y )
-                            yp_coord_known.append( 0 )
-                            not_known_e = False
-                        if v_2030 != 'interp' and time_range_vector[y] == 2030:
-                            xp_coord_known.append( y )
-                            yp_coord_known.append( v_2030 )
-                            not_known_e = False
-                        if v_2040 != 'interp' and time_range_vector[y] == 2040:
-                            xp_coord_known.append( y )
-                            yp_coord_known.append( v_2040 )
-                            not_known_e = False
-                        if v_2050 != 'interp' and time_range_vector[y] == 2050:
-                            xp_coord_known.append( y )
-                            yp_coord_known.append( v_2050 )
-                            not_known_e = False
-                        if not_known_e == True:
-                            x_coord_tofill.append( y )
+                    elif modeshift_params[ scenario_list[s] ][ this_set ][ 'Type' ] == 'Exact':
+                        # y_ini = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 0 ]
+                        # v_2030 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 1 ]
+                        v_2040 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 2 ]                
+                        v_2050 = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values' ][ 3 ]
+                        #
+                        values_exact_list = modeshift_params[ scenario_list[s] ][ this_set ][ 'Values_Exact' ]
+                        #
+                        x_coord_tofill, xp_coord_known, yp_coord_known = [], [], []
+                        for y in range( len( time_range_vector ) ):
+                            not_known_e = True
+                            if time_range_vector[y] <= 2035:
+                                xp_coord_known.append( y )
+                                yp_coord_known.append( float(values_exact_list[y]) )
+                                not_known_e = False
+                            # if v_2030 != 'interp' and time_range_vector[y] == 2030:
+                            #     xp_coord_known.append( y )
+                            #     yp_coord_known.append( v_2030 )
+                            #     not_known_e = False
+                            if v_2040 != 'interp' and time_range_vector[y] == 2040:
+                                xp_coord_known.append( y )
+                                yp_coord_known.append( v_2040 )
+                                not_known_e = False
+                            if v_2050 != 'interp' and time_range_vector[y] == 2050:
+                                xp_coord_known.append( y )
+                                yp_coord_known.append( v_2050 )
+                                not_known_e = False
+                            if not_known_e == True:
+                                x_coord_tofill.append( y )
                     #
                     y_coord_filled = list( np.interp( x_coord_tofill, xp_coord_known, yp_coord_known ) )
                     interpolated_values = []
@@ -2636,14 +2706,49 @@ if __name__ == '__main__':
                             value_index = x_coord_tofill.index(coord)
                             interpolated_values.append( float( y_coord_filled[value_index] ) )
                     #
-                    new_value_range_set_group = [ float( value_range_set_group[j] ) + interpolated_values[j]*this_demand_set_value[j] for j in range( len( time_range_vector ) ) ]
+                    '''
+                    # Take demand values in percentage of demand
+                    BOOL_PERC_VAL = True/False
+                    vs.
+                    # Take demand values directly.
+                    BOOL_DEM_VAL_DIR = True/False
+                    '''
+                    BOOL_PERC_VAL, BOOL_DEM_VAL_DIR = False, True
+                    if (BOOL_PERC_VAL is True) and (BOOL_DEM_VAL_DIR is False):
+                        new_value_range_set_group = [ float( value_range_set_group[j] ) + interpolated_values[j]*this_demand_set_value[j] for j in range( len( time_range_vector ) ) ]
+                    elif (BOOL_PERC_VAL is False) and (BOOL_DEM_VAL_DIR is True):
+                        new_value_range_set_group = [ float( value_range_set_group[j] ) + interpolated_values[j] for j in range( len( time_range_vector ) ) ]
+                    else:
+                        print('Undefined condition to assign rail values.')
+                        sys.exit()
                     new_value_range_set_group_rounded = [ round(elem, 4) for elem in new_value_range_set_group ]
                     #
+                    applicable_sets_tech_sum = [i+j for i, j in zip(applicable_sets_tech_sum, new_value_range_set_group_rounded)]
+                    #
+
+                    # if this_set == 'Techs_Telef' and scenario_list[s] != 'BAU':
+                    # if this_set == 'Techs_Trains' and scenario_list[s] != 'BAU':
+                    #    print('Review the modeshift params #4a')
+                    #    sys.exit()
+
+                    stable_scenarios[ scenario_list[ s ] ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices[0]:this_set_group_range_indices[-1]+1 ] = deepcopy( new_value_range_set_group_rounded )
+                    stable_scenarios[ scenario_list[ s ] ][ 'TotalTechnologyAnnualActivityLowerLimit' ]['value'][ this_set_group_range_indices_lm[0]:this_set_group_range_indices_lm[-1]+1 ] = deepcopy( new_value_range_set_group_rounded )
+
+                    # if this_set == 'Techs_Telef' and scenario_list[s] != 'BAU':
+                    if this_set == 'Techs_Bus_Efi' and scenario_list[s] != 'BAU':
+                        print('Review the modeshift params #4')
+                        # sys.exit()
+                    
                     # Store the value of train rail (freight) below
-                    BOOL_ADJUST_COMPLEMENTS = True
+                    BOOL_ADJUST_COMPLEMENTS = False
+                    if len( applicable_sets_tech ) -1 == a_set:
+                        BOOL_ADJUST_COMPLEMENTS = True
+                    #
                     if BOOL_ADJUST_COMPLEMENTS:
-                        stable_scenarios[ scenario_list[ s ] ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices[0]:this_set_group_range_indices[-1]+1 ] = deepcopy( new_value_range_set_group_rounded )
-                        stable_scenarios[ scenario_list[ s ] ][ 'TotalTechnologyAnnualActivityLowerLimit' ]['value'][ this_set_group_range_indices_lm[0]:this_set_group_range_indices_lm[-1]+1 ] = deepcopy( new_value_range_set_group_rounded )
+                        #
+
+                        print('Review the modeshift params #5')
+                        # sys.exit()
 
                         for this_parameter in [ 'TotalAnnualMaxCapacity', 'TotalTechnologyAnnualActivityLowerLimit' ]:
                             # We must adjust the capacity of the complementary sets:
@@ -2652,16 +2757,40 @@ if __name__ == '__main__':
                                     'Techs_Trains_Freight':['Techs_He_Freight']}
                                 this_set_complement_vals_rel_100 = {
                                     'Techs_He_Freight':100}
-                            if this_set in ['Techs_Telef', 'Techs_Trains']:
+                            if this_set in ['Techs_Telef', 'Techs_Trains', 'Techs_Bus_Efi']:
                                 if this_set == 'Techs_Telef':
                                     this_set_complement_dict = {
                                         'Techs_Telef':['Techs_Buses_Pub', 'Techs_Buses_Micro']}
                                 if this_set == 'Techs_Trains':
                                     this_set_complement_dict = {
                                         'Techs_Trains':['Techs_Buses_Pub', 'Techs_Buses_Micro']}
+                                '''
+                                if this_set == 'Techs_Bus_Efi':
+                                    this_set_complement_dict = {
+                                        'Techs_Bus_Efi':['Techs_Buses_Pub', 'Techs_Buses_Micro']}
                                 this_set_complement_vals_rel_100 = {
-                                    'Techs_Buses_Pub': 34.20,
-                                    'Techs_Buses_Micro': 65.80
+                                    'Techs_Buses_Pub': 10.7325,
+                                    'Techs_Buses_Micro': 100
+                                    }
+                                '''
+                                if this_set == 'Techs_Bus_Efi':
+                                    this_set_complement_dict = {
+                                        'Techs_Bus_Efi':['Techs_Auto',
+                                                         'Techs_Buses_Micro',
+                                                         'Techs_Buses_Pub',
+                                                         'Techs_Buses_Tur',
+                                                         'Techs_Motos',
+                                                         'Techs_SUV',
+                                                         'Techs_Taxi'
+                                                         ]}
+                                this_set_complement_vals_rel_100 = {
+                                    'Techs_Auto': 15.5,
+                                    'Techs_Buses_Micro': 5,
+                                    'Techs_Buses_Pub': 0,
+                                    'Techs_Buses_Tur': 0,
+                                    'Techs_Motos': 70.7,
+                                    'Techs_SUV': 8.5,
+                                    'Techs_Taxi': 0.3,
                                     }
 
                             for acomp in range(len(this_set_complement_dict[this_set])):
@@ -2688,11 +2817,22 @@ if __name__ == '__main__':
                                     if time_range_vector[y] < Initial_Year_of_Uncertainty:
                                         new_value_list_comp.append(value_list_complement[y])
                                     else:
-                                        new_value_list_comp.append(
-                                            security_multiplier_factor*this_set_complement_adj_val*(this_demand_set_value[y] - new_value_range_set_group_rounded[y])/or_group_tech_values[y])
+                                        DEMAND_MOTHER_ADJ = False # if this one was True, we can't adjust multiple transport technologies
+                                        if DEMAND_MOTHER_ADJ:
+                                            new_value_list_comp.append(
+                                                security_multiplier_factor*this_set_complement_adj_val*(this_demand_set_value[y] - applicable_sets_tech_sum[y])/or_group_tech_values[y])
+                                                # security_multiplier_factor*this_set_complement_adj_val*(this_demand_set_value[y] - new_value_range_set_group_rounded[y])/or_group_tech_values[y])
+                                        else:
+                                            new_value_list_comp.append(
+                                                security_multiplier_factor*(value_list_complement[y] - ((this_set_complement_adj_val * applicable_sets_tech_sum[y])/or_group_tech_values[y])))
                                 # Store the value of trucks (after change) below
                                 new_value_list_comp_rounded = [ round(elem, 4) for elem in new_value_list_comp ]
                                 stable_scenarios[scenario_list[s]][ this_parameter ]['value'][ this_set_complement_indices[0]:this_set_complement_indices[-1]+1 ] = deepcopy( new_value_list_comp_rounded )
+
+                        # Is this operating?
+                        # print('Check whether this chunk does the rail analysis (0)')
+                        # sys.exit()
+
 
                     # Is this operating?
                     # print('Check whether this chunk does the rail analysis (1)')
@@ -2746,7 +2886,15 @@ if __name__ == '__main__':
             tourism_range_indices = [ i for i, x in enumerate( stable_scenarios[ scenario_list[s] ][ 'SpecifiedAnnualDemand' ][ 'f' ] ) if x == str( 'E6TDPASTUR' ) ]
             tourism_values = deepcopy( stable_scenarios[ scenario_list[s] ][ 'SpecifiedAnnualDemand' ]['value'][ tourism_range_indices[0]:tourism_range_indices[-1]+1 ] )
 
-            new_value_list_PRIV = [ Total_Demand[n] - new_value_list_PUB_rounded[n] - new_value_list_NOMOT_rounded[n] - float(tourism_values[n]) for n in range( len( time_range_vector ) ) ]
+            try:
+                new_value_list_PRIV = [ Total_Demand[n] - new_value_list_PUB_rounded[n] - new_value_list_NOMOT_rounded[n] - float(tourism_values[n]) for n in range( len( time_range_vector ) ) ]
+            except Exception:
+                new_value_list_PUB = []
+                for n in range( len( time_range_vector ) ):               
+                    new_value_list_PUB.append( ( ref_pass_pub_shares[n] * Total_Demand[n] ) ) # - ref_value_range_RAILACTIVITY[n] )
+                new_value_list_PUB_rounded = [ round(elem, 4) for elem in new_value_list_PUB ]
+                new_value_list_PRIV = [ Total_Demand[n] - new_value_list_PUB_rounded[n] - new_value_list_NOMOT_rounded[n] - float(tourism_values[n]) for n in range( len( time_range_vector ) ) ]
+
             new_value_list_PRIV_rounded = [ round(elem, 4) for elem in new_value_list_PRIV ]
             #
             # Assign parameters back: for these subset of uncertainties
@@ -2755,6 +2903,18 @@ if __name__ == '__main__':
             stable_scenarios[ scenario_list[s] ][ 'SpecifiedAnnualDemand' ]['value'][ nonmotorized_range_indices[0]:nonmotorized_range_indices[-1]+1 ] = deepcopy( new_value_list_NOMOT_rounded )
             #
         #
+
+        this_set_group_range_indices = [ i for i, x in enumerate( stable_scenarios[ scenario_list[ s ] ][ 'TotalAnnualMaxCapacity' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]  # Techs_Telef
+        this_set_group_range_indices_lm = [ i for i, x in enumerate( stable_scenarios[ scenario_list[ s ] ][ 'TotalTechnologyAnnualActivityLowerLimit' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]
+        value_range_set_group = deepcopy( stable_scenarios[ scenario_list[ s ] ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices[0]:this_set_group_range_indices[-1]+1 ] )
+        value_range_set_group_lm = deepcopy( stable_scenarios[ scenario_list[ s ] ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices_lm[0]:this_set_group_range_indices_lm[-1]+1 ] )
+        print(value_range_set_group)
+        print(value_range_set_group_lm)
+
+        if scenario_list[s] == 'NDCcond':
+            print('Check this out!')
+            # sys.exit()
+
         ### BLOCK 4: call and modify the occupancy rate ###
         this_set_type_initial = S_DICT_sets_structure['initial'][ S_DICT_sets_structure['set'].index('TECHNOLOGY') ]
         if scenario_list[s] == BAU_STR:
@@ -2772,14 +2932,28 @@ if __name__ == '__main__':
                 new_value_list = deepcopy( interpolation_non_linear_final_flexible( time_range_vector, ref_or_values[ transport_group_sets[g] ] , or_params[ scenario_list[s] ][ transport_group_sets[g] ], Initial_Year_of_Uncertainty ) )
                 new_value_list_rounded = [ round(elem, 4) for elem in new_value_list ]
                 stable_scenarios[ scenario_list[s] ][ 'OutputActivityRatio' ]['value'][ or_indices[0]:or_indices[-1]+1 ] = deepcopy( new_value_list_rounded )
+
+        # this_set_group_range_indices = [ i for i, x in enumerate( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]  # Techs_Telef
+        # this_set_group_range_indices_lm = [ i for i, x in enumerate( stable_scenarios[ 'NDCcond' ][ 'TotalTechnologyAnnualActivityLowerLimit' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]
+        # value_range_set_group = deepcopy( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices[0]:this_set_group_range_indices[-1]+1 ] )
+        # value_range_set_group_lm = deepcopy( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices_lm[0]:this_set_group_range_indices_lm[-1]+1 ] )
+        if scenario_list[s] == 'NDCcond':
+            print(value_range_set_group)
+            print(value_range_set_group_lm)
+    
+            print('Check this out! -2')
+            # sys.exit()
+
         #
         ### BLOCK 5: call and re-establish the capacity variables of group techs after modal shift change AND occupancy rate change ###
         this_set_type_initial = S_DICT_sets_structure['initial'][ S_DICT_sets_structure['set'].index('TECHNOLOGY') ]
         capacity_variables = [ 'TotalAnnualMaxCapacity', 'TotalTechnologyAnnualActivityLowerLimit' ]
         #
         # We must call the group techs and calculate the passenger kilometers provided by each tech, then store the share relative to the demand
+        DIST_TRN_BAU = False
         for capvar in range( len( capacity_variables ) ):
             #
+            accum_pri_demand = [0 for n in range( len( time_range_vector ) )]
             for g in range( len( group_tech_PRIVATE ) ):
                 #
                 cap_indices = [ i for i, x in enumerate( stable_scenarios[ scenario_list[s] ][ capacity_variables[capvar] ][ this_set_type_initial ] ) if x == str( group_tech_PRIVATE[g] ) ]
@@ -2804,7 +2978,7 @@ if __name__ == '__main__':
                     #
                     relative_pkm_to_demand[ capacity_variables[capvar] ].update( { group_tech_PRIVATE[g]:this_pkm_share_rounded } )
                 #
-                else: # if scenario_list[s] in ['NDP','NDP_A','OP15C']: # we must apply the same distribution of transport in pkm as in the BAU, considering the new demands. The variable to modify is the capacity.
+                elif DIST_TRN_BAU: # if scenario_list[s] in ['NDP','NDP_A','OP15C']: # we must apply the same distribution of transport in pkm as in the BAU, considering the new demands. The variable to modify is the capacity.
                     #
                     apply_these_shares = relative_pkm_to_demand[ capacity_variables[capvar] ][ group_tech_PRIVATE[g] ]
                     new_cap_values = [ apply_these_shares[n]*demand_values[n]/or_values[n] for n in range( len( time_range_vector ) ) ]
@@ -2812,7 +2986,13 @@ if __name__ == '__main__':
                     #
                     stable_scenarios[ scenario_list[s] ][ capacity_variables[capvar] ]['value'][ cap_indices[0]:cap_indices[-1]+1 ] = deepcopy( new_cap_values_rounded )
                     #
+                if DIST_TRN_BAU is False:
+                    # This means DIST_TRN_BAU is false and that we need to re-caclulate the demand of private and public transport
+                    local_pri_demand = new_pri_dem_values = [ (1/1.006)*cap_values[n]*or_values[n] for n in range( len( time_range_vector ) ) ]
+                    accum_pri_demand = [i+j for i, j in zip(accum_pri_demand, local_pri_demand)]
                 #
+            if DIST_TRN_BAU is False and capvar == 0:
+                stable_scenarios[ scenario_list[s] ][ 'SpecifiedAnnualDemand' ]['value'][ demand_indices[0]:demand_indices[-1]+1 ] = deepcopy( accum_pri_demand )
             #----------------------------------------------------------------------------------------------------------------------------------------------------------
             for g in range( len( group_tech_PUBLIC ) ):
                 #
@@ -2852,7 +3032,10 @@ if __name__ == '__main__':
                         relative_pkm_to_demand_nonrail[ capacity_variables[capvar] ].update( { group_tech_PUBLIC[g]:this_pkm_share_rounded } )
                     #
                 #
-                else: # we must apply the same distribution of transport in pkm as in the BAU, considering the new demands. The variable to modify is the capacity.
+                elif DIST_TRN_BAU: # we must apply the same distribution of transport in pkm as in the BAU, considering the new demands. The variable to modify is the capacity.
+                    '''
+                    Note: in this version, the code below does nto work, and thus this DIST_TRN_BAU must always be false for this version to work.
+                    '''    
                     #
                     if adjust_with_rail == False:
                         or_values = deepcopy( stable_scenarios[ scenario_list[s] ][ 'OutputActivityRatio' ]['value'][ or_indices[0]:or_indices[-1]+1 ] )
@@ -2948,6 +3131,17 @@ if __name__ == '__main__':
                         new_cap_values_rounded = [ round(elem, 4) for elem in new_cap_values ]
                         #
                         stable_scenarios[ scenario_list[s] ][ capacity_variables[capvar] ]['value'][ cap_indices[0]:cap_indices[-1]+1 ] = deepcopy( new_cap_values_rounded )
+
+        # this_set_group_range_indices = [ i for i, x in enumerate( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]  # Techs_Telef
+        # this_set_group_range_indices_lm = [ i for i, x in enumerate( stable_scenarios[ 'NDCcond' ][ 'TotalTechnologyAnnualActivityLowerLimit' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]
+        # value_range_set_group = deepcopy( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices[0]:this_set_group_range_indices[-1]+1 ] )
+        # value_range_set_group_lm = deepcopy( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices_lm[0]:this_set_group_range_indices_lm[-1]+1 ] )
+        if scenario_list[s] == 'NDCcond':
+            print(value_range_set_group)
+            print(value_range_set_group_lm)
+    
+            print('Check this out! -1')
+            # sys.exit()
 
         #########################################################################################
         ### BLOCK 6: modify demand ###
@@ -3047,6 +3241,68 @@ if __name__ == '__main__':
                                     stable_scenarios[scenario_list[s]][param_list[p]]['e'].append(set_item)
                                     stable_scenarios[scenario_list[s]][param_list[p]]['y'].append(str(time_range_vector[ite]))
                                     stable_scenarios[scenario_list[s]][param_list[p]]['value'].append(value_list_new_vals[ite])
+
+        # EmissionsActivityRatio
+        if scenario_list[s] in list(set(base_configuration_EAR['Scenario'].tolist())):            
+            ''' MODIFYING *base_configuration_EAR* '''
+            this_scenario_df = deepcopy(base_configuration_EAR.loc[base_configuration_EAR['Scenario'].isin([scenario_list[s]])])
+
+            # Reset index for the filtered DataFrame and drop the old index
+            this_scenario_df.reset_index(drop=True, inplace=True)
+            
+            this_scenario_df_indices_list = this_scenario_df.index.tolist()         
+            #
+            for i in range(len(this_scenario_df_indices_list)):
+                #
+                set_item = this_scenario_df['Set'].tolist()[i]
+                EAR_Params_setIndex = this_scenario_df['Set_Index'].tolist()[i]
+                set_item2 = this_scenario_df['Set2'].tolist()[i]
+                EAR_Params_setIndex2 = this_scenario_df['Set_Index2'].tolist()[i]
+                #
+                EAR_Params_built_in = this_scenario_df['Built-in Parameter-Set'].tolist()[i]
+                EAR_Params_reference = this_scenario_df['Reference'].tolist()[i]
+                EAR_Params_method = this_scenario_df['Method'].tolist()[i]
+                
+                #
+                param_list = this_scenario_df['Parameter'].tolist()[i].split(' ; ')
+                param_str = this_scenario_df['Parameter'].tolist()[i]
+
+                for p in range(len(param_list)):
+                    
+                    this_emission = set_item2
+                    this_scenario_set_param_df = this_scenario_df.loc[(this_scenario_df['Parameter'] == param_str) & (this_scenario_df['Set'] == set_item) & (this_scenario_df['Set2'] == set_item2)]
+
+                    if EAR_Params_method == 'Exact': # only modify demands and capacities if this is turned on
+                        value_list_new_vals = []
+                        this_index = this_scenario_set_param_df.index.tolist()[0]
+                        for y in range(len(time_range_vector)):
+                            value_list_new_vals.append(this_scenario_set_param_df.loc[this_index, time_range_vector[y]])
+                        #
+                        # OBTAINED VALUES, NOW PRINTING
+                        if EAR_Params_built_in == 'YES':
+                            # this_param_indices = [i for i, x in enumerate(stable_scenarios[scenario_list[s]][param_list[p]][EAR_Params_setIndex]) if x == set_item]
+                            # this_param_indices2 = [i for i, x in enumerate(stable_scenarios[scenario_list[s]][param_list[p]][EAR_Params_setIndex2]) if x == set_item2]
+                            this_param_indices = list()
+                            for itera in range(len(stable_scenarios[ scenario_list[ s ] ][ param_list[p] ][ EAR_Params_setIndex ])):
+                                if stable_scenarios[ scenario_list[ s ] ][ param_list[p] ][ EAR_Params_setIndex ][itera] == str( set_item ) and stable_scenarios[ scenario_list[ s ] ][ param_list[p] ][ EAR_Params_setIndex2 ][itera] == str( set_item2 ):
+                                    this_param_indices.append(itera)
+                            
+                            value_list = deepcopy(stable_scenarios[scenario_list[s]][param_list[p]]['value'][this_param_indices[0]:this_param_indices[-1]+1])
+                            value_list = [float(e) for e in value_list]
+                            #
+                            new_value_list = [round(value_list_new_vals[e], 4) for e in range(len(value_list))]
+                            stable_scenarios[scenario_list[s]][param_list[p]]['value'][this_param_indices[0]:this_param_indices[-1]+1] = deepcopy(new_value_list)
+
+        # this_set_group_range_indices = [ i for i, x in enumerate( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]  # Techs_Telef
+        # this_set_group_range_indices_lm = [ i for i, x in enumerate( stable_scenarios[ 'NDCcond' ][ 'TotalTechnologyAnnualActivityLowerLimit' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]
+        # value_range_set_group = deepcopy( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices[0]:this_set_group_range_indices[-1]+1 ] )
+        # value_range_set_group_lm = deepcopy( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices_lm[0]:this_set_group_range_indices_lm[-1]+1 ] )
+        if scenario_list[s] == 'NDCcond':
+            print(value_range_set_group)
+            print(value_range_set_group_lm)
+    
+            print('Check this out! 1')
+            # sys.exit()
 
         # Transport
         if scenario_list[s] in list(set(base_configuration_transport_elasticity['Scenario'].tolist())):            
@@ -3225,6 +3481,18 @@ if __name__ == '__main__':
         # print('Check up until here 2')
         # sys.exit()
 
+        # this_set_group_range_indices = [ i for i, x in enumerate( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]  # Techs_Telef
+        # this_set_group_range_indices_lm = [ i for i, x in enumerate( stable_scenarios[ 'NDCcond' ][ 'TotalTechnologyAnnualActivityLowerLimit' ][ 't' ] ) if x == str( 'Techs_Bus_Efi' ) ]
+        # value_range_set_group = deepcopy( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices[0]:this_set_group_range_indices[-1]+1 ] )
+        # value_range_set_group_lm = deepcopy( stable_scenarios[ 'NDCcond' ][ 'TotalAnnualMaxCapacity' ]['value'][ this_set_group_range_indices_lm[0]:this_set_group_range_indices_lm[-1]+1 ] )
+        if scenario_list[s] == 'NDCcond':
+            print(value_range_set_group)
+            print(value_range_set_group_lm)
+    
+            print('Check this out! 2')
+            # sys.exit()
+
+
         ### BLOCK 7: define the *vehicle/ind_tech fuel tech* composition for each scenario ###
         # NOTE: check whether the scenario is contained in the system dictionary:
         if scenario_list[s] in list( set( list( adoption_params.keys() ) ) ):
@@ -3393,9 +3661,20 @@ if __name__ == '__main__':
                                     adoption_shift[y] = 0
 
                     #**********************************************************************
+                    # Let us grab the Residual Capacity and add it up to the "new_value_list"
+                    rescap_set_range_indices = [ i for i, x in enumerate( stable_scenarios[ scenario_list[ s ] ][ 'ResidualCapacity' ][ 't' ] ) if x == str( this_set ) ]
+                    if len(rescap_set_range_indices) != 0:
+                        print('Actually happens for: ', this_set)
+                        rescap_value_list = stable_scenarios[ scenario_list[s] ][ 'ResidualCapacity' ]['value'][ rescap_set_range_indices[0]:rescap_set_range_indices[-1]+1 ]
+                        rescap_value_list = [ float( rescap_value_list[j] ) for j in range( len( rescap_value_list ) ) ]
+                        if 'ELE' in this_set:
+                            use_rescap_value_list = deepcopy(rescap_value_list)
+                        else:
+                            use_rescap_value_list = [0]*len(rescap_value_list)
+
                     new_value_list = []
                     for n in range( len( time_range_vector ) ):
-                        new_value_list.append( security_multiplier_factor*adoption_shift[n]*group_value_list[n] )
+                        new_value_list.append( security_multiplier_factor*adoption_shift[n]*group_value_list[n] + security_multiplier_factor*use_rescap_value_list[n])
                         new_value_list_rounded = [ round(elem, 4) for elem in new_value_list ]
                     #
                     this_set_range_indices = [ i for i, x in enumerate( stable_scenarios[ scenario_list[ s ] ][ cap_vars[cp] ][ 't' ] ) if x == str( this_set ) ]
@@ -3470,7 +3749,7 @@ if __name__ == '__main__':
                         except Exception:
                             train_pass_capacity_values = [0 for i in range(len(time_range_vector))]
 
-                        if Fleet_Groups_techs_2_dem[ this_group_set ] == PUBLIC_TRANSPORT_DEMAND_STR and scenario_list[ s ] == 'LTS':
+                        if Fleet_Groups_techs_2_dem[ this_group_set ] == PUBLIC_TRANSPORT_DEMAND_STR and 'LTS' in scenario_list[ s ]:
                             subtract_list = [float(train_pass_capacity_values[j]) for j in range(len(train_pass_capacity_values))]
                         else:
                             subtract_list = [0 for j in range(len(train_pass_capacity_values))]
@@ -3838,7 +4117,7 @@ if __name__ == '__main__':
                                 stable_scenarios[ this_scenario_name ][ param_list[p] ]['t'].append( set_list[l] )                            
                                 stable_scenarios[ this_scenario_name ][ param_list[p] ]['y'].append( str( time_range_vector[y] ) )
                                 stable_scenarios[ this_scenario_name ][ param_list[p] ]['value'].append( float( value_list[y] ) )
-                        #if set_list[l] == "PPCOA" and param_list[p] == "TotalTechnologyAnnualActivityUpperLimit": 
+                        #if set_list[l] == "PPCCTNGSDSL" and param_list[p] == "TotalTechnologyAnnualActivityUpperLimit": 
                             #print('here')
                             #sys.exit()
                     # Let us modify the value vector if it already exists:
@@ -3963,10 +4242,22 @@ if __name__ == '__main__':
                     this_param_indices = [ i for i, x in enumerate( stable_scenarios[ this_scenario_name ][ param_list[p] ][ efficiency_Params_setIndex ] ) if x == str( set_list[l] ) ]
                     stable_scenarios[ this_scenario_name ][ param_list[p] ]['value'][ this_param_indices[0]:this_param_indices[-1]+1 ] = deepcopy( value_list )
 
+                '''
+                else:
+                    value_list = [ round( e, 4 ) for e in value_list ]
+                    for y in range(len(time_range_vector)):
+                        stable_scenarios[ this_scenario_name ][ param_list[p] ]['r'].append(REGION_STR)
+                        stable_scenarios[ this_scenario_name ][ param_list[p] ]['t'].append(set_list[l])
+                        stable_scenarios[ this_scenario_name ][ param_list[p] ]['y'].append(time_range_vector[y])
+                        stable_scenarios[ this_scenario_name ][ param_list[p] ]['value'].append(value_list[y])
+                    #print('Stop here')
+                    #sys.exit()
+                '''
+
         #########################################################################################
 
     print('  finished, now to processing')
-    # sys.exit()
+    #sys.exit()
 
     scenario_list = list( stable_scenarios.keys() ) # This applies for all other scenarios
 
@@ -3978,7 +4269,7 @@ if __name__ == '__main__':
     # is_this_last_update = False
     # generator_or_executor = 'None'
     generator_or_executor = 'Both'
-    # generator_or_executor = 'Generator'
+    #generator_or_executor = 'Generator'
     # generator_or_executor = 'Executor'
 
     #########################################################################################
@@ -4020,7 +4311,7 @@ if __name__ == '__main__':
 
         print('Entered Parallelization of control inputs')
         x = len(scenario_list)
-        max_x_per_iter = 2 # FLAG: This is an input
+        max_x_per_iter = 3 # FLAG: This is an input
         y = x / max_x_per_iter
         y_ceil = math.ceil( y )
         #
@@ -4062,7 +4353,7 @@ if __name__ == '__main__':
         #
         print('Entered Parallelization of .txt printing')
         x = len(scenario_list)
-        max_x_per_iter = 2 # FLAG: This is an input
+        max_x_per_iter = 3 # FLAG: This is an input
         y = x / max_x_per_iter
         y_ceil = math.ceil( y )
         #
@@ -4083,6 +4374,9 @@ if __name__ == '__main__':
             for process in processes:
                 process.join()
 
+    # print('Check generator stage')
+    # sys.exit()
+
     #########################################################################################
     if generator_or_executor == 'Executor' or generator_or_executor == 'Both':
         #
@@ -4095,7 +4389,7 @@ if __name__ == '__main__':
         set_first_list(scenario_list_print)
         print('Entered Parallelization of model execution')
         x = len(first_list)
-        max_x_per_iter = 2 # FLAG: This is an input
+        max_x_per_iter = 3 # FLAG: This is an input
         y = x / max_x_per_iter
         y_ceil = math.ceil( y )
         #
