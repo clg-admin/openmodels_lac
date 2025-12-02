@@ -1011,16 +1011,17 @@ writer_AR_Proj_df.close()
 #
 #***********************************************************************************
 #
-list_dicts = list(overall_param_df_dict.keys())
-for d in range(len(list_dicts)):
-    df_to_print = overall_param_df_dict[ list_dicts[d] ]    
-    df_to_print.to_csv('./A2_Output_Params/BAU/' + list_dicts[d] + '.csv', index=False, header=True)
-#
 list_dicts = list(overall_param_df_dict_ndp.keys())
 for d in range(len(list_dicts)):
     df_to_print = overall_param_df_dict_ndp[ list_dicts[d] ]
     df_to_print = df_to_print.replace({ 'Scenario':{ other_setup_params[ 'Main_Scenario' ]:other_setup_params[ 'Other_Scenarios' ] } })
-    df_to_print.to_csv('./A2_Output_Params/LTS/' + list_dicts[d] + '.csv', index=False, header=True)
+    # df_to_print.to_csv('./A2_Output_Params/LTS/' + list_dicts[d] + '.csv', index=False, header=True)
+    # df_to_print = df_to_print.replace( { 'Scenario':{"LTS":"LTSNZ"} } )
+    # df_to_print.to_csv( './A2_Output_Params/LTSNZ/' + list_dicts[d] + '.csv', index=False, header=True)
+    # df_to_print = df_to_print.replace( { 'Scenario':{"LTSNZ":"NDCincond"} } )
+    # df_to_print.to_csv( './A2_Output_Params/NDCincond/' + list_dicts[d] + '.csv', index=False, header=True)
+    # df_to_print = df_to_print.replace( { 'Scenario':{"NDCincond":"NDCcond"} } )
+    # df_to_print.to_csv( './A2_Output_Params/NDCcond/' + list_dicts[d] + '.csv', index=False, header=True)
 #
 end_2 = time.time()   
 time_elapsed_2 = -start1 + end_2
