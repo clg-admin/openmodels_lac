@@ -185,4 +185,4 @@ References
 - `otoole Documentation <https://otoole.readthedocs.io/>`_
 - `MUIO Documentation <https://muio-modelling-user-interface-for-osemosys.readthedocs.io/>`_
 - `MUIO GitHub Repository <https://github.com/OSeMOSYS/MUIO>`_
-- `OSeMOSYS Project <https://osemosys.org/>`_
+- `OSeMOSYS Project <http://www.osemosys.org/>`_
