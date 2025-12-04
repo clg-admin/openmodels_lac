@@ -146,8 +146,6 @@ Sector toggles allow you to enable or disable specific sectors without modifying
      - Enable waste sector module: ``True`` or ``False``
    * - ``Use_PIUP_B1``
      - Enable IPPU sector module: ``True`` or ``False``
-   * - ``Use_AFOLU``
-     - Enable AFOLU sector module: ``True`` or ``False``
 
 **Example configuration:**
 
