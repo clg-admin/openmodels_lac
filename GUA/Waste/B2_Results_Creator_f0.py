@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-@author: Luis Victor-Gallardo // 2021
+@author: Luis Victor-Gallardo // 2024
 """
 from datetime import date
 import sys
 import pandas as pd
-#import os
-#from copy import deepcopy
-#import csv
-#import numpy as np
+import os
+from copy import deepcopy
+import csv
+import numpy as np
 
 sys.path.insert(0, 'Executables')
 import local_dataset_creator_0
 
 'Define control parameters:'
+region_str = 'GUA'
+file_name_suffix = 'f0_OSMOSYS_' + region_str + '_'
 
 run_for_first_time = True
 
@@ -41,10 +43,10 @@ dfa_list = [ df_output, df_input ] #, df_price, df_distribution ]
 today = date.today()
 #
 df_output = dfa_list[0]
-df_output.to_csv ( 'f0_OSMOSYS_GUA_Output.csv', index = None, header=True)
-df_output.to_csv ( 'f0_OSMOSYS_GUA_Output_' + str( today ).replace( '-', '_' ) + '.csv', index = None, header=True)
+df_output.to_csv ( region_str + 'Output.csv', index = None, header=True)
+df_output.to_csv ( region_str + 'Output_' + str( today ).replace( '-', '_' ) + '.csv', index = None, header=True)
 #
 df_input = dfa_list[1]
-df_input.to_csv ( 'f0_OSMOSYS_GUA_Input.csv', index = None, header=True)
-df_input.to_csv ( 'f0_OSMOSYS_GUA_Input_' + str( today ).replace( '-', '_' ) + '.csv', index = None, header=True)
+df_input.to_csv ( region_str + 'Input.csv', index = None, header=True)
+df_input.to_csv ( region_str + 'Input_' + str( today ).replace( '-', '_' ) + '.csv', index = None, header=True)
 #
