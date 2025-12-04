@@ -1,0 +1,712 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Models &mdash; MOMF - Multipurpose OSeMOSYS-based Modeling Framework 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MOMF Version 1 Workflow" href="workflow_v1.html" />
+    <link rel="prev" title="Version Comparison" href="versions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MOMF - Multipurpose OSeMOSYS-based Modeling Framework
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-python-and-spyder">Installing Python and Spyder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-python-dependencies">Installing Python Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#required-python-packages">Required Python Packages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-glpk-solver">Installing GLPK Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#alternative-solvers-v3-only">Alternative Solvers (v3 only)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#cbc-coin-or-branch-and-cut">CBC (COIN-OR Branch and Cut)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#cplex-commercial">CPLEX (Commercial)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verifying-installation">Verifying Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#cloning-the-repository">Cloning the Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#directory-structure">Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuring-spyder">Configuring Spyder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#glpk-not-found">GLPK Not Found</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#python-package-errors">Python Package Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#excel-file-errors">Excel File Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#spyder-not-finding-modules">Spyder Not Finding Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#quick-setup">Quick Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#running-your-first-model">Running Your First Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#quick-analysis-example">Quick Analysis Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#trying-different-models">Trying Different Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#v1-example-gua-afolu">v1 Example (GUA/AFOLU)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#v3-example-cri-energy">v3 Example (CRI/Energy)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#common-issues">Common Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#glpk-not-found">GLPK Not Found</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#missing-python-package">Missing Python Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#excel-file-error">Excel File Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#memory-error">Memory Error</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework Overview</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Framework Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#what-is-momf">What is MOMF?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#why-momf">Why MOMF?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#core-components">Core Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#osemosys-foundation">OSeMOSYS Foundation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#ipcc-sectors-modeled">IPCC Sectors Modeled</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#framework-versions">Framework Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#modeling-approach">Modeling Approach</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#technology-representation">Technology Representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#scenario-framework">Scenario Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#key-parameters">Key Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#workflow-overview">Workflow Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#country-applications">Country Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Version Comparison</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="versions.html#version-summary">Version Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versions.html#version-details">Version Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="versions.html#version-1-basic">Version 1: Basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="versions.html#version-2-standard">Version 2: Standard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="versions.html#version-3-advanced">Version 3: Advanced</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="versions.html#choosing-a-version">Choosing a Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versions.html#migration-path">Migration Path</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Country Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#country-overview">Country Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sector-version-matrix">Sector-Version Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#country-details">Country Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#costa-rica-cri">Costa Rica (CRI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dominican-republic-dom">Dominican Republic (DOM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ecuador-ecu">Ecuador (ECU)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#guatemala-gua">Guatemala (GUA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#honduras-hnd">Honduras (HND)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jamaica-jam">Jamaica (JAM)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-new-country">Adding a New Country</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Workflow by Version</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow_v1.html">MOMF Version 1 Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#directory-structure">Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#pipeline-stages">Pipeline Stages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v1.html#stage-1-csv-generation-1-csv-generation-py">Stage 1: CSV Generation (1_csv_generation.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v1.html#stage-2-model-execution-2-run-model-mathprog-py">Stage 2: Model Execution (2_run_model_mathprog.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v1.html#stage-3-results-consolidation-3-append-py">Stage 3: Results Consolidation (3_append.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#complete-execution">Complete Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#limitations-of-v1">Limitations of v1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_v2.html">MOMF Version 2 Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#pipeline-stages">Pipeline Stages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#stage-a1-model-structure-a1-model-structure-py">Stage A1: Model Structure (A1_Model_Structure.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#stage-a2-parameter-compiler-a2-compiler-py">Stage A2: Parameter Compiler (A2_Compiler.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#manual-step-copy-parameters">Manual Step: Copy Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#stage-b1-scenario-adjustment-b1-base-scenarios-adj-parallel-py">Stage B1: Scenario Adjustment (B1_Base_Scenarios_Adj_Parallel.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#stage-b2-results-extraction-b2-results-creator-f0-py">Stage B2: Results Extraction (B2_Results_Creator_f0.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#complete-execution">Complete Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#scenarios-configuration">Scenarios Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#advantages-over-v1">Advantages over v1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_v3.html">MOMF Version 3 Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#pipeline-stages">Pipeline Stages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#stage-a1-model-structure">Stage A1: Model Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#stage-a2-parameter-compiler">Stage A2: Parameter Compiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#manual-step-copy-parameters">Manual Step: Copy Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#stage-b1-scenario-execution">Stage B1: Scenario Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#stage-b2-results-processing">Stage B2: Results Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#sector-toggles-b1">Sector Toggles (B1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#complete-execution">Complete Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#advantages-over-v2">Advantages over v2</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_reference.html">File Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_reference.html#input-files">Input Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#a1-stage-inputs">A1 Stage Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#a2-stage-inputs">A2 Stage Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#b1-stage-inputs">B1 Stage Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#configuration-files-v3">Configuration Files (v3)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_reference.html#output-files">Output Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#a1-stage-outputs">A1 Stage Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#b2-final-outputs">B2 Final Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_reference.html#model-files">Model Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_reference.html#python-scripts">Python Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#v1-scripts">v1 Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#v2-v3-scripts">v2/v3 Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">OSeMOSYS Parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html#sets">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html#parameters-by-category">Parameters by Category</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#demand-parameters">Demand Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#activity-ratios">Activity Ratios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#capacity-parameters">Capacity Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#performance-parameters">Performance Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#cost-parameters">Cost Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#emission-parameters">Emission Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#activity-constraints">Activity Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#renewable-energy-parameters">Renewable Energy Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#reserve-margin-parameters">Reserve Margin Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#storage-parameters">Storage Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#time-parameters">Time Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#trade-parameters">Trade Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html#output-variables">Output Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#capacity-variables">Capacity Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#activity-variables">Activity Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#cost-variables">Cost Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#emission-variables">Emission Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parameters.html#momf-specific-variables">MOMF-Specific Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#acronyms">Acronyms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#country-codes">Country Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#sector-codes">Sector Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#common-technology-prefixes">Common Technology Prefixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#common-fuel-prefixes">Common Fuel Prefixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#emission-codes">Emission Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#units">Units</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#energy">Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#emissions">Emissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#capacity">Capacity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#cost">Cost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#time">Time</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MOMF - Multipurpose OSeMOSYS-based Modeling Framework</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Country Models</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/clg-admin/openmodels_lac/blob/main/docs/source/countries.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="country-models">
+<h1>Country Models<a class="headerlink" href="#country-models" title="Link to this heading"></a></h1>
+<p>MOMF is implemented for six Latin American and Caribbean countries, each with sector-specific models aligned to national GHG inventories.</p>
+<section id="country-overview">
+<h2>Country Overview<a class="headerlink" href="#country-overview" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 40.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Country</p></th>
+<th class="head"><p>Code</p></th>
+<th class="head"><p>Sectors</p></th>
+<th class="head"><p>MOMF Version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Costa Rica</p></td>
+<td><p>CRI</p></td>
+<td><p>Energy, AFOLU, IPPU, Waste</p></td>
+<td><p>v2 (IPPU, Waste), v3 (Energy, AFOLU)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dominican Republic</p></td>
+<td><p>DOM</p></td>
+<td><p>Energy, AFOLU, IPPU, Waste</p></td>
+<td><p>v2 (all)</p></td>
+</tr>
+<tr class="row-even"><td><p>Ecuador</p></td>
+<td><p>ECU</p></td>
+<td><p>Energy, Agriculture, FOLU, IPPU, Waste</p></td>
+<td><p>v2 (all)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Guatemala</p></td>
+<td><p>GUA</p></td>
+<td><p>Energy, AFOLU, IPPU, Waste</p></td>
+<td><p>v2 (all except AFOLU), v1 (AFOLU)</p></td>
+</tr>
+<tr class="row-even"><td><p>Honduras</p></td>
+<td><p>HND</p></td>
+<td><p>Energy, AFOLU</p></td>
+<td><p>v2 (all)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jamaica</p></td>
+<td><p>JAM</p></td>
+<td><p>AFOLU, Electricity_Building_Industry, Transport, Waste</p></td>
+<td><p>v2 (all)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sector-version-matrix">
+<h2>Sector-Version Matrix<a class="headerlink" href="#sector-version-matrix" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+<col style="width: 15.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sector</p></th>
+<th class="head"><p>CRI</p></th>
+<th class="head"><p>DOM</p></th>
+<th class="head"><p>ECU</p></th>
+<th class="head"><p>GUA</p></th>
+<th class="head"><p>HND</p></th>
+<th class="head"><p>JAM</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p><strong>v3</strong></p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>AFOLU</p></td>
+<td><p><strong>v3</strong></p></td>
+<td><p>v2</p></td>
+<td><p>–</p></td>
+<td><p><strong>v1</strong></p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+</tr>
+<tr class="row-even"><td><p>Agriculture</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>v2</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>FOLU</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>v2</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>IPPU</p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>Waste</p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>v2</p></td>
+<td><p>–</p></td>
+<td><p>v2</p></td>
+</tr>
+<tr class="row-even"><td><p>Transport</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>v2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Elec_Build_Ind</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>–</p></td>
+<td><p>v2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="country-details">
+<h2>Country Details<a class="headerlink" href="#country-details" title="Link to this heading"></a></h2>
+<section id="costa-rica-cri">
+<h3>Costa Rica (CRI)<a class="headerlink" href="#costa-rica-cri" title="Link to this heading"></a></h3>
+<p><strong>Location:</strong> CRI/</p>
+<p><strong>Sectors:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sector</p></td>
+<td><p>Version</p></td>
+<td><p>Path</p></td>
+</tr>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p>v3</p></td>
+<td><p>CRI/Energy/ndc_cr_30/t1_confection/</p></td>
+</tr>
+<tr class="row-odd"><td><p>AFOLU</p></td>
+<td><p>v3</p></td>
+<td><p>CRI/AFOLU/ndc_cr_30/t1_confection/</p></td>
+</tr>
+<tr class="row-even"><td><p>IPPU</p></td>
+<td><p>v2</p></td>
+<td><p>CRI/IPPU/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Waste</p></td>
+<td><p>v2</p></td>
+<td><p>CRI/Waste/</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dominican-republic-dom">
+<h3>Dominican Republic (DOM)<a class="headerlink" href="#dominican-republic-dom" title="Link to this heading"></a></h3>
+<p><strong>Location:</strong> DOM/</p>
+<p><strong>Sectors:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sector</p></td>
+<td><p>Version</p></td>
+<td><p>Path</p></td>
+</tr>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p>v2</p></td>
+<td><p>DOM/Energy/</p></td>
+</tr>
+<tr class="row-odd"><td><p>AFOLU</p></td>
+<td><p>v2</p></td>
+<td><p>DOM/AFOLU/</p></td>
+</tr>
+<tr class="row-even"><td><p>IPPU</p></td>
+<td><p>v2</p></td>
+<td><p>DOM/IPPU/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Waste</p></td>
+<td><p>v2</p></td>
+<td><p>DOM/Waste/</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ecuador-ecu">
+<h3>Ecuador (ECU)<a class="headerlink" href="#ecuador-ecu" title="Link to this heading"></a></h3>
+<p><strong>Location:</strong> ECU/</p>
+<p><strong>Sectors:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sector</p></td>
+<td><p>Version</p></td>
+<td><p>Path</p></td>
+</tr>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p>v2</p></td>
+<td><p>ECU/Energy/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Agriculture</p></td>
+<td><p>v2</p></td>
+<td><p>ECU/Agriculture/</p></td>
+</tr>
+<tr class="row-even"><td><p>FOLU</p></td>
+<td><p>v2</p></td>
+<td><p>ECU/FOLU/</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPPU</p></td>
+<td><p>v2</p></td>
+<td><p>ECU/IPPU/</p></td>
+</tr>
+<tr class="row-even"><td><p>Waste</p></td>
+<td><p>v2</p></td>
+<td><p>ECU/Waste/</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="guatemala-gua">
+<h3>Guatemala (GUA)<a class="headerlink" href="#guatemala-gua" title="Link to this heading"></a></h3>
+<p><strong>Location:</strong> GUA/</p>
+<p><strong>Sectors:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sector</p></td>
+<td><p>Version</p></td>
+<td><p>Path</p></td>
+</tr>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p>v2</p></td>
+<td><p>GUA/Energy/</p></td>
+</tr>
+<tr class="row-odd"><td><p>AFOLU</p></td>
+<td><p><strong>v1</strong></p></td>
+<td><p>GUA/AFOLU/</p></td>
+</tr>
+<tr class="row-even"><td><p>IPPU</p></td>
+<td><p>v2</p></td>
+<td><p>GUA/IPPU/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Waste</p></td>
+<td><p>v2</p></td>
+<td><p>GUA/Waste/</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="honduras-hnd">
+<h3>Honduras (HND)<a class="headerlink" href="#honduras-hnd" title="Link to this heading"></a></h3>
+<p><strong>Location:</strong> HND/</p>
+<p><strong>Sectors:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sector</p></td>
+<td><p>Version</p></td>
+<td><p>Path</p></td>
+</tr>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p>v2</p></td>
+<td><p>HND/Energy/</p></td>
+</tr>
+<tr class="row-odd"><td><p>AFOLU</p></td>
+<td><p>v2</p></td>
+<td><p>HND/AFOLU/</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="jamaica-jam">
+<h3>Jamaica (JAM)<a class="headerlink" href="#jamaica-jam" title="Link to this heading"></a></h3>
+<p><strong>Location:</strong> JAM/</p>
+<p><strong>Sectors:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 15.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Sector</p></td>
+<td><p>Version</p></td>
+<td><p>Path</p></td>
+</tr>
+<tr class="row-even"><td><p>AFOLU</p></td>
+<td><p>v2</p></td>
+<td><p>JAM/AFOLU/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Electricity_Building_Industry</p></td>
+<td><p>v2</p></td>
+<td><p>JAM/Electricity_Bulding_Industry/</p></td>
+</tr>
+<tr class="row-even"><td><p>Transport</p></td>
+<td><p>v2</p></td>
+<td><p>JAM/Transport/</p></td>
+</tr>
+<tr class="row-odd"><td><p>Waste</p></td>
+<td><p>v2</p></td>
+<td><p>JAM/Waste/</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="adding-a-new-country">
+<h2>Adding a New Country<a class="headerlink" href="#adding-a-new-country" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Create country folder (3-letter code):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>ABC
+</pre></div>
+</div>
+</li>
+<li><p>Create sector subfolders:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>ABC/Energy<span class="w"> </span>ABC/AFOLU<span class="w"> </span>ABC/IPPU<span class="w"> </span>ABC/Waste
+</pre></div>
+</div>
+</li>
+<li><p>Copy template from existing country (v2 recommended):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-r<span class="w"> </span>DOM/Energy/*<span class="w"> </span>ABC/Energy/
+</pre></div>
+</div>
+</li>
+<li><p>Update all A1_Inputs files:</p>
+<ul class="simple">
+<li><p>A1_Inputs/A-I_Horizon_Configuration.xlsx - Set country code, years</p></li>
+<li><p>A1_Inputs/A-I_Classifier_Modes_Demand.xlsx - Define demand sectors</p></li>
+<li><p>A1_Inputs/A-I_Classifier_Modes_Supply.xlsx - Define technologies</p></li>
+</ul>
+</li>
+<li><p>Update configuration files:</p>
+<ul class="simple">
+<li><p>A2_Extra_Inputs/A-Xtra_Scenarios.xlsx - Set region</p></li>
+<li><p>B1_Scenario_Config.xlsx - Configure scenarios</p></li>
+</ul>
+</li>
+<li><p>Populate input data:</p>
+<ul class="simple">
+<li><p>Technology definitions</p></li>
+<li><p>Cost parameters</p></li>
+<li><p>Emission factors</p></li>
+<li><p>Demand projections</p></li>
+</ul>
+</li>
+<li><p>Run and validate:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>ABC/Energy
+python<span class="w"> </span>A1_Model_Structure.py
+<span class="c1"># ... continue pipeline</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="versions.html" class="btn btn-neutral float-left" title="Version Comparison" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="workflow_v1.html" class="btn btn-neutral float-right" title="MOMF Version 1 Workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Climate Lead Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

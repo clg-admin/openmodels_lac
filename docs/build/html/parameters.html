@@ -1,0 +1,1066 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSeMOSYS Parameters &mdash; MOMF - Multipurpose OSeMOSYS-based Modeling Framework 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="File Reference" href="file_reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MOMF - Multipurpose OSeMOSYS-based Modeling Framework
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-python-and-spyder">Installing Python and Spyder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-python-dependencies">Installing Python Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#required-python-packages">Required Python Packages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-glpk-solver">Installing GLPK Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#alternative-solvers-v3-only">Alternative Solvers (v3 only)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#cbc-coin-or-branch-and-cut">CBC (COIN-OR Branch and Cut)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#cplex-commercial">CPLEX (Commercial)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verifying-installation">Verifying Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#cloning-the-repository">Cloning the Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#directory-structure">Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#configuring-spyder">Configuring Spyder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#glpk-not-found">GLPK Not Found</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#python-package-errors">Python Package Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#excel-file-errors">Excel File Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#spyder-not-finding-modules">Spyder Not Finding Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#quick-setup">Quick Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#running-your-first-model">Running Your First Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#quick-analysis-example">Quick Analysis Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#trying-different-models">Trying Different Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#v1-example-gua-afolu">v1 Example (GUA/AFOLU)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#v3-example-cri-energy">v3 Example (CRI/Energy)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#common-issues">Common Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#glpk-not-found">GLPK Not Found</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#missing-python-package">Missing Python Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#excel-file-error">Excel File Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#memory-error">Memory Error</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Framework Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#what-is-momf">What is MOMF?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#why-momf">Why MOMF?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#core-components">Core Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#osemosys-foundation">OSeMOSYS Foundation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#ipcc-sectors-modeled">IPCC Sectors Modeled</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#framework-versions">Framework Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#modeling-approach">Modeling Approach</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#technology-representation">Technology Representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#scenario-framework">Scenario Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#key-parameters">Key Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#workflow-overview">Workflow Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#country-applications">Country Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Version Comparison</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="versions.html#version-summary">Version Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versions.html#version-details">Version Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="versions.html#version-1-basic">Version 1: Basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="versions.html#version-2-standard">Version 2: Standard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="versions.html#version-3-advanced">Version 3: Advanced</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="versions.html#choosing-a-version">Choosing a Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versions.html#migration-path">Migration Path</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="countries.html">Country Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="countries.html#country-overview">Country Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="countries.html#sector-version-matrix">Sector-Version Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="countries.html#country-details">Country Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="countries.html#costa-rica-cri">Costa Rica (CRI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="countries.html#dominican-republic-dom">Dominican Republic (DOM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="countries.html#ecuador-ecu">Ecuador (ECU)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="countries.html#guatemala-gua">Guatemala (GUA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="countries.html#honduras-hnd">Honduras (HND)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="countries.html#jamaica-jam">Jamaica (JAM)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="countries.html#adding-a-new-country">Adding a New Country</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Workflow by Version</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="workflow_v1.html">MOMF Version 1 Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#directory-structure">Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#pipeline-stages">Pipeline Stages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v1.html#stage-1-csv-generation-1-csv-generation-py">Stage 1: CSV Generation (1_csv_generation.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v1.html#stage-2-model-execution-2-run-model-mathprog-py">Stage 2: Model Execution (2_run_model_mathprog.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v1.html#stage-3-results-consolidation-3-append-py">Stage 3: Results Consolidation (3_append.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#complete-execution">Complete Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v1.html#limitations-of-v1">Limitations of v1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_v2.html">MOMF Version 2 Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#pipeline-stages">Pipeline Stages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#stage-a1-model-structure-a1-model-structure-py">Stage A1: Model Structure (A1_Model_Structure.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#stage-a2-parameter-compiler-a2-compiler-py">Stage A2: Parameter Compiler (A2_Compiler.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#manual-step-copy-parameters">Manual Step: Copy Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#stage-b1-scenario-adjustment-b1-base-scenarios-adj-parallel-py">Stage B1: Scenario Adjustment (B1_Base_Scenarios_Adj_Parallel.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v2.html#stage-b2-results-extraction-b2-results-creator-f0-py">Stage B2: Results Extraction (B2_Results_Creator_f0.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#complete-execution">Complete Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#scenarios-configuration">Scenarios Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#advantages-over-v1">Advantages over v1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v2.html#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflow_v3.html">MOMF Version 3 Workflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#pipeline-stages">Pipeline Stages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#stage-a1-model-structure">Stage A1: Model Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#stage-a2-parameter-compiler">Stage A2: Parameter Compiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#manual-step-copy-parameters">Manual Step: Copy Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#stage-b1-scenario-execution">Stage B1: Scenario Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflow_v3.html#stage-b2-results-processing">Stage B2: Results Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#sector-toggles-b1">Sector Toggles (B1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#complete-execution">Complete Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#advantages-over-v2">Advantages over v2</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="file_reference.html">File Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_reference.html#input-files">Input Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#a1-stage-inputs">A1 Stage Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#a2-stage-inputs">A2 Stage Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#b1-stage-inputs">B1 Stage Inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#configuration-files-v3">Configuration Files (v3)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_reference.html#output-files">Output Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#a1-stage-outputs">A1 Stage Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#b2-final-outputs">B2 Final Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_reference.html#model-files">Model Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_reference.html#python-scripts">Python Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#v1-scripts">v1 Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_reference.html#v2-v3-scripts">v2/v3 Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OSeMOSYS Parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sets">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters-by-category">Parameters by Category</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#demand-parameters">Demand Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activity-ratios">Activity Ratios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#capacity-parameters">Capacity Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performance-parameters">Performance Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cost-parameters">Cost Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emission-parameters">Emission Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activity-constraints">Activity Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#renewable-energy-parameters">Renewable Energy Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reserve-margin-parameters">Reserve Margin Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storage-parameters">Storage Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-parameters">Time Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trade-parameters">Trade Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#output-variables">Output Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#capacity-variables">Capacity Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activity-variables">Activity Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cost-variables">Cost Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emission-variables">Emission Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#momf-specific-variables">MOMF-Specific Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#acronyms">Acronyms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#country-codes">Country Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#sector-codes">Sector Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#common-technology-prefixes">Common Technology Prefixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#common-fuel-prefixes">Common Fuel Prefixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#emission-codes">Emission Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html#units">Units</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#energy">Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#emissions">Emissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#capacity">Capacity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#cost">Cost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="glossary.html#time">Time</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MOMF - Multipurpose OSeMOSYS-based Modeling Framework</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">OSeMOSYS Parameters</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/clg-admin/openmodels_lac/blob/main/docs/source/parameters.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="osemosys-parameters">
+<h1>OSeMOSYS Parameters<a class="headerlink" href="#osemosys-parameters" title="Link to this heading"></a></h1>
+<p>MOMF uses the standard OSeMOSYS parameter set. This reference documents all parameters, their indices, and default values.</p>
+<section id="sets">
+<h2>Sets<a class="headerlink" href="#sets" title="Link to this heading"></a></h2>
+<p>OSeMOSYS models are defined over the following sets:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Set</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>REGION</p></td>
+<td><p>r</p></td>
+<td><p>Geographic regions (e.g., GUA, CRI)</p></td>
+</tr>
+<tr class="row-odd"><td><p>YEAR</p></td>
+<td><p>y</p></td>
+<td><p>Model years (e.g., 2021-2050)</p></td>
+</tr>
+<tr class="row-even"><td><p>TECHNOLOGY</p></td>
+<td><p>t</p></td>
+<td><p>Technologies (power plants, vehicles, processes)</p></td>
+</tr>
+<tr class="row-odd"><td><p>FUEL</p></td>
+<td><p>f</p></td>
+<td><p>Fuels/commodities (electricity, gasoline, CO2)</p></td>
+</tr>
+<tr class="row-even"><td><p>EMISSION</p></td>
+<td><p>e</p></td>
+<td><p>Emission types (CO2, CH4, N2O)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MODE_OF_OPERATION</p></td>
+<td><p>m</p></td>
+<td><p>Operating modes (typically 1)</p></td>
+</tr>
+<tr class="row-even"><td><p>TIMESLICE</p></td>
+<td><p>l</p></td>
+<td><p>Time periods within year</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEASON</p></td>
+<td><p>ls</p></td>
+<td><p>Seasons (if sub-annual resolution)</p></td>
+</tr>
+<tr class="row-even"><td><p>DAYTYPE</p></td>
+<td><p>ld</p></td>
+<td><p>Day types (weekday, weekend)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DAILYTIMEBRACKET</p></td>
+<td><p>lh</p></td>
+<td><p>Hours of day</p></td>
+</tr>
+<tr class="row-even"><td><p>STORAGE</p></td>
+<td><p>s</p></td>
+<td><p>Storage technologies</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="parameters-by-category">
+<h2>Parameters by Category<a class="headerlink" href="#parameters-by-category" title="Link to this heading"></a></h2>
+<section id="demand-parameters">
+<h3>Demand Parameters<a class="headerlink" href="#demand-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AccumulatedAnnualDemand</p></td>
+<td><p>r,f,y</p></td>
+<td><p>0</p></td>
+<td><p>Cumulative demand requirement</p></td>
+</tr>
+<tr class="row-odd"><td><p>SpecifiedAnnualDemand</p></td>
+<td><p>r,f,y</p></td>
+<td><p>0</p></td>
+<td><p>Annual demand for each fuel [PJ]</p></td>
+</tr>
+<tr class="row-even"><td><p>SpecifiedDemandProfile</p></td>
+<td><p>r,f,l,y</p></td>
+<td><p>0</p></td>
+<td><p>Demand distribution across timeslices</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="activity-ratios">
+<h3>Activity Ratios<a class="headerlink" href="#activity-ratios" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>InputActivityRatio</p></td>
+<td><p>r,t,f,m,y</p></td>
+<td><p>0</p></td>
+<td><p>Fuel input per unit activity</p></td>
+</tr>
+<tr class="row-odd"><td><p>OutputActivityRatio</p></td>
+<td><p>r,t,f,m,y</p></td>
+<td><p>0</p></td>
+<td><p>Fuel output per unit activity</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="capacity-parameters">
+<h3>Capacity Parameters<a class="headerlink" href="#capacity-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CapacityToActivityUnit</p></td>
+<td><p>r,t</p></td>
+<td><p>1</p></td>
+<td><p>Converts capacity to activity units</p></td>
+</tr>
+<tr class="row-odd"><td><p>ResidualCapacity</p></td>
+<td><p>r,t,y</p></td>
+<td><p>0</p></td>
+<td><p>Existing installed capacity</p></td>
+</tr>
+<tr class="row-even"><td><p>TotalAnnualMaxCapacity</p></td>
+<td><p>r,t,y</p></td>
+<td><p>99999</p></td>
+<td><p>Maximum installable capacity</p></td>
+</tr>
+<tr class="row-odd"><td><p>TotalAnnualMinCapacity</p></td>
+<td><p>r,t,y</p></td>
+<td><p>0</p></td>
+<td><p>Minimum required capacity</p></td>
+</tr>
+<tr class="row-even"><td><p>TotalAnnualMaxCapacityInvestment</p></td>
+<td><p>r,t,y</p></td>
+<td><p>99999</p></td>
+<td><p>Maximum annual investment</p></td>
+</tr>
+<tr class="row-odd"><td><p>TotalAnnualMinCapacityInvestment</p></td>
+<td><p>r,t,y</p></td>
+<td><p>0</p></td>
+<td><p>Minimum annual investment</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="performance-parameters">
+<h3>Performance Parameters<a class="headerlink" href="#performance-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AvailabilityFactor</p></td>
+<td><p>r,t,y</p></td>
+<td><p>1</p></td>
+<td><p>Fraction of year available (0-1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>CapacityFactor</p></td>
+<td><p>r,t,l,y</p></td>
+<td><p>1</p></td>
+<td><p>Capacity utilization factor (0-1)</p></td>
+</tr>
+<tr class="row-even"><td><p>OperationalLife</p></td>
+<td><p>r,t</p></td>
+<td><p>1</p></td>
+<td><p>Technology lifetime [years]</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cost-parameters">
+<h3>Cost Parameters<a class="headerlink" href="#cost-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CapitalCost</p></td>
+<td><p>r,t,y</p></td>
+<td><p>0</p></td>
+<td><p>Investment cost [USD/unit capacity]</p></td>
+</tr>
+<tr class="row-odd"><td><p>FixedCost</p></td>
+<td><p>r,t,y</p></td>
+<td><p>0</p></td>
+<td><p>Fixed O&amp;M [USD/unit capacity/year]</p></td>
+</tr>
+<tr class="row-even"><td><p>VariableCost</p></td>
+<td><p>r,t,m,y</p></td>
+<td><p>0</p></td>
+<td><p>Variable O&amp;M [USD/unit activity]</p></td>
+</tr>
+<tr class="row-odd"><td><p>DiscountRate</p></td>
+<td><p>r</p></td>
+<td><p>0.05</p></td>
+<td><p>Discount rate (5% default)</p></td>
+</tr>
+<tr class="row-even"><td><p>DepreciationMethod</p></td>
+<td><p>r</p></td>
+<td><p>1</p></td>
+<td><p>1=straight line, 2=sinking fund</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="emission-parameters">
+<h3>Emission Parameters<a class="headerlink" href="#emission-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EmissionActivityRatio</p></td>
+<td><p>r,t,e,m,y</p></td>
+<td><p>0</p></td>
+<td><p>Emissions per unit activity [tCO2/PJ]</p></td>
+</tr>
+<tr class="row-odd"><td><p>EmissionsPenalty</p></td>
+<td><p>r,e,y</p></td>
+<td><p>0</p></td>
+<td><p>Carbon price [USD/tCO2]</p></td>
+</tr>
+<tr class="row-even"><td><p>AnnualEmissionLimit</p></td>
+<td><p>r,e,y</p></td>
+<td><p>99999</p></td>
+<td><p>Annual emission cap</p></td>
+</tr>
+<tr class="row-odd"><td><p>ModelPeriodEmissionLimit</p></td>
+<td><p>r,e</p></td>
+<td><p>99999</p></td>
+<td><p>Cumulative emission cap</p></td>
+</tr>
+<tr class="row-even"><td><p>AnnualExogenousEmission</p></td>
+<td><p>r,e,y</p></td>
+<td><p>0</p></td>
+<td><p>External emissions added to total</p></td>
+</tr>
+<tr class="row-odd"><td><p>ModelPeriodExogenousEmission</p></td>
+<td><p>r,e</p></td>
+<td><p>0</p></td>
+<td><p>External cumulative emissions</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="activity-constraints">
+<h3>Activity Constraints<a class="headerlink" href="#activity-constraints" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TotalTechnologyAnnualActivityUpperLimit</p></td>
+<td><p>r,t,y</p></td>
+<td><p>99999</p></td>
+<td><p>Max annual activity</p></td>
+</tr>
+<tr class="row-odd"><td><p>TotalTechnologyAnnualActivityLowerLimit</p></td>
+<td><p>r,t,y</p></td>
+<td><p>0</p></td>
+<td><p>Min annual activity</p></td>
+</tr>
+<tr class="row-even"><td><p>TotalTechnologyModelPeriodActivityUpperLimit</p></td>
+<td><p>r,t</p></td>
+<td><p>99999</p></td>
+<td><p>Max cumulative activity</p></td>
+</tr>
+<tr class="row-odd"><td><p>TotalTechnologyModelPeriodActivityLowerLimit</p></td>
+<td><p>r,t</p></td>
+<td><p>0</p></td>
+<td><p>Min cumulative activity</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="renewable-energy-parameters">
+<h3>Renewable Energy Parameters<a class="headerlink" href="#renewable-energy-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>REMinProductionTarget</p></td>
+<td><p>r,y</p></td>
+<td><p>0</p></td>
+<td><p>Minimum RE fraction of demand</p></td>
+</tr>
+<tr class="row-odd"><td><p>RETagFuel</p></td>
+<td><p>r,f,y</p></td>
+<td><p>0</p></td>
+<td><p>1 if fuel counts as RE demand</p></td>
+</tr>
+<tr class="row-even"><td><p>RETagTechnology</p></td>
+<td><p>r,t,y</p></td>
+<td><p>0</p></td>
+<td><p>1 if technology is renewable</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reserve-margin-parameters">
+<h3>Reserve Margin Parameters<a class="headerlink" href="#reserve-margin-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ReserveMargin</p></td>
+<td><p>r,y</p></td>
+<td><p>0</p></td>
+<td><p>Required reserve margin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ReserveMarginTagFuel</p></td>
+<td><p>r,f,y</p></td>
+<td><p>0</p></td>
+<td><p>1 if fuel requires reserve</p></td>
+</tr>
+<tr class="row-even"><td><p>ReserveMarginTagTechnology</p></td>
+<td><p>r,t,y</p></td>
+<td><p>0</p></td>
+<td><p>1 if tech provides reserve</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="storage-parameters">
+<h3>Storage Parameters<a class="headerlink" href="#storage-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CapitalCostStorage</p></td>
+<td><p>r,s,y</p></td>
+<td><p>0</p></td>
+<td><p>Storage investment cost</p></td>
+</tr>
+<tr class="row-odd"><td><p>OperationalLifeStorage</p></td>
+<td><p>r,s</p></td>
+<td><p>1</p></td>
+<td><p>Storage lifetime [years]</p></td>
+</tr>
+<tr class="row-even"><td><p>ResidualStorageCapacity</p></td>
+<td><p>r,s,y</p></td>
+<td><p>0</p></td>
+<td><p>Existing storage capacity</p></td>
+</tr>
+<tr class="row-odd"><td><p>StorageLevelStart</p></td>
+<td><p>r,s</p></td>
+<td><p>0</p></td>
+<td><p>Initial storage level</p></td>
+</tr>
+<tr class="row-even"><td><p>StorageMaxChargeRate</p></td>
+<td><p>r,s</p></td>
+<td><p>0</p></td>
+<td><p>Max charging rate</p></td>
+</tr>
+<tr class="row-odd"><td><p>StorageMaxDischargeRate</p></td>
+<td><p>r,s</p></td>
+<td><p>0</p></td>
+<td><p>Max discharging rate</p></td>
+</tr>
+<tr class="row-even"><td><p>MinStorageCharge</p></td>
+<td><p>r,s,y</p></td>
+<td><p>0</p></td>
+<td><p>Minimum storage level</p></td>
+</tr>
+<tr class="row-odd"><td><p>TechnologyToStorage</p></td>
+<td><p>r,t,s,m</p></td>
+<td><p>0</p></td>
+<td><p>Tech-storage charging link</p></td>
+</tr>
+<tr class="row-even"><td><p>TechnologyFromStorage</p></td>
+<td><p>r,t,s,m</p></td>
+<td><p>0</p></td>
+<td><p>Tech-storage discharging link</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="time-parameters">
+<h3>Time Parameters<a class="headerlink" href="#time-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>YearSplit</p></td>
+<td><p>l,y</p></td>
+<td><p>0</p></td>
+<td><p>Fraction of year per timeslice</p></td>
+</tr>
+<tr class="row-odd"><td><p>DaySplit</p></td>
+<td><p>lh,y</p></td>
+<td><p>0.00137</p></td>
+<td><p>Fraction of day per bracket</p></td>
+</tr>
+<tr class="row-even"><td><p>DaysInDayType</p></td>
+<td><p>ls,ld,y</p></td>
+<td><p>7</p></td>
+<td><p>Days per day type</p></td>
+</tr>
+<tr class="row-odd"><td><p>Conversionls</p></td>
+<td><p>l,ls</p></td>
+<td><p>0</p></td>
+<td><p>Timeslice to season mapping</p></td>
+</tr>
+<tr class="row-even"><td><p>Conversionld</p></td>
+<td><p>l,ld</p></td>
+<td><p>0</p></td>
+<td><p>Timeslice to daytype mapping</p></td>
+</tr>
+<tr class="row-odd"><td><p>Conversionlh</p></td>
+<td><p>l,lh</p></td>
+<td><p>0</p></td>
+<td><p>Timeslice to hour mapping</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="trade-parameters">
+<h3>Trade Parameters<a class="headerlink" href="#trade-parameters" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Indices</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TradeRoute</p></td>
+<td><p>r,rr,f,y</p></td>
+<td><p>0</p></td>
+<td><p>1 if trade allowed between regions</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="output-variables">
+<h2>Output Variables<a class="headerlink" href="#output-variables" title="Link to this heading"></a></h2>
+<p>The solver produces the following output variables:</p>
+<section id="capacity-variables">
+<h3>Capacity Variables<a class="headerlink" href="#capacity-variables" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NewCapacity[r,t,y]</p></td>
+<td><p>New capacity installed</p></td>
+</tr>
+<tr class="row-odd"><td><p>AccumulatedNewCapacity[r,t,y]</p></td>
+<td><p>Cumulative new capacity</p></td>
+</tr>
+<tr class="row-even"><td><p>TotalCapacityAnnual[r,t,y]</p></td>
+<td><p>Total installed capacity</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="activity-variables">
+<h3>Activity Variables<a class="headerlink" href="#activity-variables" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TotalTechnologyAnnualActivity[r,t,y]</p></td>
+<td><p>Total annual activity</p></td>
+</tr>
+<tr class="row-odd"><td><p>ProductionByTechnology[r,l,t,f,y]</p></td>
+<td><p>Production by tech/fuel/timeslice</p></td>
+</tr>
+<tr class="row-even"><td><p>UseByTechnology[r,l,t,f,y]</p></td>
+<td><p>Fuel use by tech/fuel/timeslice</p></td>
+</tr>
+<tr class="row-odd"><td><p>Demand[r,l,f,y]</p></td>
+<td><p>Demand served by timeslice</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cost-variables">
+<h3>Cost Variables<a class="headerlink" href="#cost-variables" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CapitalInvestment[r,t,y]</p></td>
+<td><p>Annual capital investment</p></td>
+</tr>
+<tr class="row-odd"><td><p>DiscountedCapitalInvestment[r,t,y]</p></td>
+<td><p>NPV of investments</p></td>
+</tr>
+<tr class="row-even"><td><p>OperatingCost[r,t,y]</p></td>
+<td><p>Total O&amp;M cost</p></td>
+</tr>
+<tr class="row-odd"><td><p>AnnualVariableOperatingCost[r,t,y]</p></td>
+<td><p>Variable O&amp;M cost</p></td>
+</tr>
+<tr class="row-even"><td><p>AnnualFixedOperatingCost[r,t,y]</p></td>
+<td><p>Fixed O&amp;M cost</p></td>
+</tr>
+<tr class="row-odd"><td><p>DiscountedOperatingCost[r,t,y]</p></td>
+<td><p>NPV of O&amp;M costs</p></td>
+</tr>
+<tr class="row-even"><td><p>SalvageValue[r,t,y]</p></td>
+<td><p>End-of-horizon salvage value</p></td>
+</tr>
+<tr class="row-odd"><td><p>DiscountedSalvageValue[r,t,y]</p></td>
+<td><p>NPV of salvage</p></td>
+</tr>
+<tr class="row-even"><td><p>TotalDiscountedCostByTechnology[r,t,y]</p></td>
+<td><p>Total NPV by technology</p></td>
+</tr>
+<tr class="row-odd"><td><p>TotalDiscountedCost[r,y]</p></td>
+<td><p>Total system NPV</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="emission-variables">
+<h3>Emission Variables<a class="headerlink" href="#emission-variables" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AnnualTechnologyEmission[r,t,e,y]</p></td>
+<td><p>Emissions by technology</p></td>
+</tr>
+<tr class="row-odd"><td><p>AnnualEmissions[r,e,y]</p></td>
+<td><p>Total emissions by type</p></td>
+</tr>
+<tr class="row-even"><td><p>AnnualTechnologyEmissionPenaltyByEmission[r,t,e,y]</p></td>
+<td><p>Carbon cost by tech/emission</p></td>
+</tr>
+<tr class="row-odd"><td><p>AnnualTechnologyEmissionsPenalty[r,t,y]</p></td>
+<td><p>Total carbon cost by tech</p></td>
+</tr>
+<tr class="row-even"><td><p>DiscountedTechnologyEmissionsPenalty[r,t,y]</p></td>
+<td><p>NPV of carbon costs</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="momf-specific-variables">
+<h3>MOMF-Specific Variables<a class="headerlink" href="#momf-specific-variables" title="Link to this heading"></a></h3>
+<p>MOMF adds derived variables for analysis:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Capex{YEAR}</p></td>
+<td><p>Capital costs discounted to reference year</p></td>
+</tr>
+<tr class="row-odd"><td><p>Opex{YEAR}</p></td>
+<td><p>Operating costs discounted to reference year</p></td>
+</tr>
+<tr class="row-even"><td><p>FixedOpex{YEAR}</p></td>
+<td><p>Fixed O&amp;M discounted</p></td>
+</tr>
+<tr class="row-odd"><td><p>VarOpex{YEAR}</p></td>
+<td><p>Variable O&amp;M discounted</p></td>
+</tr>
+<tr class="row-even"><td><p>Externalities{YEAR}</p></td>
+<td><p>External costs discounted</p></td>
+</tr>
+<tr class="row-odd"><td><p>Capex_GDP</p></td>
+<td><p>Capital costs as % of GDP</p></td>
+</tr>
+<tr class="row-even"><td><p>Opex_GDP</p></td>
+<td><p>Operating costs as % of GDP</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fleet</p></td>
+<td><p>Vehicle fleet size (transport)</p></td>
+</tr>
+<tr class="row-even"><td><p>NewFleet</p></td>
+<td><p>New vehicles added</p></td>
+</tr>
+<tr class="row-odd"><td><p>DistanceDriven</p></td>
+<td><p>Distance traveled</p></td>
+</tr>
+<tr class="row-even"><td><p>ProducedMobility</p></td>
+<td><p>Mobility produced</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="file_reference.html" class="btn btn-neutral float-left" title="File Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Climate Lead Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
