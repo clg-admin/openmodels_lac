@@ -186,6 +186,26 @@
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="momf_to_muio.html">MOMF to MUIO Conversion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#module-structure">Module Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#configuration-file">Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#batch-conversion">Batch Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="momf_to_muio.html#otoole-not-found">otoole not found</a></li>
+<li class="toctree-l3"><a class="reference internal" href="momf_to_muio.html#parameter-not-in-config">Parameter not in config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="momf_to_muio.html#empty-output-file">Empty output file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#references">References</a></li>
+</ul>
+</li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="file_reference.html">File Reference</a><ul>
@@ -284,7 +304,9 @@
   <section id="momf-documentation">
 <h1>MOMF Documentation<a class="headerlink" href="#momf-documentation" title="Link to this heading"></a></h1>
 <p><strong>Multipurpose OSeMOSYS-based Modeling Framework</strong></p>
-<p>MOMF is an open-source framework for building national-level greenhouse gas (GHG) emission models aligned with IPCC inventory structures. It supports all four IPCC sectors (Energy, AFOLU, IPPU, and Waste) and is designed for NDC updates and Long-Term Strategy (LTS) pathways in Low- and Middle-Income Countries (LMICs), with a focus on Latin America and the Caribbean.</p>
+<p>MOMF is an open-source framework for building national greenhouse gas (GHG) emission models that cover all IPCC sectors in a single, integrated tool. It is designed for NDC updates and Long-Term Strategy (LTS) pathways, and has been applied in Latin America and the Caribbean.</p>
+<p><strong>The problem:</strong> Energy system models use optimization methods to find least-cost pathways for capacity expansion and energy balances across future scenarios. However, translating real-world energy systems into the mathematical parameters these models require is time-consuming and error-prone—modelers must manually ensure that data is correctly formatted, units are consistent, and relationships between technologies make physical sense.</p>
+<p><strong>The solution:</strong> MOMF lets you define your energy system using intuitive Excel templates focused on physical relationships (e.g., fuel inputs, efficiencies, emissions factors). The framework then automatically generates properly structured OSeMOSYS input files. MOMF can be used in tandem with <a class="reference external" href="https://github.com/OSeMOSYS/MUIO">MUIO</a> and <a class="reference external" href="https://otoole.readthedocs.io/">otoole</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This documentation covers MOMF versions 1, 2, and 3, which are used across different country models in this repository.</p>
@@ -292,11 +314,11 @@
 <section id="key-features">
 <h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><strong>Open-source</strong>: Built on OSeMOSYS/CLEWs-type structure</p></li>
-<li><p><strong>Full IPCC coverage</strong>: Supports Energy, AFOLU, IPPU, and Waste sectors</p></li>
-<li><p><strong>Inventory-calibrated</strong>: Directly calibrated to national GHG inventories</p></li>
-<li><p><strong>Policy-ready</strong>: Designed for both NDC updates and LTS pathways</p></li>
-<li><p><strong>Multi-country</strong>: Currently implemented for 6 Latin American countries</p></li>
+<li><p><strong>Full IPCC sector coverage</strong>: Energy, IPPU, agriculture, LULUCF, waste</p></li>
+<li><p><strong>Policy-ready</strong>: Designed and built for NDC and LTS policy scenario development</p></li>
+<li><p><strong>Multi-solver</strong>: Compatible with all major OSeMOSYS solvers</p></li>
+<li><p><strong>Open-source</strong>: Freely available under Apache-2.0 license</p></li>
+<li><p><strong>Proven</strong>: Currently implemented for 6 Latin American and Caribbean countries</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
@@ -381,6 +403,23 @@
 <li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#sector-toggles-b1">Sector Toggles (B1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#complete-execution">Complete Execution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="workflow_v3.html#advantages-over-v2">Advantages over v2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="momf_to_muio.html">MOMF to MUIO Conversion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#module-structure">Module Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#how-it-works">How It Works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#configuration-file">Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#batch-conversion">Batch Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="momf_to_muio.html#references">References</a></li>
 </ul>
 </li>
 </ul>
