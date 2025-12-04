@@ -81,8 +81,8 @@ In Spyder, navigate to ``MOMF_to_MUIO/`` and run:
 
 .. code-block:: text
 
-   Archivo modificado y guardado: BAU_0.txt
-   Conversión exitosa: MUIO_models/BAU_0.xlsx
+   File modified and saved: BAU_0.txt
+   Conversion successful: MUIO_models/BAU_0.xlsx
 
 **Step 3: Open in MUIO**
 
