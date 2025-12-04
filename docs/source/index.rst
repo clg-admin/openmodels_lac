@@ -42,6 +42,12 @@ Key Features
 
 .. toctree::
    :maxdepth: 2
+   :caption: Tools
+
+   momf_to_muio
+
+.. toctree::
+   :maxdepth: 2
    :caption: Reference
 
    file_reference

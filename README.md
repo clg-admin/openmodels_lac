@@ -1,6 +1,6 @@
 # MOMF - Multipurpose OSeMOSYS-based Modeling Framework
 
-[![Documentation Status](https://readthedocs.org/projects/openmodels-lac/badge/?version=latest)](https://openmodels-lac.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/modelslac/badge/?version=latest)](https://modelslac.readthedocs.io/en/latest/?badge=latest)
 
 MOMF is a framework for building and running OSeMOSYS-based energy and emissions models for Latin American and Caribbean countries. It provides standardized workflows for scenario analysis, GHG emissions projections, and policy evaluation.
 
@@ -11,6 +11,7 @@ MOMF is a framework for building and running OSeMOSYS-based energy and emissions
 - **Parallel execution**: Run multiple scenarios simultaneously
 - **Flexible solvers**: GLPK, CBC, CPLEX support (v3)
 - **Excel-based inputs**: User-friendly parameterization
+- **MUIO export**: Convert scenarios to MUIO format for visualization
 
 ## Countries
 
@@ -30,16 +31,17 @@ MOMF is a framework for building and running OSeMOSYS-based energy and emissions
 3. Open Spyder and navigate to a model folder (e.g., `GUA/IPPU`)
 4. Run the scripts in order: A1 -> A2 -> B1 -> B2
 
-For detailed instructions, see the [Documentation](https://openmodels-lac.readthedocs.io/).
+For detailed instructions, see the [Documentation](https://modelslac.readthedocs.io/).
 
 ## Documentation
 
-Full documentation is available at: **https://openmodels-lac.readthedocs.io/**
+Full documentation is available at: **https://modelslac.readthedocs.io/**
 
-- [Installation Guide](https://openmodels-lac.readthedocs.io/en/latest/installation.html)
-- [Quick Start](https://openmodels-lac.readthedocs.io/en/latest/quickstart.html)
-- [Workflow Versions](https://openmodels-lac.readthedocs.io/en/latest/versions.html)
-- [Country Models](https://openmodels-lac.readthedocs.io/en/latest/countries.html)
+- [Installation Guide](https://modelslac.readthedocs.io/en/latest/installation.html)
+- [Quick Start](https://modelslac.readthedocs.io/en/latest/quickstart.html)
+- [Workflow Versions](https://modelslac.readthedocs.io/en/latest/versions.html)
+- [Country Models](https://modelslac.readthedocs.io/en/latest/countries.html)
+- [MOMF to MUIO](https://modelslac.readthedocs.io/en/latest/momf_to_muio.html)
 
 ## Vendored Dependencies
 
