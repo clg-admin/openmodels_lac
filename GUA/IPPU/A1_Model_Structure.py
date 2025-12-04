@@ -15,6 +15,8 @@ import time
 import warnings
 warnings.simplefilter("ignore")
 
+from setup_utils import install_requirements
+
 '''
 May 6th, 2022
 The df.append({}) wll have to be changed
@@ -22,6 +24,10 @@ The df.append({}) wll have to be changed
 
 start1 = time.time()
 # OBJECTIVE: to establish the elements of the model to set up a BAU.
+
+requirements_file = 'requirements.txt'
+install_requirements(requirements_file)
+
 '''
 -------------------------------------------------------------------------------------------------------------
 Structural feature 1: './A1_Inputs/A-I_Classifier_Modes_Demand.xlsx'
@@ -35,7 +41,7 @@ classifier_demand_fuel_to_code = pd.read_excel('./A1_Inputs/A-I_Classifier_Modes
 
 cd_sectors_all = classifier_demand_sectors['Sector'].tolist()
 cd_sectors_name_eng = classifier_demand_sectors['Plain English'].tolist()
-cd_sectors_name_spa = classifier_demand_sectors['Plain Spanish'].tolist()
+#cd_sectors_name_spa = classifier_demand_sectors['Plain Spanish'].tolist()
 cd_sectors_method = classifier_demand_sectors['Address_Method'].tolist()
 
 cd_sectors_index = [i for i, x in enumerate( cd_sectors_method) if x != str( 'Detailed')] # Only grabs 'Simple' Demands
@@ -46,7 +52,7 @@ cd_fuels_in_sectors = classifier_demand_fuel_per_sectors['Fuel/Sector'].tolist()
 cd_fuel_to_code_fuels = classifier_demand_fuel_to_code['Fuel'].tolist()
 cd_fuel_to_code_codes = classifier_demand_fuel_to_code['Code'].tolist()
 cd_fuel_to_code_names_eng = classifier_demand_fuel_to_code['Plain English'].tolist()
-cd_fuel_to_code_names_spa = classifier_demand_fuel_to_code['Plain Spanish'].tolist()
+#cd_fuel_to_code_names_spa = classifier_demand_fuel_to_code['Plain Spanish'].tolist()
 
 demands_simple = []
 demands_simple_eng = []
@@ -68,7 +74,7 @@ for s in cd_sectors_simple:
     this_s_index = cd_sectors_all.index(s)
     this_s_code = s
     this_s_name_eng = cd_sectors_name_eng[this_s_index]
-    this_s_name_spa = cd_sectors_name_spa[this_s_index]
+    #this_s_name_spa = cd_sectors_name_spa[this_s_index]
     #
     
     for f in these_s_fuels:
@@ -76,16 +82,16 @@ for s in cd_sectors_simple:
         f_code_index = cd_fuel_to_code_fuels.index(f)
         this_f_code = cd_fuel_to_code_codes[f_code_index]
         this_f_name_eng = cd_fuel_to_code_names_eng[f_code_index]
-        this_f_name_spa = cd_fuel_to_code_names_spa[f_code_index]
+        #this_f_name_spa = cd_fuel_to_code_names_spa[f_code_index]
 
         #
-        demands_simple.append('E5_' + this_s_code + this_f_code)
+        demands_simple.append('E5' + this_s_code + this_f_code)
         demands_simple_eng.append('Demand ' + this_s_name_eng + ' ' + this_f_name_eng)
-        demands_simple_spa.append('Demanda ' + this_s_name_spa + ' ' + this_f_name_spa)
+        #demands_simple_spa.append('Demanda ' + this_s_name_spa + ' ' + this_f_name_spa)
         #
         techs_demand_simple.append('T5' + this_f_code + '' + this_s_code)
         techs_demand_simple_eng.append('Demand ' + this_f_name_eng + ' for ' + this_s_name_eng)
-        techs_demand_simple_spa.append('Demanda ' + this_f_name_spa + ' for ' + this_s_name_spa)
+        #techs_demand_simple_spa.append('Demanda ' + this_f_name_spa + ' for ' + this_s_name_spa)
         #
         techs_demand_input_connect.update({techs_demand_simple[-1]:this_f_code}) # *we leave this fuel code but later replace it with the supply side*
         #
@@ -206,9 +212,9 @@ techs_secondary_output_connect = {}
 test_tertiary_fuels = \
     list(set(classifier_supply_sec_energy['Tertiary_Commodity'].tolist()))
     
-test_tertiary_fuels = \
-    ['Clinker_production',
-    'Cement_production']
+# test_tertiary_fuels = \
+#     ['Clinker_production',
+#     'Cement_production']
 
 
 # Working with the Secondary Energy:
@@ -514,7 +520,7 @@ for n in range(len(codes_list_techs_primary)):
         'Tech.Name'     : this_tech_names               ,
         'Fuel.O'        : this_fuel_o                   ,
         'Fuel.O.Name'   : this_fuel_o_name                ,
-        'Value.Fuel.O'  : 1 # This should be filled by the user
+        'Value.Fuel.O'  : 0 # This should be filled by the user
         }, ignore_index=True)
 
     df_techs_primary_projection = df_techs_primary_projection._append({\
@@ -524,7 +530,7 @@ for n in range(len(codes_list_techs_primary)):
         'Fuel.Name'             : this_fuel_o_name                ,
         'Direction'             : 'Output',
         'Projection.Mode'       : '',
-        'Projection.Parameter'  : 1 # This should be filled by the user
+        'Projection.Parameter'  : 0 # This should be filled by the user
         }, ignore_index=True)
 
 df_techs_primary_projection = \
@@ -582,12 +588,12 @@ for n in range(len(codes_list_techs_secondary)):
         df_techs_secondary_base_year = df_techs_secondary_base_year._append({\
             'Fuel.I'        : this_fuel_i                   ,
             'Fuel.I.Name'   : this_fuel_i_name              ,
-            'Value.Fuel.I'  : 1 , # This should be filled by the user
+            'Value.Fuel.I'  : 0 , # This should be filled by the user
             'Tech'          : codes_list_techs_secondary[n] ,
             'Tech.Name'     : this_tech_names               ,
             'Fuel.O'        : this_fuel_o                   ,
             'Fuel.O.Name'   : this_fuel_o_name              ,
-            'Value.Fuel.O'  : 1 # This should be filled by the user
+            'Value.Fuel.O'  : 0 # This should be filled by the user
             }, ignore_index=True)
 
         if this_fuel_i not in repeat_input:
@@ -645,12 +651,12 @@ for n in range(len(codes_list_techs_demands)):
     df_techs_demand_base_year = df_techs_demand_base_year._append({\
         'Fuel.I'        : this_fuel_i                   ,
         'Fuel.I.Name'   : this_fuel_i_name              ,
-        'Value.Fuel.I'  : 1 , # This should be filled by the user
+        'Value.Fuel.I'  : 0 , # This should be filled by the user
         'Tech'          : techs_demand_simple[n] ,
         'Tech.Name'     : this_tech_names               ,
         'Fuel.O'        : this_fuel_o                   ,
         'Fuel.O.Name'   : this_fuel_o_name              ,
-        'Value.Fuel.O'  : 1 # This should be filled by the user
+        'Value.Fuel.O'  : 0 # This should be filled by the user
         }, ignore_index=True)
 
     df_techs_demand_projection = df_techs_demand_projection._append({\
@@ -765,3 +771,9 @@ minute = time.strftime("%M")
 str1 = 'Esta versión se produjo el ' + str(today) + ' a las ' + hour + ':' + minute
 log_file.write(str1)
 log_file.close()
+
+# print("********************************")
+# print("********************************")
+# print("proceso finalizado correctamente")
+# print("********************************")
+# print("********************************")

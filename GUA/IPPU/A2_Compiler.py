@@ -334,13 +334,13 @@ for s in range( len( param_sheets ) ):
             this_projection_mode = this_df.loc[ n, 'Projection.Mode' ]
             #-----------------------------------------
             if this_projection_mode == 'Flat':
-                print(this_projection_mode)
+                #print(this_projection_mode)
                 for y in range( len( time_range_vector ) ):
-                    this_df_new.loc[ n, time_range_vector[y] ] = round( this_df.loc[ n, 2018 ], 4 )
+                    this_df_new.loc[ n, time_range_vector[y] ] = round( this_df.loc[ n, time_range_vector[0] ], 4 )
                     this_df_new_2.loc[ n, time_range_vector[y] ] = this_df_new.loc[ n, time_range_vector[y] ]
             #-----------------------------------------
             if this_projection_mode == 'Percent growth of incomplete years':
-                print(this_projection_mode)
+                #print(this_projection_mode)
                 growth_param = this_df.loc[ n, 'Projection.Parameter' ]
                 for y in range( len( time_range_vector ) ):
                     value_field = this_df.loc[ n, time_range_vector[y] ]
@@ -349,7 +349,7 @@ for s in range( len( param_sheets ) ):
                         this_df_new_2.loc[ n, time_range_vector[y] ] = this_df_new.loc[ n, time_range_vector[y] ]
             #-----------------------------------------
             if this_projection_mode == 'User defined':
-                print(this_projection_mode)
+                #print(this_projection_mode)
                 for y in range( len( time_range_vector ) ):
                     this_df_new.loc[ n, time_range_vector[y] ] = round( this_df.loc[ n, time_range_vector[y] ], 4 )
                     this_df_new_2.loc[ n, time_range_vector[y] ] = this_df_new.loc[ n, time_range_vector[y] ]
@@ -512,7 +512,7 @@ print('*: For all effects, we have finished the processing tasks of this script.
 #---------------------------------
 # Print updated demand DF (user)
 writer_Demand_df_new = pd.ExcelWriter("./A1_Outputs/A-O_Demand_COMPLETED.xlsx", engine='xlsxwriter')
-Demand_df_new[2018] = Demand_df_new[2018].astype(float)
+Demand_df_new[time_range_vector[0]] = Demand_df_new[time_range_vector[0]].astype(float)
 Demand_df_new = Demand_df_new.round( 4 )
 Demand_df_new.to_excel( writer_Demand_df_new, sheet_name = 'A-O_Demand', index=False)
 writer_Demand_df_new.close()
@@ -554,12 +554,12 @@ for d in range( len( list_dicts ) ):
 list_dicts = list( overall_param_df_dict_ndp.keys() )
 for d in range( len( list_dicts ) ):
     df_to_print = overall_param_df_dict_ndp[ list_dicts[d] ]
-    df_to_print = df_to_print.replace( { 'Scenario':{ other_setup_params[ 'Main_Scenario' ]:other_setup_params[ 'Other_Scenarios' ] } } )
-    df_to_print.to_csv( './A2_Output_Params/NDP/' + list_dicts[d] + '.csv', index=False, header=True)
-    df_to_print = df_to_print.replace( { 'Scenario':{"NDP":"NDPhigh"} } )
-    df_to_print.to_csv( './A2_Output_Params/NDPhigh/' + list_dicts[d] + '.csv', index=False, header=True)
-    df_to_print = df_to_print.replace( { 'Scenario':{"NDPhigh":"NDPlow"} } )
-    df_to_print.to_csv( './A2_Output_Params/NDPlow/' + list_dicts[d] + '.csv', index=False, header=True)
+    # df_to_print = df_to_print.replace( { 'Scenario':{ other_setup_params[ 'Main_Scenario' ]:"NDP"} } )
+    # df_to_print.to_csv( './A2_Output_Params/NDP/' + list_dicts[d] + '.csv', index=False, header=True)
+    # df_to_print = df_to_print.replace( { 'Scenario':{"NDP":"NDPhigh"} } )
+    # df_to_print.to_csv( './A2_Output_Params/NDPhigh/' + list_dicts[d] + '.csv', index=False, header=True)
+    # df_to_print = df_to_print.replace( { 'Scenario':{"NDPhigh":"NDPlow"} } )
+    # df_to_print.to_csv( './A2_Output_Params/NDPlow/' + list_dicts[d] + '.csv', index=False, header=True)
 #
 end_2 = time.time()   
 time_elapsed_2 = -start1 + end_2
@@ -592,3 +592,8 @@ df_structure.to_excel( writer_Structure_df, sheet_name = 'Lists', index=False)
 writer_Structure_df.close()
 #
 #***********************************************************************************
+# print("********************************")
+# print("********************************")
+# print("proceso finalizado correctamente")
+# print("********************************")
+# print("********************************")
