@@ -4,18 +4,18 @@ Framework Overview
 What is MOMF?
 -------------
 
-**MOMF (Multipurpose OSeMOSYS-based Modeling Framework)** is an open-source framework designed for building comprehensive national greenhouse gas (GHG) emission models.
+**MOMF (Multipurpose OSeMOSYS-based Modeling Framework)** is an open-source framework for building national greenhouse gas (GHG) emission models that cover all IPCC sectors in a single, integrated tool.
 
-Energy system modeling tools typically use linear and/or non-linear optimization methods to determine least-cost capacity mixes and energy balances across modeled time horizons for given climate and development scenarios. This means that both a reference energy system and alternative scenarios' changes and their expected costs must be expressed through various mathematical parameters that the model uses to configure and calculate the modeled energy system.
+**The problem:** Energy system models use optimization methods to find least-cost pathways for capacity expansion and energy balances across future scenarios. However, translating real-world energy systems into the mathematical parameters these models require is time-consuming and error-prone—modelers must manually ensure that data is correctly formatted, units are consistent, and relationships between technologies make physical sense.
 
-MOMF is designed to solve this problem by introducing a programmatic modeling framework that lets the modeler focus on the physics of the energy system through intuitive Excel-based templates, while pre-processing this information into consistent, correctly formatted, dimensionally aligned, and semantically coherent OSeMOSYS model runs that can be used with any of the current solvers available.
+**The solution:** MOMF lets you define your energy system using intuitive Excel templates focused on physical relationships (e.g., fuel inputs, efficiencies, emissions factors). The framework then automatically generates properly structured OSeMOSYS input files. MOMF can be used in tandem with `MUIO <https://github.com/OSeMOSYS/MUIO>`_ and `otoole <https://otoole.readthedocs.io/>`_.
 
-MOMF addresses a critical gap in existing modeling tools by providing:
+**Key features:**
 
-1. **Full IPCC sector coverage** in a single, integrated framework
-2. **Direct calibration** to national GHG inventories
-3. **Support for both NDC and LTS** policy planning
-4. **Open-source accessibility** for Low- and Middle-Income Countries (LMICs)
+- Full IPCC sector coverage (energy, IPPU, agriculture, LULUCF, waste)
+- Designed and built for NDC and LTS policy scenario development
+- Compatible with all major OSeMOSYS solvers
+- Open-source and freely available
 
 Why MOMF?
 ---------
