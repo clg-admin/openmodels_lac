@@ -47,15 +47,15 @@ Full documentation is available at: **https://modelslac.readthedocs.io/**
 
 | Original Project | Folder | Version | License | Link |
 |------------------|--------|---------|---------|------|
-| ndc_cr | CRI | 2025-08-06 (`f8157d9`) | MIT | https://github.com/clg-admin/ndc_cr |
-| ECU_NDC | ECU | 2025-03-31 (`ea7065d`) | MIT | https://github.com/clg-admin/ECU_NDC |
-| GUA_LTS | GUA | 2025-07-22 (`20bfa62`) | MIT | https://github.com/clg-admin/GUA_LTS |
-| ENDRCH-HON | HND | 2025-07-22 (`a28533f`) | MIT | https://github.com/clg-admin/ENDRCH-HON |
-| JAM-LTS | JAM | 2025-07-22 | MIT | https://github.com/clg-admin/JAM-LTS |
-| LTS-RD | DOM | 2025-07-22 (`c971401`) | MIT | https://github.com/clg-admin/LTS-RD |
+| ndc_cr | CRI | 2025-08-06 (`f8157d9`) | Apache-2.0 | https://github.com/clg-admin/ndc_cr |
+| ECU_NDC | ECU | 2025-03-31 (`ea7065d`) | Apache-2.0 | https://github.com/clg-admin/ECU_NDC |
+| GUA_LTS | GUA | 2025-07-22 (`20bfa62`) | Apache-2.0 | https://github.com/clg-admin/GUA_LTS |
+| ENDRCH-HON | HND | 2025-07-22 (`a28533f`) | Apache-2.0 | https://github.com/clg-admin/ENDRCH-HON |
+| JAM-LTS | JAM | 2025-07-22 | Apache-2.0 | https://github.com/clg-admin/JAM-LTS |
+| LTS-RD | DOM | 2025-07-22 (`c971401`) | Apache-2.0 | https://github.com/clg-admin/LTS-RD |
 
 > **Note:** The code for each model is maintained under its original license. Only data has been modified. See the [`LICENSES/`](./LICENSES) directory for details.
 
 ## License
 
-MIT License - See [LICENSE](./LICENSE) for details.
+Apache-2.0 License - See [LICENSE](./LICENSE) for details.

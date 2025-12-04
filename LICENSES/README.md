@@ -1,45 +1,45 @@
-# Licencias de Terceros
+# Third-Party Licenses
 
-Este directorio contiene las licencias originales de los proyectos vendorizados:
+This directory contains the original licenses of the vendored projects:
 
-- **ndc_cr**  
-  - Nombre en este repositorio: CRI
-  - Licencia: MIT  
-  - Archivo: `ndc_cr_LICENSE`
-  - Enlace: [GitHub](https://github.com/clg-admin/ndc_cr.git) 
+- **ndc_cr**
+  - Name in this repository: CRI
+  - License: Apache-2.0
+  - File: `ndc_cr_LICENSE`
+  - Link: [GitHub](https://github.com/clg-admin/ndc_cr.git)
 
-- **PLAN MICC**  
-  - Nombre en este repositorio: ECU
-  - Licencia: MIT  
-  - Archivo: `ECU_NDC_LICENSE`
-  - Enlace: [GitHub](https://github.com/clg-admin/ECU_NDC.git) 
+- **PLAN MICC**
+  - Name in this repository: ECU
+  - License: Apache-2.0
+  - File: `ECU_NDC_LICENSE`
+  - Link: [GitHub](https://github.com/clg-admin/ECU_NDC.git)
 
-- **GUA_LTS**  
-  - Nombre en este repositorio: GUA
-  - Licencia: MIT  
-  - Archivo: `GUA_LTS_LICENSE`
-  - Enlace: [GitHub](https://github.com/clg-admin/GUA_LTS.git) 
+- **GUA_LTS**
+  - Name in this repository: GUA
+  - License: Apache-2.0
+  - File: `GUA_LTS_LICENSE`
+  - Link: [GitHub](https://github.com/clg-admin/GUA_LTS.git)
 
-- **ENDRCH-HON**  
-  - Nombre en este repositorio: HND
-  - Licencia: MIT  
-  - Archivo: `ENDRCH-HON_LICENSE`
-  - Enlace: [GitHub](https://github.com/clg-admin/ENDRCH-HON.git) 
+- **ENDRCH-HON**
+  - Name in this repository: HND
+  - License: Apache-2.0
+  - File: `ENDRCH-HON_LICENSE`
+  - Link: [GitHub](https://github.com/clg-admin/ENDRCH-HON.git)
 
-- **JAM-LTS**  
-  - Nombre en este repositorio: JAM
-  - Licencia: MIT  
-  - Archivo: `JAM-LTS_LICENSE`
-  - Enlace: [GitHub](https://github.com/clg-admin/JAM-LTS.git) 
+- **JAM-LTS**
+  - Name in this repository: JAM
+  - License: Apache-2.0
+  - File: `JAM-LTS_LICENSE`
+  - Link: [GitHub](https://github.com/clg-admin/JAM-LTS.git)
 
-- **PAN_CCAC**  
-  - Nombre en este repositorio: PAN
-  - Licencia: MIT  
-  - Archivo: `PAN_CCAC_LICENSE`
-  - Enlace: [GitHub](https://github.com/clg-admin/PAN_CCAC.git)
+- **PAN_CCAC**
+  - Name in this repository: PAN
+  - License: Apache-2.0
+  - File: `PAN_CCAC_LICENSE`
+  - Link: [GitHub](https://github.com/clg-admin/PAN_CCAC.git)
 
-- **LTS-RD**  
-  - Nombre en este repositorio: DOM
-  - Licencia: MIT  
-  - Archivo: `LTS-RD_LICENSE`
-  - Enlace: [GitHub](https://github.com/clg-admin/LTS-RD.git) 
+- **LTS-RD**
+  - Name in this repository: DOM
+  - License: Apache-2.0
+  - File: `LTS-RD_LICENSE`
+  - Link: [GitHub](https://github.com/clg-admin/LTS-RD.git)
