@@ -9,6 +9,13 @@ Version 1 is the simplest implementation of MOMF, using a streamlined 3-script p
 Overview
 --------
 
+.. figure:: _static/workflow_v1.png
+   :alt: MOMF Version 1 Workflow Diagram
+   :align: center
+   :width: 100%
+
+   MOMF v1 pipeline: 3-script workflow with direct Excel input.
+
 MOMF v1 uses a straightforward approach:
 
 1. Single Excel file contains all model parameters

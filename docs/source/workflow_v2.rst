@@ -16,6 +16,13 @@ Version 2 is the standard MOMF implementation with a 4-stage pipeline, enhanced 
 Overview
 --------
 
+.. figure:: _static/workflow_v2.png
+   :alt: MOMF Version 2 Workflow Diagram
+   :align: center
+   :width: 100%
+
+   MOMF v2 pipeline: 4-stage workflow with enhanced scenario management.
+
 MOMF v2 introduces a more sophisticated architecture:
 
 1. **Modular Input Structure:** Separate Excel files for different data types

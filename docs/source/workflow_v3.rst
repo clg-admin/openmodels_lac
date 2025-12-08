@@ -9,6 +9,13 @@ Version 3 is the most advanced MOMF implementation, featuring YAML-based configu
 Overview
 --------
 
+.. figure:: _static/workflow_v3.png
+   :alt: MOMF Version 3 Workflow Diagram
+   :align: center
+   :width: 100%
+
+   MOMF v3 pipeline: YAML-based configuration with otoole integration.
+
 MOMF v3 introduces significant architectural improvements:
 
 1. **YAML Configuration:** All settings externalized to YAML files
