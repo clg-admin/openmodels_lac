@@ -440,8 +440,8 @@ sp_trn_dist_techs_i_connect = {}
 #
 #**************************#
 
-dict_dist_fam_to_name_eng = {'PUB':'Public', 'PRI':'Private', 'HEA':'Heavy Freight' , 'LIG':'Light Freight' }
-dict_dist_fam_to_name_spa = {'PUB':'Público', 'PRI':'Privado', 'HEA':'Carga Pesada' , 'LIG':'Carga Liviana' }
+dict_dist_fam_to_name_eng = {'PUB':'Public', 'PRI':'Private', 'HEA':'Heavy Freight' , 'LIG':'Light Freight' , 'TUR': 'Tourism'}
+dict_dist_fam_to_name_spa = {'PUB':'Público', 'PRI':'Privado', 'HEA':'Carga Pesada' , 'LIG':'Carga Liviana' , 'TUR': 'Turismo'}
 
 for gt in sp_trn_group_techs: # gt is for group tech
     #
