@@ -75,6 +75,47 @@ IPCC Sectors Modeled
      - Waste
      - Solid waste, wastewater, incineration
 
+Reference Energy Systems (RES)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each sector is modeled using a Reference Energy System (RES) that represents the flow of resources, transformations, and final demands. Below are the conceptual RES diagrams for each IPCC sector.
+
+**Energy Sector**
+
+.. figure:: _static/res_energy.png
+   :alt: Energy Sector Reference Energy System
+   :align: center
+   :width: 100%
+
+   Energy sector RES: From primary resources (fossil fuels, renewables) through transformation (power generation, fuel processing) to final demand (industry, transport, residential, commercial).
+
+**AFOLU Sector (Agriculture, Forestry and Other Land Use)**
+
+.. figure:: _static/res_afolu.png
+   :alt: AFOLU Sector Reference Energy System
+   :align: center
+   :width: 100%
+
+   AFOLU sector RES: Land allocation to forestry, agriculture, and livestock, with production flows to domestic consumption and exports.
+
+**IPPU Sector (Industrial Processes and Product Use)**
+
+.. figure:: _static/res_ippu.png
+   :alt: IPPU Sector Reference Energy System
+   :align: center
+   :width: 100%
+
+   IPPU sector RES: Raw materials through industrial processes (cement, chemicals, metals) to industrial products, with associated process emissions.
+
+**Waste Sector**
+
+.. figure:: _static/res_waste.png
+   :alt: Waste Sector Reference Energy System
+   :align: center
+   :width: 100%
+
+   Waste sector RES: Solid waste and wastewater flows from generation through collection, treatment, and final disposal, including circular economy pathways.
+
 Framework Versions
 ------------------
 
